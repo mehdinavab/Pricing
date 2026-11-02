@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\Brands\Kahrad.Pricing.Brands.Application\Kahrad.Pricing.Brands.Application.csproj" />
+    <ProjectReference Include="..\..\Modules\Brands\Kahrad.Pricing.Brands.Infrastructure\Kahrad.Pricing.Brands.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Modules\Products\Kahrad.Pricing.Products.Application\Kahrad.Pricing.Products.Application.csproj" />
+    <ProjectReference Include="..\..\Modules\Products\Kahrad.Pricing.Products.Infrastructure\Kahrad.Pricing.Products.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Modules\Representatives\Kahrad.Pricing.Representatives.Application\Kahrad.Pricing.Representatives.Application.csproj" />
+    <ProjectReference Include="..\..\Modules\Representatives\Kahrad.Pricing.Representatives.Infrastructure\Kahrad.Pricing.Representatives.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Modules\Pricing\Kahrad.Pricing.Pricing.Application\Kahrad.Pricing.Pricing.Application.csproj" />
+    <ProjectReference Include="..\..\Modules\Pricing\Kahrad.Pricing.Pricing.Infrastructure\Kahrad.Pricing.Pricing.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Modules\Media\Kahrad.Pricing.Media.Application\Kahrad.Pricing.Media.Application.csproj" />
+    <ProjectReference Include="..\..\Modules\Media\Kahrad.Pricing.Media.Infrastructure\Kahrad.Pricing.Media.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Modules\Identity\Kahrad.Pricing.Identity.Application\Kahrad.Pricing.Identity.Application.csproj" />
+    <ProjectReference Include="..\..\Modules\Identity\Kahrad.Pricing.Identity.Infrastructure\Kahrad.Pricing.Identity.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

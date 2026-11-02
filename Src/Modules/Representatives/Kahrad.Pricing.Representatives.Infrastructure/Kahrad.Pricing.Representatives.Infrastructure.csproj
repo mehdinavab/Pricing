@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kahrad.Pricing.Representatives.Application\Kahrad.Pricing.Representatives.Application.csproj" />
+    <ProjectReference Include="..\Kahrad.Pricing.Representatives.Domain\Kahrad.Pricing.Representatives.Domain.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Kahrad.Pricing.BuildingBlocks.Infrastructure\Kahrad.Pricing.BuildingBlocks.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
