@@ -5,6 +5,22 @@
     <ProjectReference Include="..\..\..\BuildingBlocks\Kahrad.Pricing.BuildingBlocks.Application\Kahrad.Pricing.BuildingBlocks.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Authentication\" />
+    <Folder Include="Authorization\" />
+    <Folder Include="Auditing\" />
+    <Folder Include="Permissions\" />
+    <Folder Include="Roles\" />
+    <Folder Include="Users\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.2.0" />
+    <PackageReference Include="Sieve" Version="2.5.5" />
+	  <PackageReference Include="FluentValidation" Version="12.2.0" />
+	  <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.2.0" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

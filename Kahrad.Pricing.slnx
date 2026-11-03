@@ -43,4 +43,9 @@
     <Project Path="src/Modules/Representatives/Kahrad.Pricing.Representatives.Domain/Kahrad.Pricing.Representatives.Domain.csproj" />
     <Project Path="src/Modules/Representatives/Kahrad.Pricing.Representatives.Infrastructure/Kahrad.Pricing.Representatives.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/src/Modules/Sms/">
+    <Project Path="Src/Modules/Sms/Kahrad.Pricing.Sms.Application/Kahrad.Pricing.Sms.Application.csproj" />
+    <Project Path="Src/Modules/Sms/Kahrad.Pricing.Sms.Domain/Kahrad.Pricing.Sms.Domain.csproj" />
+    <Project Path="Src/Modules/Sms/Kahrad.Pricing.Sms.Infrastructure/Kahrad.Pricing.Sms.Infrastructure.csproj" />
+  </Folder>
 </Solution>
