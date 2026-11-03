@@ -1,6 +1,31 @@
+# Configure ConnectionStrings__IdentityDb and Jwt__Key/Jwt__Issuer/Jwt__Audience
+# before starting the API. Jwt__Key must contain at least 32 UTF-8 bytes.
+# Apply the Identity schema with EF migrations before sending requests.
+# For example: dotnet ef database update --project Src\Modules\Identity\Kahrad.Pricing.Identity.Infrastructure --startup-project Src\Hosts\Kahrad.Pricing.Api --context IdentityDbContext
 @Kahrad.Pricing.Api_HostAddress = http://localhost:5276
+@accessToken = replace-with-access-token
+@refreshToken = replace-with-refresh-token
 
-GET {{Kahrad.Pricing.Api_HostAddress}}/weatherforecast/
+### Password login
+POST {{Kahrad.Pricing.Api_HostAddress}}/api/identity/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "replace-with-password"
+}
+
+### Refresh tokens
+POST {{Kahrad.Pricing.Api_HostAddress}}/api/identity/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refreshToken}}"
+}
+
+### List users (Admin or SuperAdmin)
+GET {{Kahrad.Pricing.Api_HostAddress}}/api/users?page=1&pageSize=20
+Authorization: Bearer {{accessToken}}
 Accept: application/json
 
 ###

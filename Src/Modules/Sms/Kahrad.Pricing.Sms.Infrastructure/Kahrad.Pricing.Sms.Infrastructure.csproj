@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kahrad.Pricing.Sms.Application\Kahrad.Pricing.Sms.Application.csproj" />
+    <ProjectReference Include="..\Kahrad.Pricing.Sms.Domain\Kahrad.Pricing.Sms.Domain.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
