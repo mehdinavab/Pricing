@@ -11,8 +11,8 @@ using Kahrad.Pricing.Products.Infrastructure;
 using Kahrad.Pricing.Sms.Application;
 using Kahrad.Pricing.Sms.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.OpenApi;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi;
 using Scalar.AspNetCore;
 using System.Text;
 

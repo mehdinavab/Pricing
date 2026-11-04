@@ -1,8 +1,7 @@
 ﻿using Kahrad.Pricing.Identity.Application.Abstractions.Persistence;
-using Kahrad.Pricing.Identity.Application.Abstractions.Services;
 using Kahrad.Pricing.Identity.Domain.Entities;
-using Kahrad.Pricing.Identity.Infrastructure.Persistence.Repositories;
 using Kahrad.Pricing.Identity.Infrastructure.Persistence;
+using Kahrad.Pricing.Identity.Infrastructure.Persistence.Repositories;
 using Kahrad.Pricing.Identity.Infrastructure.Services;
 using Kahrad.Pricing.Identity.Infrastructure.Services.models;
 using Microsoft.AspNetCore.Identity;

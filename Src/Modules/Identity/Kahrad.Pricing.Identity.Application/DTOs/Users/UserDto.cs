@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Kahrad.Pricing.Identity.Application.DTOs.Users
+﻿namespace Kahrad.Pricing.Identity.Application.DTOs.Users
 {
     public sealed class UserDto
     {

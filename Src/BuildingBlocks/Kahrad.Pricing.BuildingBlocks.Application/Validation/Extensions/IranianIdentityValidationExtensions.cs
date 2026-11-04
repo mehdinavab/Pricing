@@ -1,8 +1,5 @@
 using FluentValidation;
 using PhoneNumbers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Kahrad.Pricing.BuildingBlocks.Application.Validation.Extensions
 {

@@ -2,7 +2,6 @@
 using Kahrad.Pricing.Identity.Application.Abstractions.Persistence;
 using Kahrad.Pricing.Identity.Application.DTOs.Auditing;
 using Kahrad.Pricing.Identity.Domain.Entities;
-using Kahrad.Pricing.Identity.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Sieve.Services;
 

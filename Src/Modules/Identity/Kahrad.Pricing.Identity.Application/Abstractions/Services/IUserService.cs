@@ -1,8 +1,5 @@
 ﻿using Kahrad.Pricing.BuildingBlocks.Application.DTOs.Responses;
 using Kahrad.Pricing.Identity.Application.DTOs.Users;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Kahrad.Pricing.Identity.Application.Abstractions.Services
 {

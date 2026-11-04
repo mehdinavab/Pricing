@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Kahrad.Pricing.Identity.Infrastructure.Services.models
+﻿namespace Kahrad.Pricing.Identity.Infrastructure.Services.models
 {
     public sealed class JwtOptions
     {

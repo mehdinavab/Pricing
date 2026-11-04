@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Sieve.Attributes;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace Kahrad.Pricing.Identity.Domain.Entities
 {

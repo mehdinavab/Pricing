@@ -1,9 +1,6 @@
 ﻿using Kahrad.Pricing.BuildingBlocks.Application.DTOs.Responses;
 using Kahrad.Pricing.Identity.Application.DTOs.Auditing;
 using Kahrad.Pricing.Identity.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Kahrad.Pricing.Identity.Application.Abstractions.Persistence
 {

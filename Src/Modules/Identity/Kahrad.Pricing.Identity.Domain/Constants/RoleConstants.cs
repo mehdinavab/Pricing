@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Kahrad.Pricing.Identity.Domain.Constants
+﻿namespace Kahrad.Pricing.Identity.Domain.Constants
 {
     public static class RoleConstants
     {

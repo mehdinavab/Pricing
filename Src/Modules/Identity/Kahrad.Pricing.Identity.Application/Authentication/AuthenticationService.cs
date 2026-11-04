@@ -1,11 +1,11 @@
-﻿using System.Security.Cryptography;
-using System.Text;
-using Kahrad.Pricing.Identity.Application.Abstractions.Persistence;
+﻿using Kahrad.Pricing.Identity.Application.Abstractions.Persistence;
 using Kahrad.Pricing.Identity.Application.Abstractions.Services;
 using Kahrad.Pricing.Identity.Application.DTOs.Authentication;
 using Kahrad.Pricing.Identity.Application.Exceptions;
 using Kahrad.Pricing.Identity.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Kahrad.Pricing.Identity.Application.Authentication
 {

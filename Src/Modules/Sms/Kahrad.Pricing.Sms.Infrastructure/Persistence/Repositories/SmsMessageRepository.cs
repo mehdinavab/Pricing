@@ -1,7 +1,6 @@
 using Kahrad.Pricing.Sms.Application.Abstractions.Persistence;
 using Kahrad.Pricing.Sms.Domain.Entities;
 using Kahrad.Pricing.Sms.Domain.Enums;
-using Kahrad.Pricing.Sms.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kahrad.Pricing.Sms.Infrastructure.Persistence.Repositories;

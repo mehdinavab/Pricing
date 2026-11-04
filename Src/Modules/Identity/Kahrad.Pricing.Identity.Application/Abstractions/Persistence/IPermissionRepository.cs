@@ -1,7 +1,4 @@
 ﻿using Kahrad.Pricing.Identity.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Kahrad.Pricing.Identity.Application.Abstractions.Persistence
 {

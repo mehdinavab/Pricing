@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
-using Kahrad.Pricing.Identity.Application.DTOs.Users;
 using Kahrad.Pricing.BuildingBlocks.Application.Validation.Extensions;
+using Kahrad.Pricing.Identity.Application.DTOs.Users;
 
 namespace Kahrad.Pricing.Identity.Application.Validation.Users
 {

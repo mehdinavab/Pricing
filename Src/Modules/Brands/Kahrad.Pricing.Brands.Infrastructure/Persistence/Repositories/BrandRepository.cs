@@ -1,6 +1,5 @@
 using Kahrad.Pricing.Brands.Application.Abstractions.Persistence;
 using Kahrad.Pricing.Brands.Domain.Entities;
-using Kahrad.Pricing.Brands.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kahrad.Pricing.Brands.Infrastructure.Persistence.Repositories;

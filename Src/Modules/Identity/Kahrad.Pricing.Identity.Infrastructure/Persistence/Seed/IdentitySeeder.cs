@@ -1,9 +1,6 @@
 ﻿using Kahrad.Pricing.Identity.Domain.Constants;
 using Kahrad.Pricing.Identity.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Kahrad.Pricing.Identity.Infrastructure.Persistence.Seed
 {

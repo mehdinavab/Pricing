@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using Kahrad.Pricing.BuildingBlocks.Application.DTOs.Responses;
 using Kahrad.Pricing.Identity.Application.Abstractions.Persistence;
 using Kahrad.Pricing.Identity.Application.Abstractions.Services;
-using Kahrad.Pricing.BuildingBlocks.Application.DTOs.Responses;
 using Kahrad.Pricing.Identity.Application.DTOs.Permissions;
 using Kahrad.Pricing.Identity.Application.DTOs.Roles;
 using Kahrad.Pricing.Identity.Application.Exceptions;

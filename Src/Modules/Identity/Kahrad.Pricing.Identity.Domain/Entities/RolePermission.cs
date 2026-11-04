@@ -8,7 +8,7 @@ namespace Kahrad.Pricing.Identity.Domain.Entities
     [Index(nameof(PublicId), IsUnique = true)]
     [Index(nameof(RoleId), nameof(PermissionId), IsUnique = true)]
     [Index(nameof(PermissionId))]
-    public sealed class RolePermission :BaseEntity
+    public sealed class RolePermission : BaseEntity
     {
         public Guid RoleId { get; private set; }
 
