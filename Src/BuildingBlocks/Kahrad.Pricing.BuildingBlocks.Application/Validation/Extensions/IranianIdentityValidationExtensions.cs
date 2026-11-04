@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using PhoneNumbers;
 using System;
 using System.Collections.Generic;
@@ -13,10 +13,9 @@ namespace Kahrad.Pricing.BuildingBlocks.Application.Validation.Extensions
         private static readonly PhoneNumberUtil PhoneUtil = PhoneNumberUtil.GetInstance();
 
         public static IRuleBuilderOptions<T, string> ValidIranianNationalCode<T>(
-            this IRuleBuilderInitial<T, string> ruleBuilder)
+            this IRuleBuilder<T, string> ruleBuilder)
         {
             return ruleBuilder
-                .Cascade(CascadeMode.Stop)
                 .NotEmpty()
                     .WithMessage("NationalCodeIsRequiredError")
                 .Must(IsValidIranianNationalCode)
@@ -24,10 +23,9 @@ namespace Kahrad.Pricing.BuildingBlocks.Application.Validation.Extensions
         }
 
         public static IRuleBuilderOptions<T, string> ValidIranianMobileNumber<T>(
-            this IRuleBuilderInitial<T, string> ruleBuilder)
+            this IRuleBuilder<T, string> ruleBuilder)
         {
             return ruleBuilder
-                .Cascade(CascadeMode.Stop)
                 .NotEmpty()
                     .WithMessage("PhoneNumberIsRequiredError")
                 .Must(IsValidIranianMobileNumber)
@@ -52,7 +50,7 @@ namespace Kahrad.Pricing.BuildingBlocks.Application.Validation.Extensions
                 : DateTime.SpecifyKind(birthDate.Value.Date, DateTimeKind.Utc);
         }
 
-        internal static bool IsValidIranianNationalCode(string? nationalCode)
+        public static bool IsValidIranianNationalCode(string? nationalCode)
         {
             if (nationalCode is null ||
                 nationalCode.Length != 10 ||
@@ -73,7 +71,7 @@ namespace Kahrad.Pricing.BuildingBlocks.Application.Validation.Extensions
             return nationalCode[9] - '0' == expectedCheckDigit;
         }
 
-        internal static bool IsValidIranianMobileNumber(string? phoneNumber)
+        public static bool IsValidIranianMobileNumber(string? phoneNumber)
         {
             if (string.IsNullOrWhiteSpace(phoneNumber))
             {

@@ -1,9 +1,22 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
     <ProjectReference Include="..\Kahrad.Pricing.Brands.Application\Kahrad.Pricing.Brands.Application.csproj" />
     <ProjectReference Include="..\Kahrad.Pricing.Brands.Domain\Kahrad.Pricing.Brands.Domain.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Kahrad.Pricing.BuildingBlocks.Infrastructure\Kahrad.Pricing.BuildingBlocks.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.2.0" />
+    <PackageReference Include="Sieve" Version="2.5.5" />
+    <PackageReference Include="FluentValidation" Version="12.2.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.14" />
   </ItemGroup>
 
   <PropertyGroup>

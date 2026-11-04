@@ -1,7 +1,15 @@
 using Kahrad.Pricing.Api;
+using Kahrad.Pricing.Brands.Application;
+using Kahrad.Pricing.Brands.Infrastructure;
+using Kahrad.Pricing.Guarantees.Application;
+using Kahrad.Pricing.Guarantees.Infrastructure;
 using Kahrad.Pricing.Identity.Application;
 using Kahrad.Pricing.Identity.Infrastructure;
 using Kahrad.Pricing.Identity.Infrastructure.Services.models;
+using Kahrad.Pricing.Products.Application;
+using Kahrad.Pricing.Products.Infrastructure;
+using Kahrad.Pricing.Sms.Application;
+using Kahrad.Pricing.Sms.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi;
 using Microsoft.IdentityModel.Tokens;
@@ -54,9 +62,21 @@ builder.Services.AddSwaggerGen(options =>
         });
 });
 builder.Services.AddExceptionHandler<IdentityExceptionHandler>();
+builder.Services.AddExceptionHandler<BrandExceptionHandler>();
+builder.Services.AddExceptionHandler<GuaranteeExceptionHandler>();
+builder.Services.AddExceptionHandler<ProductExceptionHandler>();
+builder.Services.AddExceptionHandler<SmsExceptionHandler>();
 builder.Services.AddProblemDetails();
 builder.Services.AddIdentityApplication();
 builder.Services.AddIdentityInfrastructure(builder.Configuration);
+builder.Services.AddBrandsApplication();
+builder.Services.AddBrandsInfrastructure(builder.Configuration);
+builder.Services.AddGuaranteesApplication();
+builder.Services.AddGuaranteesInfrastructure(builder.Configuration);
+builder.Services.AddProductsApplication();
+builder.Services.AddProductsInfrastructure(builder.Configuration);
+builder.Services.AddSmsApplication();
+builder.Services.AddSmsInfrastructure(builder.Configuration);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {

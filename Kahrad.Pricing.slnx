@@ -17,6 +17,11 @@
     <Project Path="src/Modules/Brands/Kahrad.Pricing.Brands.Domain/Kahrad.Pricing.Brands.Domain.csproj" />
     <Project Path="src/Modules/Brands/Kahrad.Pricing.Brands.Infrastructure/Kahrad.Pricing.Brands.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/src/Modules/Guarantees/">
+    <Project Path="Src/Modules/Guarantees/Kahrad.Pricing.Guarantees.Application/Kahrad.Pricing.Guarantees.Application.csproj" />
+    <Project Path="Src/Modules/Guarantees/Kahrad.Pricing.Guarantees.Domain/Kahrad.Pricing.Guarantees.Domain.csproj" />
+    <Project Path="Src/Modules/Guarantees/Kahrad.Pricing.Guarantees.Infrastructure/Kahrad.Pricing.Guarantees.Infrastructure.csproj" />
+  </Folder>
   <Folder Name="/src/Modules/Identity/">
     <Project Path="Src/Modules/Identity/Kahrad.Pricing.Identity.Application/Kahrad.Pricing.Identity.Application.csproj" />
     <Project Path="Src/Modules/Identity/Kahrad.Pricing.Identity.Domain/Kahrad.Pricing.Identity.Domain.csproj" />
