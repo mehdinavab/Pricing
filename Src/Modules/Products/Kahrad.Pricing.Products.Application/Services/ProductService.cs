@@ -15,6 +15,7 @@ namespace Kahrad.Pricing.Products.Application.Services;
 public sealed class ProductService(
     IProductRepository productRepository,
     IProductGroupRepository productGroupRepository,
+    ICatalogRepository catalogRepository,
     IMapper mapper,
     ISieveProcessor sieveProcessor) : IProductService
 {
@@ -197,7 +198,7 @@ public sealed class ProductService(
             DateTime.UtcNow,
             currentUserId);
 
-        await productRepository.UpdateAsync(product, cancellationToken);
+        await productRepository.UpdateContentAsync(product, cancellationToken);
     }
 
     public async Task DeleteAsync(
@@ -236,6 +237,8 @@ public sealed class ProductService(
             throw new ProductNotFoundException(id);
 
         var utcNow = DateTime.UtcNow;
+        if (isActive && !await catalogRepository.HasDefaultTranslationAsync(id, cancellationToken))
+            throw new ProductOperationException("A default-language translation is required before activating a product.");
         if (isActive)
             product.Activate(utcNow, currentUserId);
         else
@@ -380,16 +383,24 @@ public sealed class ProductService(
         if (!await productRepository.ExistsAsync(productId, cancellationToken))
             throw new ProductNotFoundException(productId);
 
+        Feature? definition = null;
+        if (request.FeatureId.HasValue)
+            definition = await catalogRepository.GetFeatureAsync(request.FeatureId.Value, cancellationToken)
+                ?? throw new ProductOperationException("Shared feature does not exist.");
         var utcNow = DateTime.UtcNow;
+        var featureName = definition?.Name ?? request.Name;
+        if (string.IsNullOrWhiteSpace(featureName)) throw new ProductOperationException("Feature name or shared FeatureId is required.");
         var feature = new ProductFeature(
             productId,
-            request.Name,
+            featureName,
             request.Value,
             request.HasPriceEffect,
             request.PriceEffectPercentage,
             request.PriceEffectAmount,
             request.DisplayOrder,
             request.Description);
+
+        if (definition is not null) feature.AssignDefinition(definition.Id);
 
         feature.SetCreated(currentUserId, utcNow);
 

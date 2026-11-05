@@ -13,6 +13,14 @@ namespace Kahrad.Pricing.Products.Domain.Entities;
 [Index(nameof(IsDeleted))]
 public sealed class ProductFeature : BaseEntity
 {
+    public long? FeatureId { get; private set; }
+
+    public void AssignDefinition(long featureId)
+    {
+        if (featureId <= 0) throw new ArgumentOutOfRangeException(nameof(featureId));
+        FeatureId = featureId;
+    }
+
     public long ProductId { get; private set; }
 
     [Sieve(CanFilter = true, CanSort = true)]

@@ -2,6 +2,7 @@ namespace Kahrad.Pricing.Products.Application.DTOs.Products;
 
 public class ProductDto
 {
+    public string? Language { get; init; }
     public long Id { get; init; }
     public Guid PublicId { get; init; }
     public string Name { get; init; } = null!;

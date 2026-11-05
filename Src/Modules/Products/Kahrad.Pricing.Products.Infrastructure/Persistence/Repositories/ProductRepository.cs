@@ -1,6 +1,7 @@
 using Kahrad.Pricing.Products.Application.Abstractions.Persistence;
 using Kahrad.Pricing.Products.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Kahrad.Pricing.Products.Application.Exceptions;
 
 namespace Kahrad.Pricing.Products.Infrastructure.Persistence.Repositories;
 
@@ -128,8 +129,12 @@ public sealed class ProductRepository(ProductsDbContext context) : IProductRepos
         Product product,
         CancellationToken cancellationToken = default)
     {
+        await using var transaction = await context.Database.BeginTransactionAsync(cancellationToken);
         await context.Products.AddAsync(product, cancellationToken);
         await context.SaveChangesAsync(cancellationToken);
+        await SyncDefaultContentAsync(product, cancellationToken);
+        await context.SaveChangesAsync(cancellationToken);
+        await transaction.CommitAsync(cancellationToken);
         return product.Id;
     }
 
@@ -139,6 +144,27 @@ public sealed class ProductRepository(ProductsDbContext context) : IProductRepos
     {
         context.Products.Update(product);
         await context.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task UpdateContentAsync(Product product, CancellationToken cancellationToken = default)
+    {
+        await SyncDefaultContentAsync(product, cancellationToken);
+        context.Products.Update(product);
+        await context.SaveChangesAsync(cancellationToken);
+    }
+
+    private async Task SyncDefaultContentAsync(Product product, CancellationToken ct)
+    {
+        var language = await context.Languages.SingleOrDefaultAsync(x => x.IsActive && x.IsDefault, ct)
+            ?? throw new ProductOperationException("Catalog default language is missing.");
+        var translation = await context.ProductTranslations.SingleOrDefaultAsync(x => x.ProductId == product.Id && x.LanguageId == language.Id, ct);
+        if (translation is null)
+        {
+            translation = new ProductTranslation(product.Id, language.Id, product.Name, product.Description);
+            translation.SetCreated(product.UpdatedById ?? product.CreatedById, DateTime.UtcNow);
+            context.ProductTranslations.Add(translation);
+        }
+        else { translation.Update(product.Name, product.Description); translation.SetUpdated(product.UpdatedById, DateTime.UtcNow); }
     }
 
     public async Task DeleteAsync(
@@ -196,8 +222,21 @@ public sealed class ProductRepository(ProductsDbContext context) : IProductRepos
         ProductFeature feature,
         CancellationToken cancellationToken = default)
     {
+        await using var transaction = await context.Database.BeginTransactionAsync(cancellationToken);
+        if (!feature.FeatureId.HasValue)
+        {
+            var definition = new Feature($"FEATURE-{Guid.NewGuid():N}", feature.Name);
+            definition.SetCreated(feature.CreatedById, DateTime.UtcNow);
+            context.Features.Add(definition);
+            await context.SaveChangesAsync(cancellationToken);
+            var fallback = await context.Languages.SingleAsync(x => x.IsActive && x.IsDefault, cancellationToken);
+            var label = new FeatureTranslation(definition.Id, fallback.Id, definition.Name);
+            label.SetCreated(feature.CreatedById, DateTime.UtcNow); context.FeatureTranslations.Add(label);
+            feature.AssignDefinition(definition.Id);
+        }
         await context.ProductFeatures.AddAsync(feature, cancellationToken);
         await context.SaveChangesAsync(cancellationToken);
+        await transaction.CommitAsync(cancellationToken);
         return feature.Id;
     }
 
@@ -205,6 +244,15 @@ public sealed class ProductRepository(ProductsDbContext context) : IProductRepos
         ProductFeature feature,
         CancellationToken cancellationToken = default)
     {
+        if (feature.FeatureId.HasValue)
+        {
+            var definition = await context.Features.SingleAsync(x => x.Id == feature.FeatureId.Value, cancellationToken);
+            var fallback = await context.Languages.SingleAsync(x => x.IsActive && x.IsDefault, cancellationToken);
+            var translation = await context.FeatureTranslations.SingleOrDefaultAsync(x => x.FeatureId == definition.Id && x.LanguageId == fallback.Id, cancellationToken);
+            definition.SetDefaultName(feature.Name); definition.SetUpdated(feature.UpdatedById, DateTime.UtcNow);
+            if (translation is null) context.FeatureTranslations.Add(new FeatureTranslation(definition.Id, fallback.Id, feature.Name));
+            else { translation.Update(feature.Name); translation.SetUpdated(feature.UpdatedById, DateTime.UtcNow); }
+        }
         context.ProductFeatures.Update(feature);
         await context.SaveChangesAsync(cancellationToken);
     }

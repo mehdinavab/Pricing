@@ -18,6 +18,9 @@ public static class DependencyInjection
 
         services.AddScoped<IProductGroupService, ProductGroupService>();
         services.AddScoped<IProductService, ProductService>();
+        services.AddScoped<ICatalogService, CatalogService>();
+        services.AddScoped<ItemCatalogService>();
+        services.AddSingleton<ILanguageResolver, LanguageResolver>();
 
         return services;
     }

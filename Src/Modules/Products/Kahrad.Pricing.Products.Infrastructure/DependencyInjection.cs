@@ -42,6 +42,10 @@ public static class DependencyInjection
 
         services.AddScoped<IProductGroupRepository, ProductGroupRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<ICatalogRepository, CatalogRepository>();
+        services.AddScoped<ILocalItemReader, LocalItemReader>();
+        services.AddScoped<IProductBrandReader, ProductBrandReader>();
+        services.AddScoped<IItemCatalogStore, ItemCatalogStore>();
 
         return services;
     }

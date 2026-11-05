@@ -50,6 +50,8 @@ public interface IProductRepository
         Product product,
         CancellationToken cancellationToken = default);
 
+    Task UpdateContentAsync(Product product, CancellationToken cancellationToken = default);
+
     Task DeleteAsync(
         Product product,
         CancellationToken cancellationToken = default);

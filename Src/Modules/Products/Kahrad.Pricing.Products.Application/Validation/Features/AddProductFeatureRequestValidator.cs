@@ -8,8 +8,10 @@ public sealed class AddProductFeatureRequestValidator : AbstractValidator<AddPro
     public AddProductFeatureRequestValidator()
     {
         RuleFor(x => x.Name)
-            .NotEmpty().WithMessage("Feature name is required.")
+            .NotEmpty().When(x => !x.FeatureId.HasValue).WithMessage("Feature name is required.")
             .MaximumLength(150).WithMessage("Feature name cannot exceed 150 characters.");
+
+        RuleFor(x => x.FeatureId).GreaterThan(0).When(x => x.FeatureId.HasValue);
 
         RuleFor(x => x.Value)
             .NotEmpty().WithMessage("Feature value is required.")

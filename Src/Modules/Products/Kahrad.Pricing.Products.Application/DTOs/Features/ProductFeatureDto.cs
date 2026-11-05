@@ -4,6 +4,7 @@ public class ProductFeatureDto
 {
     public long Id { get; init; }
     public Guid PublicId { get; init; }
+    public long? FeatureId { get; init; }
     public long ProductId { get; init; }
     public string Name { get; init; } = null!;
     public string Value { get; init; } = null!;

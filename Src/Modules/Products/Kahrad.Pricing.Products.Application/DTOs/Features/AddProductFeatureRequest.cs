@@ -2,7 +2,8 @@ namespace Kahrad.Pricing.Products.Application.DTOs.Features;
 
 public class AddProductFeatureRequest
 {
-    public string Name { get; init; } = null!;
+    public long? FeatureId { get; init; }
+    public string? Name { get; init; }
     public string Value { get; init; } = null!;
     public bool HasPriceEffect { get; init; }
     public decimal PriceEffectPercentage { get; init; } = 0;

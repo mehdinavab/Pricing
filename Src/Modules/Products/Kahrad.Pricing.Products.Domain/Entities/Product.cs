@@ -13,6 +13,15 @@ namespace Kahrad.Pricing.Products.Domain.Entities;
 [Index(nameof(IsDeleted))]
 public sealed class Product : BaseEntity
 {
+    public ICollection<ProductTranslation> Translations { get; private set; } = new List<ProductTranslation>();
+
+    public void SetDefaultContent(string name, string? description)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(name);
+        if (name.Trim().Length > 250 || description?.Length > 1000) throw new ArgumentException("Product content is too long.");
+        Name = name.Trim(); Description = description?.Trim();
+    }
+
     private readonly List<ProductFeature> _features = [];
     private readonly List<ProductImage> _gallery = [];
 

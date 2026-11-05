@@ -11,6 +11,7 @@ public sealed class ProductFeatureConfiguration : IEntityTypeConfiguration<Produ
         builder.ToTable("ProductFeatures", "products");
 
         builder.HasKey(x => x.Id);
+        builder.HasOne<Feature>().WithMany().HasForeignKey(x => x.FeatureId).OnDelete(DeleteBehavior.Restrict);
 
         builder.Property(x => x.PublicId)
             .IsRequired();

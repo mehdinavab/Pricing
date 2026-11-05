@@ -6,6 +6,7 @@ namespace Kahrad.Pricing.Products.Application.DTOs.Products;
 
 public class ProductDetailDto : ProductDto
 {
+    public List<Kahrad.Pricing.Products.Application.DTOs.Catalog.ProductSpecificationDto> Specifications { get; init; } = [];
     public ProductGroupDto? Group { get; init; }
     public List<ProductFeatureDto> Features { get; init; } = [];
     public List<ProductImageDto> Gallery { get; init; } = [];
