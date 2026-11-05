@@ -28,7 +28,7 @@ namespace Kahrad.Pricing.Api.Controllers.Identity.Users
                         roleId,
                         cancellationToken);
 
-                    if (role?.Name == RoleConstants.SuperAdmin)
+                    if (string.Equals(role?.Name, RoleConstants.SuperAdmin, StringComparison.OrdinalIgnoreCase))
                         return Forbid();
                 }
             }

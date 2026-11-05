@@ -1,3 +1,4 @@
+using Kahrad.Pricing.Api.Authorization;
 ﻿using Kahrad.Pricing.Identity.Application.Abstractions.Services;
 using Kahrad.Pricing.Identity.Domain.Constants;
 using Microsoft.AspNetCore.Authorization;
@@ -6,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Kahrad.Pricing.Api.Controllers.Identity.Users
 {
     [Authorize(Roles = RoleConstants.Admin + "," + RoleConstants.SuperAdmin)]
+    [ServiceFilter(typeof(ProtectSuperAdminFilter))]
+    [ProducesResponseType(StatusCodes.Status403Forbidden)]
     public sealed class AssignRole(
         IUserService userService,
         IAuditService auditService,
@@ -23,7 +26,7 @@ namespace Kahrad.Pricing.Api.Controllers.Identity.Users
             if (!User.IsInRole(RoleConstants.SuperAdmin))
             {
                 var role = await roleService.GetByIdAsync(roleId, cancellationToken);
-                if (role?.Name == RoleConstants.SuperAdmin)
+                if (string.Equals(role?.Name, RoleConstants.SuperAdmin, StringComparison.OrdinalIgnoreCase))
                     return Forbid();
             }
 
