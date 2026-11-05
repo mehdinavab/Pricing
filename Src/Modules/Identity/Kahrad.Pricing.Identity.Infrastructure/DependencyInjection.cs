@@ -48,6 +48,7 @@ public static class DependencyInjection
             .AddDefaultTokenProviders();
 
         services.Configure<JwtOptions>(configuration.GetSection("Jwt"));
+        services.AddScoped<Kahrad.Pricing.Identity.Infrastructure.Persistence.Seed.IdentitySeeder>();
         services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
         services.AddScoped<ISieveProcessor, IdentitySieveProcessor>();
         services.Configure<SieveOptions>(options =>
