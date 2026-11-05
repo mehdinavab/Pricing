@@ -4,6 +4,8 @@
     <ProjectReference Include="..\Kahrad.Pricing.Pricing.Application\Kahrad.Pricing.Pricing.Application.csproj" />
     <ProjectReference Include="..\Kahrad.Pricing.Pricing.Domain\Kahrad.Pricing.Pricing.Domain.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Kahrad.Pricing.BuildingBlocks.Infrastructure\Kahrad.Pricing.BuildingBlocks.Infrastructure.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" PrivateAssets="all" />
   </ItemGroup>
 
   <PropertyGroup>
