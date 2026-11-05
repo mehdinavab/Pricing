@@ -9,7 +9,6 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Serilog;
 using Serilog.Context;
 using Serilog.Events;
-using Serilog.Formatting.Json;
 namespace Kahrad.Pricing.BuildingBlocks.Infrastructure.Hosting;
 
 public static class HostOperations
@@ -18,8 +17,10 @@ public static class HostOperations
     {
         services.AddSerilog((_, logger) => logger
             .MinimumLevel.Information().MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-            .ReadFrom.Configuration(configuration).Enrich.FromLogContext().Enrich.WithProperty("Application", application)
-            .WriteTo.Console(new JsonFormatter(renderMessage: true)));
+            .ReadFrom.Configuration(configuration)
+            .ReadFrom.Services(_)
+            .Enrich.FromLogContext()
+            .Enrich.WithProperty("Application", application));
         return services;
     }
 

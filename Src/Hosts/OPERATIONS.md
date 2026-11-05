@@ -2,7 +2,7 @@
 
 ## Logging
 
-All four hosts use Serilog 10 with structured JSON console output. Minimum level defaults to Information, with Microsoft framework logs at Warning, and can be adjusted through the standard `Serilog` configuration section. Add an operational sink through reviewed configuration if durable aggregation is required; console output alone is not log retention.
+All four hosts use the shared Serilog setup with themed structured console output and a Seq sink at http://localhost:5341. Each host appsettings.json contains configurable levels, framework overrides, expression filters, and machine, environment, process and thread enrichment. Application and HTTP correlation properties are retained. Module ILogger<T> events flow through the host provider; Domain and calculation engines need no Serilog dependency. Seq batches up to 100 events every two seconds at Information or above. Set Serilog__WriteTo__1__Args__serverUrl and Serilog__WriteTo__1__Args__apiKey through environment variables or secure configuration when required; do not commit credentials. Console output alone is not log retention.
 
 The shared host support is in BuildingBlocks.Infrastructure. Because it includes ASP.NET Core operations support, framework-dependent deployments of the workers also require the matching ASP.NET Core shared runtime; alternatively publish the deployment with its appropriate self-contained runtime. No container is needed.
 
