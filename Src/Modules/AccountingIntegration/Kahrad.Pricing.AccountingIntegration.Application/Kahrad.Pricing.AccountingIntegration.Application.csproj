@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kahrad.Pricing.AccountingIntegration.Domain\Kahrad.Pricing.AccountingIntegration.Domain.csproj" />
+    <ProjectReference Include="..\..\Products\Kahrad.Pricing.Products.Application\Kahrad.Pricing.Products.Application.csproj" />
+    <ProjectReference Include="..\..\Brands\Kahrad.Pricing.Brands.Application\Kahrad.Pricing.Brands.Application.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" />
+  </ItemGroup>
+
+</Project>
