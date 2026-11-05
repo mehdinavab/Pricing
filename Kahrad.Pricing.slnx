@@ -1,21 +1,26 @@
 <Solution>
   <Folder Name="/src/" />
   <Folder Name="/src/BuildingBlocks/">
-    <Project Path="src/BuildingBlocks/Kahrad.Pricing.BuildingBlocks.Application/Kahrad.Pricing.BuildingBlocks.Application.csproj" />
-    <Project Path="src/BuildingBlocks/Kahrad.Pricing.BuildingBlocks.Domain/Kahrad.Pricing.BuildingBlocks.Domain.csproj" />
-    <Project Path="src/BuildingBlocks/Kahrad.Pricing.BuildingBlocks.Infrastructure/Kahrad.Pricing.BuildingBlocks.Infrastructure.csproj" />
+    <Project Path="Src/BuildingBlocks/Kahrad.Pricing.BuildingBlocks.Application/Kahrad.Pricing.BuildingBlocks.Application.csproj" />
+    <Project Path="Src/BuildingBlocks/Kahrad.Pricing.BuildingBlocks.Domain/Kahrad.Pricing.BuildingBlocks.Domain.csproj" />
+    <Project Path="Src/BuildingBlocks/Kahrad.Pricing.BuildingBlocks.Infrastructure/Kahrad.Pricing.BuildingBlocks.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/src/Hosts/">
-    <Project Path="src/Hosts/Kahrad.Pricing.Api/Kahrad.Pricing.Api.csproj" />
-    <Project Path="src/Hosts/Kahrad.Pricing.Media.Worker/Kahrad.Pricing.Media.Worker.csproj" />
-    <Project Path="src/Hosts/Kahrad.Pricing.PriceInquiry.Api/Kahrad.Pricing.PriceInquiry.Api.csproj" />
-    <Project Path="src/Hosts/Kahrad.Pricing.Worker/Kahrad.Pricing.Worker.csproj" />
+    <Project Path="Src/Hosts/Kahrad.Pricing.Api/Kahrad.Pricing.Api.csproj" />
+    <Project Path="Src/Hosts/Kahrad.Pricing.Media.Worker/Kahrad.Pricing.Media.Worker.csproj" />
+    <Project Path="Src/Hosts/Kahrad.Pricing.PriceInquiry.Api/Kahrad.Pricing.PriceInquiry.Api.csproj" />
+    <Project Path="Src/Hosts/Kahrad.Pricing.Worker/Kahrad.Pricing.Worker.csproj" />
   </Folder>
   <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/AccountingIntegration/">
+    <Project Path="Src/Modules/AccountingIntegration/Kahrad.Pricing.AccountingIntegration.Application/Kahrad.Pricing.AccountingIntegration.Application.csproj" />
+    <Project Path="Src/Modules/AccountingIntegration/Kahrad.Pricing.AccountingIntegration.Domain/Kahrad.Pricing.AccountingIntegration.Domain.csproj" />
+    <Project Path="Src/Modules/AccountingIntegration/Kahrad.Pricing.AccountingIntegration.Infrastructure/Kahrad.Pricing.AccountingIntegration.Infrastructure.csproj" />
+  </Folder>
   <Folder Name="/src/Modules/Brands/">
-    <Project Path="src/Modules/Brands/Kahrad.Pricing.Brands.Application/Kahrad.Pricing.Brands.Application.csproj" />
-    <Project Path="src/Modules/Brands/Kahrad.Pricing.Brands.Domain/Kahrad.Pricing.Brands.Domain.csproj" />
-    <Project Path="src/Modules/Brands/Kahrad.Pricing.Brands.Infrastructure/Kahrad.Pricing.Brands.Infrastructure.csproj" />
+    <Project Path="Src/Modules/Brands/Kahrad.Pricing.Brands.Application/Kahrad.Pricing.Brands.Application.csproj" />
+    <Project Path="Src/Modules/Brands/Kahrad.Pricing.Brands.Domain/Kahrad.Pricing.Brands.Domain.csproj" />
+    <Project Path="Src/Modules/Brands/Kahrad.Pricing.Brands.Infrastructure/Kahrad.Pricing.Brands.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/src/Modules/Guarantees/">
     <Project Path="Src/Modules/Guarantees/Kahrad.Pricing.Guarantees.Application/Kahrad.Pricing.Guarantees.Application.csproj" />
@@ -28,29 +33,49 @@
     <Project Path="Src/Modules/Identity/Kahrad.Pricing.Identity.Infrastructure/Kahrad.Pricing.Identity.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/src/Modules/Media/">
-    <Project Path="src/Modules/Media/Kahrad.Pricing.Media.Application/Kahrad.Pricing.Media.Application.csproj" />
-    <Project Path="src/Modules/Media/Kahrad.Pricing.Media.Engine/Kahrad.Pricing.Media.Engine.csproj" />
-    <Project Path="src/Modules/Media/Kahrad.Pricing.Media.Infrastructure/Kahrad.Pricing.Media.Infrastructure.csproj" />
+    <Project Path="Src/Modules/Media/Kahrad.Pricing.Media.Application/Kahrad.Pricing.Media.Application.csproj" />
+    <Project Path="Src/Modules/Media/Kahrad.Pricing.Media.Engine/Kahrad.Pricing.Media.Engine.csproj" />
+    <Project Path="Src/Modules/Media/Kahrad.Pricing.Media.Infrastructure/Kahrad.Pricing.Media.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/src/Modules/Pricing/">
-    <Project Path="src/Modules/Pricing/Kahrad.Pricing.Pricing.Application/Kahrad.Pricing.Pricing.Application.csproj" />
-    <Project Path="src/Modules/Pricing/Kahrad.Pricing.Pricing.Domain/Kahrad.Pricing.Pricing.Domain.csproj" />
-    <Project Path="src/Modules/Pricing/Kahrad.Pricing.Pricing.Engine/Kahrad.Pricing.Pricing.Engine.csproj" />
-    <Project Path="src/Modules/Pricing/Kahrad.Pricing.Pricing.Infrastructure/Kahrad.Pricing.Pricing.Infrastructure.csproj" />
+    <Project Path="Src/Modules/Pricing/Kahrad.Pricing.Pricing.Application/Kahrad.Pricing.Pricing.Application.csproj" />
+    <Project Path="Src/Modules/Pricing/Kahrad.Pricing.Pricing.Domain/Kahrad.Pricing.Pricing.Domain.csproj" />
+    <Project Path="Src/Modules/Pricing/Kahrad.Pricing.Pricing.Engine/Kahrad.Pricing.Pricing.Engine.csproj" />
+    <Project Path="Src/Modules/Pricing/Kahrad.Pricing.Pricing.Infrastructure/Kahrad.Pricing.Pricing.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/src/Modules/Products/">
-    <Project Path="src/Modules/Products/Kahrad.Pricing.Products.Application/Kahrad.Pricing.Products.Application.csproj" />
-    <Project Path="src/Modules/Products/Kahrad.Pricing.Products.Domain/Kahrad.Pricing.Products.Domain.csproj" />
-    <Project Path="src/Modules/Products/Kahrad.Pricing.Products.Infrastructure/Kahrad.Pricing.Products.Infrastructure.csproj" />
+    <Project Path="Src/Modules/Products/Kahrad.Pricing.Products.Application/Kahrad.Pricing.Products.Application.csproj" />
+    <Project Path="Src/Modules/Products/Kahrad.Pricing.Products.Domain/Kahrad.Pricing.Products.Domain.csproj" />
+    <Project Path="Src/Modules/Products/Kahrad.Pricing.Products.Infrastructure/Kahrad.Pricing.Products.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/src/Modules/Representatives/">
-    <Project Path="src/Modules/Representatives/Kahrad.Pricing.Representatives.Application/Kahrad.Pricing.Representatives.Application.csproj" />
-    <Project Path="src/Modules/Representatives/Kahrad.Pricing.Representatives.Domain/Kahrad.Pricing.Representatives.Domain.csproj" />
-    <Project Path="src/Modules/Representatives/Kahrad.Pricing.Representatives.Infrastructure/Kahrad.Pricing.Representatives.Infrastructure.csproj" />
+    <Project Path="Src/Modules/Representatives/Kahrad.Pricing.Representatives.Application/Kahrad.Pricing.Representatives.Application.csproj" />
+    <Project Path="Src/Modules/Representatives/Kahrad.Pricing.Representatives.Domain/Kahrad.Pricing.Representatives.Domain.csproj" />
+    <Project Path="Src/Modules/Representatives/Kahrad.Pricing.Representatives.Infrastructure/Kahrad.Pricing.Representatives.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Sales/">
+    <Project Path="Src/Modules/Sales/Kahrad.Pricing.Sales.Application/Kahrad.Pricing.Sales.Application.csproj" />
+    <Project Path="Src/Modules/Sales/Kahrad.Pricing.Sales.Domain/Kahrad.Pricing.Sales.Domain.csproj" />
+    <Project Path="Src/Modules/Sales/Kahrad.Pricing.Sales.Infrastructure/Kahrad.Pricing.Sales.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/src/Modules/Sms/">
     <Project Path="Src/Modules/Sms/Kahrad.Pricing.Sms.Application/Kahrad.Pricing.Sms.Application.csproj" />
     <Project Path="Src/Modules/Sms/Kahrad.Pricing.Sms.Domain/Kahrad.Pricing.Sms.Domain.csproj" />
     <Project Path="Src/Modules/Sms/Kahrad.Pricing.Sms.Infrastructure/Kahrad.Pricing.Sms.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/Tests/" />
+  <Folder Name="/Tests/ArchitectureTests/">
+    <Project Path="Tests/ArchitectureTests/Kahrad.Pricing.ArchitectureTests/Kahrad.Pricing.ArchitectureTests.csproj" />
+  </Folder>
+  <Folder Name="/Tests/IntegrationTests/">
+    <Project Path="Tests/IntegrationTests/Kahrad.Pricing.Api.IntegrationTests/Kahrad.Pricing.Api.IntegrationTests.csproj" />
+    <Project Path="Tests/IntegrationTests/Kahrad.Pricing.Hosts.IntegrationTests/Kahrad.Pricing.Hosts.IntegrationTests.csproj" />
+    <Project Path="Tests/IntegrationTests/Kahrad.Pricing.Products.IntegrationTests/Kahrad.Pricing.Products.IntegrationTests.csproj" />
+    <Project Path="Tests/IntegrationTests/Kahrad.Pricing.Sms.IntegrationTests/Kahrad.Pricing.Sms.IntegrationTests.csproj" />
+  </Folder>
+  <Folder Name="/Tests/UnitTests/">
+    <Project Path="Tests/UnitTests/Kahrad.Pricing.Pricing.Tests/Kahrad.Pricing.Pricing.Tests.csproj" />
+    <Project Path="Tests/UnitTests/Kahrad.Pricing.Products.Tests/Kahrad.Pricing.Products.Tests.csproj" />
+    <Project Path="Tests/UnitTests/Kahrad.Pricing.Sms.Tests/Kahrad.Pricing.Sms.Tests.csproj" />
   </Folder>
 </Solution>

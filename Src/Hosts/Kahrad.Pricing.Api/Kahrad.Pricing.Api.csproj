@@ -7,17 +7,21 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FluentValidation" Version="12.2.0" />
-		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.2.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.14" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.14">
+		<ProjectReference Include="..\..\Modules\AccountingIntegration\Kahrad.Pricing.AccountingIntegration.Application\Kahrad.Pricing.AccountingIntegration.Application.csproj" />
+		<ProjectReference Include="..\..\Modules\AccountingIntegration\Kahrad.Pricing.AccountingIntegration.Infrastructure\Kahrad.Pricing.AccountingIntegration.Infrastructure.csproj" />
+		<ProjectReference Include="..\..\Modules\Sales\Kahrad.Pricing.Sales.Application\Kahrad.Pricing.Sales.Application.csproj" />
+		<ProjectReference Include="..\..\Modules\Sales\Kahrad.Pricing.Sales.Infrastructure\Kahrad.Pricing.Sales.Infrastructure.csproj" />
+		<PackageReference Include="FluentValidation" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.14" />
-		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.8" />
-		<PackageReference Include="Scalar.AspNetCore" Version="2.18.7" />
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="10.3.1" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+		<PackageReference Include="Microsoft.Data.SqlClient" />
+		<PackageReference Include="Scalar.AspNetCore" />
+		<PackageReference Include="Swashbuckle.AspNetCore" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -39,4 +43,7 @@
 		<ProjectReference Include="..\..\Modules\Sms\Kahrad.Pricing.Sms.Infrastructure\Kahrad.Pricing.Sms.Infrastructure.csproj" />
 	</ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\Kahrad.Pricing.BuildingBlocks.Infrastructure\Kahrad.Pricing.BuildingBlocks.Infrastructure.csproj" />
+  </ItemGroup>
 </Project>

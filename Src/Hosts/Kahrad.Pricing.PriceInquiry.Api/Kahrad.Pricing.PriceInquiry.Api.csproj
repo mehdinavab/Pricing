@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.14" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Microsoft.Data.SqlClient" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,4 +18,7 @@
     <ProjectReference Include="..\..\Modules\Identity\Kahrad.Pricing.Identity.Infrastructure\Kahrad.Pricing.Identity.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\Kahrad.Pricing.BuildingBlocks.Infrastructure\Kahrad.Pricing.BuildingBlocks.Infrastructure.csproj" />
+  </ItemGroup>
 </Project>
