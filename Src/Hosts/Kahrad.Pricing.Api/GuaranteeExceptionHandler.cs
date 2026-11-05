@@ -1,11 +1,13 @@
 using Kahrad.Pricing.Guarantees.Application.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Kahrad.Pricing.Api.Localization;
+using Microsoft.Extensions.Localization;
 
 namespace Kahrad.Pricing.Api;
 
 public sealed class GuaranteeExceptionHandler(
-    ILogger<GuaranteeExceptionHandler> logger) : IExceptionHandler
+    ILogger<GuaranteeExceptionHandler> logger, IStringLocalizer<ApiMessages> messages) : IExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(
         HttpContext httpContext,
@@ -14,6 +16,9 @@ public sealed class GuaranteeExceptionHandler(
     {
         var (statusCode, title) = exception switch
         {
+            VendorNotFoundException => (StatusCodes.Status404NotFound, "Vendor not found"),
+            GuaranteeNotFoundException => (StatusCodes.Status404NotFound, "Guarantee not found"),
+            CertificateNotFoundException => (StatusCodes.Status404NotFound, "Guarantee certificate not found"),
             GuaranteeOperationException => (StatusCodes.Status400BadRequest, "Guarantee operation failed"),
             _ => (0, string.Empty)
         };
@@ -31,8 +36,8 @@ public sealed class GuaranteeExceptionHandler(
             new ProblemDetails
             {
                 Status = statusCode,
-                Title = title,
-                Detail = exception.Message
+                Title = ApiText.Translate(messages, title, "Guarantee operation failed"),
+                Detail = ApiText.Translate(messages, exception.Message, title)
             },
             cancellationToken);
 

@@ -1,0 +1,507 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <data name="The request is invalid." xml:space="preserve">
+    <value>The request is invalid.</value>
+  </data>
+  <data name="The server encountered an error." xml:space="preserve">
+    <value>The server encountered an error.</value>
+  </data>
+  <data name="Identified record not found" xml:space="preserve">
+    <value>{0} with {1} '{2}' was not found.</value>
+  </data>
+  <data name="Identified record already exists" xml:space="preserve">
+    <value>{0} with {1} '{2}' already exists.</value>
+  </data>
+  <data name="product" xml:space="preserve">
+    <value>product</value>
+  </data>
+  <data name="product group" xml:space="preserve">
+    <value>product group</value>
+  </data>
+  <data name="product feature" xml:space="preserve">
+    <value>product feature</value>
+  </data>
+  <data name="product image" xml:space="preserve">
+    <value>product image</value>
+  </data>
+  <data name="brand" xml:space="preserve">
+    <value>brand</value>
+  </data>
+  <data name="store" xml:space="preserve">
+    <value>store</value>
+  </data>
+  <data name="vendor" xml:space="preserve">
+    <value>vendor</value>
+  </data>
+  <data name="guarantee" xml:space="preserve">
+    <value>guarantee</value>
+  </data>
+  <data name="guarantee certificate" xml:space="preserve">
+    <value>guarantee certificate</value>
+  </data>
+  <data name="certificate" xml:space="preserve">
+    <value>certificate</value>
+  </data>
+  <data name="sms message" xml:space="preserve">
+    <value>sms message</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Public ID" xml:space="preserve">
+    <value>Public ID</value>
+  </data>
+  <data name="code" xml:space="preserve">
+    <value>code</value>
+  </data>
+  <data name="number" xml:space="preserve">
+    <value>number</value>
+  </data>
+  <data name="Forbidden" xml:space="preserve">
+    <value>Forbidden</value>
+  </data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="Resource not found" xml:space="preserve">
+    <value>Resource not found</value>
+  </data>
+  <data name="Brand not found" xml:space="preserve">
+    <value>Brand not found</value>
+  </data>
+  <data name="Store not found" xml:space="preserve">
+    <value>Store not found</value>
+  </data>
+  <data name="Vendor not found" xml:space="preserve">
+    <value>Vendor not found</value>
+  </data>
+  <data name="Guarantee not found" xml:space="preserve">
+    <value>Guarantee not found</value>
+  </data>
+  <data name="Guarantee certificate not found" xml:space="preserve">
+    <value>Guarantee certificate not found</value>
+  </data>
+  <data name="Identity operation failed" xml:space="preserve">
+    <value>Identity operation failed</value>
+  </data>
+  <data name="Brand operation failed" xml:space="preserve">
+    <value>Brand operation failed</value>
+  </data>
+  <data name="Guarantee operation failed" xml:space="preserve">
+    <value>Guarantee operation failed</value>
+  </data>
+  <data name="Product operation failed" xml:space="preserve">
+    <value>Product operation failed</value>
+  </data>
+  <data name="SMS operation failed" xml:space="preserve">
+    <value>SMS operation failed</value>
+  </data>
+  <data name="SMS message not found" xml:space="preserve">
+    <value>SMS message not found</value>
+  </data>
+  <data name="Product not found" xml:space="preserve">
+    <value>Product not found</value>
+  </data>
+  <data name="Product group not found" xml:space="preserve">
+    <value>Product group not found</value>
+  </data>
+  <data name="Product feature not found" xml:space="preserve">
+    <value>Product feature not found</value>
+  </data>
+  <data name="Product image not found" xml:space="preserve">
+    <value>Product image not found</value>
+  </data>
+  <data name="Catalog update conflict" xml:space="preserve">
+    <value>Catalog update conflict</value>
+  </data>
+  <data name="Catalog validation failed" xml:space="preserve">
+    <value>Catalog validation failed</value>
+  </data>
+  <data name="The resource was changed by another request" xml:space="preserve">
+    <value>The resource was changed by another request</value>
+  </data>
+  <data name="A default-language translation is required before activating a product." xml:space="preserve">
+    <value>A default-language translation is required before activating a product.</value>
+  </data>
+  <data name="A nonblank value is required." xml:space="preserve">
+    <value>A nonblank value is required.</value>
+  </data>
+  <data name="Active SMS provider is disabled." xml:space="preserve">
+    <value>Active SMS provider is disabled.</value>
+  </data>
+  <data name="Additional months must be between 1 and 120." xml:space="preserve">
+    <value>Additional months must be between 1 and 120.</value>
+  </data>
+  <data name="Alt text cannot exceed 250 characters." xml:space="preserve">
+    <value>Alt text cannot exceed 250 characters.</value>
+  </data>
+  <data name="An enabled persisted SMS provider configuration is required." xml:space="preserve">
+    <value>An enabled persisted SMS provider configuration is required.</value>
+  </data>
+  <data name="Assignment IDs must be positive." xml:space="preserve">
+    <value>Assignment IDs must be positive.</value>
+  </data>
+  <data name="At least one peer-to-peer item is required." xml:space="preserve">
+    <value>At least one peer-to-peer item is required.</value>
+  </data>
+  <data name="At least one phone number is required." xml:space="preserve">
+    <value>At least one phone number is required.</value>
+  </data>
+  <data name="Base price cannot be negative." xml:space="preserve">
+    <value>Base price cannot be negative.</value>
+  </data>
+  <data name="Beauty factor percentage must be between -100% and 1000%." xml:space="preserve">
+    <value>Beauty factor percentage must be between -100% and 1000%.</value>
+  </data>
+  <data name="BrandId must be a valid positive identifier." xml:space="preserve">
+    <value>BrandId must be a valid positive identifier.</value>
+  </data>
+  <data name="Bulk SMS cannot exceed 1000 phone numbers per request." xml:space="preserve">
+    <value>Bulk SMS cannot exceed 1000 phone numbers per request.</value>
+  </data>
+  <data name="Cannot issue a certificate for an inactive guarantee plan." xml:space="preserve">
+    <value>Cannot issue a certificate for an inactive guarantee plan.</value>
+  </data>
+  <data name="Catalog requires exactly one active default language." xml:space="preserve">
+    <value>Catalog requires exactly one active default language.</value>
+  </data>
+  <data name="Code must contain only alphanumeric characters, underscores, or hyphens." xml:space="preserve">
+    <value>Code must contain only alphanumeric characters, underscores, or hyphens.</value>
+  </data>
+  <data name="Commercial factor percentage must be between -100% and 1000%." xml:space="preserve">
+    <value>Commercial factor percentage must be between -100% and 1000%.</value>
+  </data>
+  <data name="Configuration key is too long." xml:space="preserve">
+    <value>Configuration key is too long.</value>
+  </data>
+  <data name="Date specification values must not contain a time of day." xml:space="preserve">
+    <value>Date specification values must not contain a time of day.</value>
+  </data>
+  <data name="Definition is too long." xml:space="preserve">
+    <value>Definition is too long.</value>
+  </data>
+  <data name="Definition name is too long." xml:space="preserve">
+    <value>Definition name is too long.</value>
+  </data>
+  <data name="Description cannot exceed 1000 characters." xml:space="preserve">
+    <value>Description cannot exceed 1000 characters.</value>
+  </data>
+  <data name="Description cannot exceed 500 characters." xml:space="preserve">
+    <value>Description cannot exceed 500 characters.</value>
+  </data>
+  <data name="Description is too long." xml:space="preserve">
+    <value>Description is too long.</value>
+  </data>
+  <data name="Display order cannot be negative." xml:space="preserve">
+    <value>Display order cannot be negative.</value>
+  </data>
+  <data name="Entity and language IDs must be positive." xml:space="preserve">
+    <value>Entity and language IDs must be positive.</value>
+  </data>
+  <data name="Every active product needs a translation in the proposed default language." xml:space="preserve">
+    <value>Every active product needs a translation in the proposed default language.</value>
+  </data>
+  <data name="Expiry date must be after purchase date." xml:space="preserve">
+    <value>Expiry date must be after purchase date.</value>
+  </data>
+  <data name="FamilyId cannot be empty." xml:space="preserve">
+    <value>FamilyId cannot be empty.</value>
+  </data>
+  <data name="Feature name cannot exceed 150 characters." xml:space="preserve">
+    <value>Feature name cannot exceed 150 characters.</value>
+  </data>
+  <data name="Feature name is required." xml:space="preserve">
+    <value>Feature name is required.</value>
+  </data>
+  <data name="Feature name or shared FeatureId is required." xml:space="preserve">
+    <value>Feature name or shared FeatureId is required.</value>
+  </data>
+  <data name="Feature value cannot exceed 500 characters." xml:space="preserve">
+    <value>Feature value cannot exceed 500 characters.</value>
+  </data>
+  <data name="Feature value is required." xml:space="preserve">
+    <value>Feature value is required.</value>
+  </data>
+  <data name="Group code can only contain letters, numbers, underscores and hyphens." xml:space="preserve">
+    <value>Group code can only contain letters, numbers, underscores and hyphens.</value>
+  </data>
+  <data name="Group code cannot exceed 50 characters." xml:space="preserve">
+    <value>Group code cannot exceed 50 characters.</value>
+  </data>
+  <data name="Group code is required." xml:space="preserve">
+    <value>Group code is required.</value>
+  </data>
+  <data name="Group name cannot exceed 150 characters." xml:space="preserve">
+    <value>Group name cannot exceed 150 characters.</value>
+  </data>
+  <data name="Group name is required." xml:space="preserve">
+    <value>Group name is required.</value>
+  </data>
+  <data name="Guarantee duration must be greater than zero." xml:space="preserve">
+    <value>Guarantee duration must be greater than zero.</value>
+  </data>
+  <data name="Guarantee must have a duration greater than 0 days." xml:space="preserve">
+    <value>Guarantee must have a duration greater than 0 days.</value>
+  </data>
+  <data name="GuaranteeId must be a valid positive identifier." xml:space="preserve">
+    <value>GuaranteeId must be a valid positive identifier.</value>
+  </data>
+  <data name="Image URL cannot exceed 1000 characters." xml:space="preserve">
+    <value>Image URL cannot exceed 1000 characters.</value>
+  </data>
+  <data name="Image URL is required." xml:space="preserve">
+    <value>Image URL is required.</value>
+  </data>
+  <data name="Invalid BCP-47 language code." xml:space="preserve">
+    <value>Invalid BCP-47 language code.</value>
+  </data>
+  <data name="Invalid SMS log pagination." xml:space="preserve">
+    <value>Invalid SMS log pagination.</value>
+  </data>
+  <data name="Invalid catalog pagination." xml:space="preserve">
+    <value>Invalid catalog pagination.</value>
+  </data>
+  <data name="Invalid refresh token." xml:space="preserve">
+    <value>Invalid refresh token.</value>
+  </data>
+  <data name="Invalid translation target." xml:space="preserve">
+    <value>Invalid translation target.</value>
+  </data>
+  <data name="Invalid username or password." xml:space="preserve">
+    <value>Invalid username or password.</value>
+  </data>
+  <data name="Invalid value type." xml:space="preserve">
+    <value>Invalid value type.</value>
+  </data>
+  <data name="InvalidIranianShabaError" xml:space="preserve">
+    <value>InvalidIranianShabaError</value>
+  </data>
+  <data name="InvalidNationalCodeError" xml:space="preserve">
+    <value>InvalidNationalCodeError</value>
+  </data>
+  <data name="InvalidPhoneNumberError" xml:space="preserve">
+    <value>InvalidPhoneNumberError</value>
+  </data>
+  <data name="Language name is too long." xml:space="preserve">
+    <value>Language name is too long.</value>
+  </data>
+  <data name="Line number cannot exceed 30 characters." xml:space="preserve">
+    <value>Line number cannot exceed 30 characters.</value>
+  </data>
+  <data name="Line number is too long." xml:space="preserve">
+    <value>Line number is too long.</value>
+  </data>
+  <data name="Message cannot exceed 1000 characters." xml:space="preserve">
+    <value>Message cannot exceed 1000 characters.</value>
+  </data>
+  <data name="Message text is required." xml:space="preserve">
+    <value>Message text is required.</value>
+  </data>
+  <data name="NationalCodeIsRequiredError" xml:space="preserve">
+    <value>NationalCodeIsRequiredError</value>
+  </data>
+  <data name="Numeric specification values must fit decimal(18,4) without rounding." xml:space="preserve">
+    <value>Numeric specification values must fit decimal(18,4) without rounding.</value>
+  </data>
+  <data name="OTP code cannot exceed 20 characters." xml:space="preserve">
+    <value>OTP code cannot exceed 20 characters.</value>
+  </data>
+  <data name="OTP code is required." xml:space="preserve">
+    <value>OTP code is required.</value>
+  </data>
+  <data name="Only product descriptions are localized." xml:space="preserve">
+    <value>Only product descriptions are localized.</value>
+  </data>
+  <data name="Only textual specification values can be translated." xml:space="preserve">
+    <value>Only textual specification values can be translated.</value>
+  </data>
+  <data name="Peer-to-peer SMS cannot exceed 500 items per request." xml:space="preserve">
+    <value>Peer-to-peer SMS cannot exceed 500 items per request.</value>
+  </data>
+  <data name="PhoneNumberIsRequiredError" xml:space="preserve">
+    <value>PhoneNumberIsRequiredError</value>
+  </data>
+  <data name="Previous language is not default." xml:space="preserve">
+    <value>Previous language is not default.</value>
+  </data>
+  <data name="Price adjustment percentage must be between 0 and 100." xml:space="preserve">
+    <value>Price adjustment percentage must be between 0 and 100.</value>
+  </data>
+  <data name="Price effect percentage must be between -100% and 1000%." xml:space="preserve">
+    <value>Price effect percentage must be between -100% and 1000%.</value>
+  </data>
+  <data name="Product ID must be positive." xml:space="preserve">
+    <value>Product ID must be positive.</value>
+  </data>
+  <data name="Product code cannot exceed 100 characters." xml:space="preserve">
+    <value>Product code cannot exceed 100 characters.</value>
+  </data>
+  <data name="Product code is required." xml:space="preserve">
+    <value>Product code is required.</value>
+  </data>
+  <data name="Product content is too long." xml:space="preserve">
+    <value>Product content is too long.</value>
+  </data>
+  <data name="Product name cannot exceed 250 characters." xml:space="preserve">
+    <value>Product name cannot exceed 250 characters.</value>
+  </data>
+  <data name="Product name is required." xml:space="preserve">
+    <value>Product name is required.</value>
+  </data>
+  <data name="ProductId must be a valid positive identifier." xml:space="preserve">
+    <value>ProductId must be a valid positive identifier.</value>
+  </data>
+  <data name="Provider name is too long." xml:space="preserve">
+    <value>Provider name is too long.</value>
+  </data>
+  <data name="Provider receipt is too long." xml:space="preserve">
+    <value>Provider receipt is too long.</value>
+  </data>
+  <data name="PurchaseDate is required." xml:space="preserve">
+    <value>PurchaseDate is required.</value>
+  </data>
+  <data name="Role not found." xml:space="preserve">
+    <value>Role not found.</value>
+  </data>
+  <data name="RoleId cannot be empty." xml:space="preserve">
+    <value>RoleId cannot be empty.</value>
+  </data>
+  <data name="SMS log has already completed." xml:space="preserve">
+    <value>SMS log has already completed.</value>
+  </data>
+  <data name="SMS module is disabled." xml:space="preserve">
+    <value>SMS module is disabled.</value>
+  </data>
+  <data name="Sales factor percentage must be between -100% and 1000%." xml:space="preserve">
+    <value>Sales factor percentage must be between -100% and 1000%.</value>
+  </data>
+  <data name="Shared feature does not exist." xml:space="preserve">
+    <value>Shared feature does not exist.</value>
+  </data>
+  <data name="Supply exactly one value matching the specification type." xml:space="preserve">
+    <value>Supply exactly one value matching the specification type.</value>
+  </data>
+  <data name="Switch to another active default language instead." xml:space="preserve">
+    <value>Switch to another active default language instead.</value>
+  </data>
+  <data name="Template ID must be positive." xml:space="preserve">
+    <value>Template ID must be positive.</value>
+  </data>
+  <data name="Template IDs and names must be valid." xml:space="preserve">
+    <value>Template IDs and names must be valid.</value>
+  </data>
+  <data name="The default language must remain active." xml:space="preserve">
+    <value>The default language must remain active.</value>
+  </data>
+  <data name="The new default must be active." xml:space="preserve">
+    <value>The new default must be active.</value>
+  </data>
+  <data name="The new password must be different from the current password." xml:space="preserve">
+    <value>The new password must be different from the current password.</value>
+  </data>
+  <data name="Too many template mappings." xml:space="preserve">
+    <value>Too many template mappings.</value>
+  </data>
+  <data name="Translation is too long." xml:space="preserve">
+    <value>Translation is too long.</value>
+  </data>
+  <data name="Unit is too long." xml:space="preserve">
+    <value>Unit is too long.</value>
+  </data>
+  <data name="Unsupported SMS provider." xml:space="preserve">
+    <value>Unsupported SMS provider.</value>
+  </data>
+  <data name="User not found." xml:space="preserve">
+    <value>User not found.</value>
+  </data>
+  <data name="UserId cannot be empty." xml:space="preserve">
+    <value>UserId cannot be empty.</value>
+  </data>
+  <data name="Valid group ID is required." xml:space="preserve">
+    <value>Valid group ID is required.</value>
+  </data>
+  <data name="VendorId must be a valid positive identifier." xml:space="preserve">
+    <value>VendorId must be a valid positive identifier.</value>
+  </data>
+  <data name="A catalog record with this language, code or assignment already exists." xml:space="preserve">
+    <value>A catalog record with this language, code or assignment already exists.</value>
+  </data>
+  <data name="An active default catalog language is required; apply catalog migrations." xml:space="preserve">
+    <value>An active default catalog language is required; apply catalog migrations.</value>
+  </data>
+  <data name="Catalog default language is missing." xml:space="preserve">
+    <value>Catalog default language is missing.</value>
+  </data>
+  <data name="Language does not exist." xml:space="preserve">
+    <value>Language does not exist.</value>
+  </data>
+  <data name="SMS module configuration is missing; apply SMS migrations." xml:space="preserve">
+    <value>SMS module configuration is missing; apply SMS migrations.</value>
+  </data>
+  <data name="SMS provider configuration was not found." xml:space="preserve">
+    <value>SMS provider configuration was not found.</value>
+  </data>
+  <data name="SMS provider is disabled." xml:space="preserve">
+    <value>SMS provider is disabled.</value>
+  </data>
+  <data name="Specification assignment does not exist." xml:space="preserve">
+    <value>Specification assignment does not exist.</value>
+  </data>
+  <data name="Specification does not exist." xml:space="preserve">
+    <value>Specification does not exist.</value>
+  </data>
+  <data name="The catalog record was changed by another editor." xml:space="preserve">
+    <value>The catalog record was changed by another editor.</value>
+  </data>
+  <data name="The record changed or its row version is missing. Reload it before editing." xml:space="preserve">
+    <value>The record changed or its row version is missing. Reload it before editing.</value>
+  </data>
+  <data name="Unsupported SMS provider configuration." xml:space="preserve">
+    <value>Unsupported SMS provider configuration.</value>
+  </data>
+  <data name="Identified record not found for owner" xml:space="preserve">
+    <value>{0} with {1} '{2}' for {3} '{4}' was not found.</value>
+  </data>
+  <data name="Identified record already exists for owner" xml:space="preserve">
+    <value>{0} with {1} '{2}' already exists for {3} '{4}'.</value>
+  </data>
+  <data name="Accounting operation failed" xml:space="preserve"><value>Accounting operation failed</value></data>
+  <data name="Accounting provider is not configured." xml:space="preserve"><value>Accounting provider is not configured.</value></data>
+  <data name="Brand ID must be positive." xml:space="preserve"><value>Brand ID must be positive.</value></data>
+  <data name="Item mapping identifiers and conversion factor must be positive." xml:space="preserve"><value>Item mapping identifiers and conversion factor must be positive.</value></data>
+  <data name="Local item was not found." xml:space="preserve"><value>Local item was not found.</value></data>
+  <data name="Accounting item was not found." xml:space="preserve"><value>Accounting item was not found.</value></data>
+  <data name="Accounting item belongs to another brand." xml:space="preserve"><value>Accounting item belongs to another brand.</value></data>
+  <data name="Item unit conversion requires an approved mapping rule." xml:space="preserve"><value>Item unit conversion requires an approved mapping rule.</value></data>
+  <data name="Local item is already mapped for this brand." xml:space="preserve"><value>Local item is already mapped for this brand.</value></data>
+  <data name="Accounting item is already mapped for this brand." xml:space="preserve"><value>Accounting item is already mapped for this brand.</value></data>
+  <data name="Active item mapping was not found." xml:space="preserve"><value>Active item mapping was not found.</value></data>
+  <data name="Invalid accounting item pagination." xml:space="preserve"><value>Invalid accounting item pagination.</value></data>
+  <data name="Representative operation failed" xml:space="preserve"><value>Representative operation failed</value></data>
+  <data name="A valid representative code is required." xml:space="preserve"><value>A valid representative code is required.</value></data>
+  <data name="Representative code already exists; match the existing representative explicitly." xml:space="preserve"><value>Representative code already exists; match the existing representative explicitly.</value></data>
+  <data name="Local representative was not found." xml:space="preserve"><value>Local representative was not found.</value></data>
+  <data name="Representative belongs to another brand." xml:space="preserve"><value>Representative belongs to another brand.</value></data>
+  <data name="Accounting representative is already matched." xml:space="preserve"><value>Accounting representative is already matched.</value></data>
+  <data name="Local representative is already matched." xml:space="preserve"><value>Local representative is already matched.</value></data>
+  <data name="Representative identifiers must be positive." xml:space="preserve"><value>Representative identifiers must be positive.</value></data>
+  <data name="Accounting representative was not found." xml:space="preserve"><value>Accounting representative was not found.</value></data>
+  <data name="Accounting representative belongs to another brand." xml:space="preserve"><value>Accounting representative belongs to another brand.</value></data>
+  <data name="Accounting representative was absent from the latest complete sync." xml:space="preserve"><value>Accounting representative was absent from the latest complete sync.</value></data>
+  <data name="Representative code or accounting mapping already exists." xml:space="preserve"><value>Representative code or accounting mapping already exists.</value></data>
+  <data name="Representative accounting mapping already exists." xml:space="preserve"><value>Representative accounting mapping already exists.</value></data>
+  <data name="Brand was not found for accounting connection." xml:space="preserve"><value>Brand was not found for accounting connection.</value></data>
+  <data name="Use an environment secret reference, not an API key." xml:space="preserve"><value>Use an environment secret reference, not an API key.</value></data>
+  <data name="An HTTPS accounting base URL is required." xml:space="preserve"><value>An HTTPS accounting base URL is required.</value></data>
+  <data name="Pricing operation failed" xml:space="preserve"><value>Pricing operation failed</value></data>
+  <data name="Pricing update conflict" xml:space="preserve"><value>Pricing update conflict</value></data>
+  <data name="Product must belong to the selected brand." xml:space="preserve"><value>Product must belong to the selected brand.</value></data>
+  <data name="Factory price override is invalid." xml:space="preserve"><value>Factory price override is invalid.</value></data>
+  <data name="Price override version is invalid." xml:space="preserve"><value>Price override version is invalid.</value></data>
+  <data name="Price override changed; reload before editing." xml:space="preserve"><value>Price override changed; reload before editing.</value></data>
+  <data name="Local item details are invalid." xml:space="preserve"><value>Local item details are invalid.</value></data>
+  <data name="Invalid local item pagination." xml:space="preserve"><value>Invalid local item pagination.</value></data>
+  <data name="Product composition requires distinct items with valid quantities." xml:space="preserve"><value>Product composition requires distinct items with valid quantities.</value></data>
+  <data name="Local item code already exists." xml:space="preserve"><value>Local item code already exists.</value></data>
+  <data name="Product composition contains an unknown local item." xml:space="preserve"><value>Product composition contains an unknown local item.</value></data>
+</root>

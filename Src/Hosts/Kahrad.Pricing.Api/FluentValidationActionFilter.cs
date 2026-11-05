@@ -1,10 +1,12 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Kahrad.Pricing.Api.Localization;
+using Microsoft.Extensions.Localization;
 
 namespace Kahrad.Pricing.Api;
 
-public sealed class FluentValidationActionFilter : IAsyncActionFilter
+public sealed class FluentValidationActionFilter(IStringLocalizer<ApiMessages> messages) : IAsyncActionFilter
 {
     public async Task OnActionExecutionAsync(
         ActionExecutingContext context,
@@ -35,12 +37,13 @@ public sealed class FluentValidationActionFilter : IAsyncActionFilter
                     : x.PropertyName)
                 .ToDictionary(
                     group => group.Key,
-                    group => group.Select(x => x.ErrorMessage).ToArray());
+                    group => group.Select(x => ApiText.Translate(messages, x.ErrorMessage, "The request is invalid.")).ToArray());
 
             context.Result = new BadRequestObjectResult(
                 new ValidationProblemDetails(errors)
                 {
-                    Status = StatusCodes.Status400BadRequest
+                    Status = StatusCodes.Status400BadRequest,
+                    Title = messages["The request is invalid."]
                 });
             return;
         }

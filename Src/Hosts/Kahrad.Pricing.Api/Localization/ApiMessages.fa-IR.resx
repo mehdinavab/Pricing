@@ -1,0 +1,507 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <data name="The request is invalid." xml:space="preserve">
+    <value>درخواست نامعتبر است.</value>
+  </data>
+  <data name="The server encountered an error." xml:space="preserve">
+    <value>سرور با خطا روبه‌رو شد.</value>
+  </data>
+  <data name="Identified record not found" xml:space="preserve">
+    <value>{0} با {1} «{2}» یافت نشد.</value>
+  </data>
+  <data name="Identified record already exists" xml:space="preserve">
+    <value>{0} با {1} «{2}» از قبل وجود دارد.</value>
+  </data>
+  <data name="product" xml:space="preserve">
+    <value>محصول</value>
+  </data>
+  <data name="product group" xml:space="preserve">
+    <value>گروه محصول</value>
+  </data>
+  <data name="product feature" xml:space="preserve">
+    <value>ویژگی محصول</value>
+  </data>
+  <data name="product image" xml:space="preserve">
+    <value>تصویر محصول</value>
+  </data>
+  <data name="brand" xml:space="preserve">
+    <value>برند</value>
+  </data>
+  <data name="store" xml:space="preserve">
+    <value>فروشگاه</value>
+  </data>
+  <data name="vendor" xml:space="preserve">
+    <value>فروشنده</value>
+  </data>
+  <data name="guarantee" xml:space="preserve">
+    <value>گارانتی</value>
+  </data>
+  <data name="guarantee certificate" xml:space="preserve">
+    <value>گواهی گارانتی</value>
+  </data>
+  <data name="certificate" xml:space="preserve">
+    <value>گواهی</value>
+  </data>
+  <data name="sms message" xml:space="preserve">
+    <value>پیامک</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="Public ID" xml:space="preserve">
+    <value>شناسهٔ عمومی</value>
+  </data>
+  <data name="code" xml:space="preserve">
+    <value>کد</value>
+  </data>
+  <data name="number" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Forbidden" xml:space="preserve">
+    <value>دسترسی مجاز نیست.</value>
+  </data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>احراز هویت لازم است.</value>
+  </data>
+  <data name="Resource not found" xml:space="preserve">
+    <value>منبع یافت نشد.</value>
+  </data>
+  <data name="Brand not found" xml:space="preserve">
+    <value>برند یافت نشد.</value>
+  </data>
+  <data name="Store not found" xml:space="preserve">
+    <value>فروشگاه یافت نشد.</value>
+  </data>
+  <data name="Vendor not found" xml:space="preserve">
+    <value>فروشنده یافت نشد.</value>
+  </data>
+  <data name="Guarantee not found" xml:space="preserve">
+    <value>گارانتی یافت نشد.</value>
+  </data>
+  <data name="Guarantee certificate not found" xml:space="preserve">
+    <value>گواهی گارانتی یافت نشد.</value>
+  </data>
+  <data name="Identity operation failed" xml:space="preserve">
+    <value>عملیات کاربر ناموفق بود.</value>
+  </data>
+  <data name="Brand operation failed" xml:space="preserve">
+    <value>عملیات برند ناموفق بود.</value>
+  </data>
+  <data name="Guarantee operation failed" xml:space="preserve">
+    <value>عملیات گارانتی ناموفق بود.</value>
+  </data>
+  <data name="Product operation failed" xml:space="preserve">
+    <value>عملیات محصول ناموفق بود.</value>
+  </data>
+  <data name="SMS operation failed" xml:space="preserve">
+    <value>عملیات پیامک ناموفق بود.</value>
+  </data>
+  <data name="SMS message not found" xml:space="preserve">
+    <value>پیامک یافت نشد.</value>
+  </data>
+  <data name="Product not found" xml:space="preserve">
+    <value>محصول یافت نشد.</value>
+  </data>
+  <data name="Product group not found" xml:space="preserve">
+    <value>گروه محصول یافت نشد.</value>
+  </data>
+  <data name="Product feature not found" xml:space="preserve">
+    <value>ویژگی محصول یافت نشد.</value>
+  </data>
+  <data name="Product image not found" xml:space="preserve">
+    <value>تصویر محصول یافت نشد.</value>
+  </data>
+  <data name="Catalog update conflict" xml:space="preserve">
+    <value>تغییرات کاتالوگ با نسخهٔ دیگری تداخل دارد.</value>
+  </data>
+  <data name="Catalog validation failed" xml:space="preserve">
+    <value>اعتبارسنجی کاتالوگ ناموفق بود.</value>
+  </data>
+  <data name="The resource was changed by another request" xml:space="preserve">
+    <value>منبع توسط درخواست دیگری تغییر کرده است.</value>
+  </data>
+  <data name="A default-language translation is required before activating a product." xml:space="preserve">
+    <value>برای فعال‌سازی محصول، ترجمهٔ زبان پیش‌فرض لازم است.</value>
+  </data>
+  <data name="A nonblank value is required." xml:space="preserve">
+    <value>مقدار غیرخالی لازم است.</value>
+  </data>
+  <data name="Active SMS provider is disabled." xml:space="preserve">
+    <value>ارائه‌دهندهٔ فعال پیامک غیرفعال است.</value>
+  </data>
+  <data name="Additional months must be between 1 and 120." xml:space="preserve">
+    <value>ماه‌های اضافی باید بین ۱ تا ۱۲۰ باشد.</value>
+  </data>
+  <data name="Alt text cannot exceed 250 characters." xml:space="preserve">
+    <value>متن جایگزین نباید بیش از ۲۵۰ نویسه باشد.</value>
+  </data>
+  <data name="An enabled persisted SMS provider configuration is required." xml:space="preserve">
+    <value>پیکربندی ذخیره‌شده و فعال ارائه‌دهندهٔ پیامک لازم است.</value>
+  </data>
+  <data name="Assignment IDs must be positive." xml:space="preserve">
+    <value>شناسه‌های تخصیص باید مثبت باشند.</value>
+  </data>
+  <data name="At least one peer-to-peer item is required." xml:space="preserve">
+    <value>حداقل یک مورد پیامک فردبه‌فرد لازم است.</value>
+  </data>
+  <data name="At least one phone number is required." xml:space="preserve">
+    <value>حداقل یک شماره تلفن لازم است.</value>
+  </data>
+  <data name="Base price cannot be negative." xml:space="preserve">
+    <value>قیمت پایه نمی‌تواند منفی باشد.</value>
+  </data>
+  <data name="Beauty factor percentage must be between -100% and 1000%." xml:space="preserve">
+    <value>درصد ضریب زیبایی باید بین ۱۰۰- و ۱۰۰۰ باشد.</value>
+  </data>
+  <data name="BrandId must be a valid positive identifier." xml:space="preserve">
+    <value>شناسهٔ برند باید عدد مثبت معتبر باشد.</value>
+  </data>
+  <data name="Bulk SMS cannot exceed 1000 phone numbers per request." xml:space="preserve">
+    <value>هر درخواست پیامک انبوه حداکثر ۱۰۰۰ شماره دارد.</value>
+  </data>
+  <data name="Cannot issue a certificate for an inactive guarantee plan." xml:space="preserve">
+    <value>برای طرح گارانتی غیرفعال نمی‌توان گواهی صادر کرد.</value>
+  </data>
+  <data name="Catalog requires exactly one active default language." xml:space="preserve">
+    <value>کاتالوگ دقیقاً به یک زبان پیش‌فرض فعال نیاز دارد.</value>
+  </data>
+  <data name="Code must contain only alphanumeric characters, underscores, or hyphens." xml:space="preserve">
+    <value>کد فقط می‌تواند شامل حرف لاتین، عدد، زیرخط یا خط تیره باشد.</value>
+  </data>
+  <data name="Commercial factor percentage must be between -100% and 1000%." xml:space="preserve">
+    <value>درصد ضریب تجاری باید بین ۱۰۰- و ۱۰۰۰ باشد.</value>
+  </data>
+  <data name="Configuration key is too long." xml:space="preserve">
+    <value>کلید پیکربندی بیش از حد طولانی است.</value>
+  </data>
+  <data name="Date specification values must not contain a time of day." xml:space="preserve">
+    <value>مقدار مشخصهٔ تاریخ نباید شامل ساعت باشد.</value>
+  </data>
+  <data name="Definition is too long." xml:space="preserve">
+    <value>تعریف بیش از حد طولانی است.</value>
+  </data>
+  <data name="Definition name is too long." xml:space="preserve">
+    <value>نام تعریف بیش از حد طولانی است.</value>
+  </data>
+  <data name="Description cannot exceed 1000 characters." xml:space="preserve">
+    <value>توضیح نباید بیش از ۱۰۰۰ نویسه باشد.</value>
+  </data>
+  <data name="Description cannot exceed 500 characters." xml:space="preserve">
+    <value>توضیح نباید بیش از ۵۰۰ نویسه باشد.</value>
+  </data>
+  <data name="Description is too long." xml:space="preserve">
+    <value>توضیح بیش از حد طولانی است.</value>
+  </data>
+  <data name="Display order cannot be negative." xml:space="preserve">
+    <value>ترتیب نمایش نمی‌تواند منفی باشد.</value>
+  </data>
+  <data name="Entity and language IDs must be positive." xml:space="preserve">
+    <value>شناسهٔ موجودیت و زبان باید مثبت باشند.</value>
+  </data>
+  <data name="Every active product needs a translation in the proposed default language." xml:space="preserve">
+    <value>هر محصول فعال باید به زبان پیش‌فرض پیشنهادی ترجمه داشته باشد.</value>
+  </data>
+  <data name="Expiry date must be after purchase date." xml:space="preserve">
+    <value>تاریخ انقضا باید بعد از تاریخ خرید باشد.</value>
+  </data>
+  <data name="FamilyId cannot be empty." xml:space="preserve">
+    <value>شناسهٔ خانواده نمی‌تواند خالی باشد.</value>
+  </data>
+  <data name="Feature name cannot exceed 150 characters." xml:space="preserve">
+    <value>نام ویژگی نباید بیش از ۱۵۰ نویسه باشد.</value>
+  </data>
+  <data name="Feature name is required." xml:space="preserve">
+    <value>نام ویژگی لازم است.</value>
+  </data>
+  <data name="Feature name or shared FeatureId is required." xml:space="preserve">
+    <value>نام ویژگی یا شناسهٔ ویژگی مشترک لازم است.</value>
+  </data>
+  <data name="Feature value cannot exceed 500 characters." xml:space="preserve">
+    <value>مقدار ویژگی نباید بیش از ۵۰۰ نویسه باشد.</value>
+  </data>
+  <data name="Feature value is required." xml:space="preserve">
+    <value>مقدار ویژگی لازم است.</value>
+  </data>
+  <data name="Group code can only contain letters, numbers, underscores and hyphens." xml:space="preserve">
+    <value>کد گروه فقط می‌تواند شامل حرف، عدد، زیرخط و خط تیره باشد.</value>
+  </data>
+  <data name="Group code cannot exceed 50 characters." xml:space="preserve">
+    <value>کد گروه نباید بیش از ۵۰ نویسه باشد.</value>
+  </data>
+  <data name="Group code is required." xml:space="preserve">
+    <value>کد گروه لازم است.</value>
+  </data>
+  <data name="Group name cannot exceed 150 characters." xml:space="preserve">
+    <value>نام گروه نباید بیش از ۱۵۰ نویسه باشد.</value>
+  </data>
+  <data name="Group name is required." xml:space="preserve">
+    <value>نام گروه لازم است.</value>
+  </data>
+  <data name="Guarantee duration must be greater than zero." xml:space="preserve">
+    <value>مدت گارانتی باید بیشتر از صفر باشد.</value>
+  </data>
+  <data name="Guarantee must have a duration greater than 0 days." xml:space="preserve">
+    <value>مدت گارانتی باید بیش از صفر روز باشد.</value>
+  </data>
+  <data name="GuaranteeId must be a valid positive identifier." xml:space="preserve">
+    <value>شناسهٔ گارانتی باید عدد مثبت معتبر باشد.</value>
+  </data>
+  <data name="Image URL cannot exceed 1000 characters." xml:space="preserve">
+    <value>نشانی تصویر نباید بیش از ۱۰۰۰ نویسه باشد.</value>
+  </data>
+  <data name="Image URL is required." xml:space="preserve">
+    <value>نشانی تصویر لازم است.</value>
+  </data>
+  <data name="Invalid BCP-47 language code." xml:space="preserve">
+    <value>کد زبان BCP-47 نامعتبر است.</value>
+  </data>
+  <data name="Invalid SMS log pagination." xml:space="preserve">
+    <value>صفحه‌بندی گزارش پیامک نامعتبر است.</value>
+  </data>
+  <data name="Invalid catalog pagination." xml:space="preserve">
+    <value>صفحه‌بندی کاتالوگ نامعتبر است.</value>
+  </data>
+  <data name="Invalid refresh token." xml:space="preserve">
+    <value>توکن نوسازی نامعتبر است.</value>
+  </data>
+  <data name="Invalid translation target." xml:space="preserve">
+    <value>هدف ترجمه نامعتبر است.</value>
+  </data>
+  <data name="Invalid username or password." xml:space="preserve">
+    <value>نام کاربری یا گذرواژه نامعتبر است.</value>
+  </data>
+  <data name="Invalid value type." xml:space="preserve">
+    <value>نوع مقدار نامعتبر است.</value>
+  </data>
+  <data name="InvalidIranianShabaError" xml:space="preserve">
+    <value>شمارهٔ شبا نامعتبر است.</value>
+  </data>
+  <data name="InvalidNationalCodeError" xml:space="preserve">
+    <value>کد ملی نامعتبر است.</value>
+  </data>
+  <data name="InvalidPhoneNumberError" xml:space="preserve">
+    <value>شمارهٔ تلفن نامعتبر است.</value>
+  </data>
+  <data name="Language name is too long." xml:space="preserve">
+    <value>نام زبان بیش از حد طولانی است.</value>
+  </data>
+  <data name="Line number cannot exceed 30 characters." xml:space="preserve">
+    <value>شمارهٔ خط نباید بیش از ۳۰ نویسه باشد.</value>
+  </data>
+  <data name="Line number is too long." xml:space="preserve">
+    <value>شمارهٔ خط بیش از حد طولانی است.</value>
+  </data>
+  <data name="Message cannot exceed 1000 characters." xml:space="preserve">
+    <value>متن پیام نباید بیش از ۱۰۰۰ نویسه باشد.</value>
+  </data>
+  <data name="Message text is required." xml:space="preserve">
+    <value>متن پیام لازم است.</value>
+  </data>
+  <data name="NationalCodeIsRequiredError" xml:space="preserve">
+    <value>کد ملی لازم است.</value>
+  </data>
+  <data name="Numeric specification values must fit decimal(18,4) without rounding." xml:space="preserve">
+    <value>مقدار عددی مشخصه باید بدون گرد کردن در decimal(18,4) جا شود.</value>
+  </data>
+  <data name="OTP code cannot exceed 20 characters." xml:space="preserve">
+    <value>کد یک‌بارمصرف نباید بیش از ۲۰ نویسه باشد.</value>
+  </data>
+  <data name="OTP code is required." xml:space="preserve">
+    <value>کد یک‌بارمصرف لازم است.</value>
+  </data>
+  <data name="Only product descriptions are localized." xml:space="preserve">
+    <value>فقط توضیحات محصول قابل ترجمه است.</value>
+  </data>
+  <data name="Only textual specification values can be translated." xml:space="preserve">
+    <value>فقط مقدار متنی مشخصه قابل ترجمه است.</value>
+  </data>
+  <data name="Peer-to-peer SMS cannot exceed 500 items per request." xml:space="preserve">
+    <value>هر درخواست پیامک فردبه‌فرد حداکثر ۵۰۰ مورد دارد.</value>
+  </data>
+  <data name="PhoneNumberIsRequiredError" xml:space="preserve">
+    <value>شمارهٔ تلفن لازم است.</value>
+  </data>
+  <data name="Previous language is not default." xml:space="preserve">
+    <value>زبان قبلی پیش‌فرض نیست.</value>
+  </data>
+  <data name="Price adjustment percentage must be between 0 and 100." xml:space="preserve">
+    <value>درصد تعدیل قیمت باید بین صفر و ۱۰۰ باشد.</value>
+  </data>
+  <data name="Price effect percentage must be between -100% and 1000%." xml:space="preserve">
+    <value>درصد اثر قیمت باید بین ۱۰۰- و ۱۰۰۰ باشد.</value>
+  </data>
+  <data name="Product ID must be positive." xml:space="preserve">
+    <value>شناسهٔ محصول باید مثبت باشد.</value>
+  </data>
+  <data name="Product code cannot exceed 100 characters." xml:space="preserve">
+    <value>کد محصول نباید بیش از ۱۰۰ نویسه باشد.</value>
+  </data>
+  <data name="Product code is required." xml:space="preserve">
+    <value>کد محصول لازم است.</value>
+  </data>
+  <data name="Product content is too long." xml:space="preserve">
+    <value>محتوای محصول بیش از حد طولانی است.</value>
+  </data>
+  <data name="Product name cannot exceed 250 characters." xml:space="preserve">
+    <value>نام محصول نباید بیش از ۲۵۰ نویسه باشد.</value>
+  </data>
+  <data name="Product name is required." xml:space="preserve">
+    <value>نام محصول لازم است.</value>
+  </data>
+  <data name="ProductId must be a valid positive identifier." xml:space="preserve">
+    <value>شناسهٔ محصول باید عدد مثبت معتبر باشد.</value>
+  </data>
+  <data name="Provider name is too long." xml:space="preserve">
+    <value>نام ارائه‌دهنده بیش از حد طولانی است.</value>
+  </data>
+  <data name="Provider receipt is too long." xml:space="preserve">
+    <value>رسید ارائه‌دهنده بیش از حد طولانی است.</value>
+  </data>
+  <data name="PurchaseDate is required." xml:space="preserve">
+    <value>تاریخ خرید لازم است.</value>
+  </data>
+  <data name="Role not found." xml:space="preserve">
+    <value>نقش یافت نشد.</value>
+  </data>
+  <data name="RoleId cannot be empty." xml:space="preserve">
+    <value>شناسهٔ نقش نمی‌تواند خالی باشد.</value>
+  </data>
+  <data name="SMS log has already completed." xml:space="preserve">
+    <value>گزارش پیامک قبلاً تکمیل شده است.</value>
+  </data>
+  <data name="SMS module is disabled." xml:space="preserve">
+    <value>ماژول پیامک غیرفعال است.</value>
+  </data>
+  <data name="Sales factor percentage must be between -100% and 1000%." xml:space="preserve">
+    <value>درصد ضریب فروش باید بین ۱۰۰- و ۱۰۰۰ باشد.</value>
+  </data>
+  <data name="Shared feature does not exist." xml:space="preserve">
+    <value>ویژگی مشترک وجود ندارد.</value>
+  </data>
+  <data name="Supply exactly one value matching the specification type." xml:space="preserve">
+    <value>دقیقاً یک مقدار متناسب با نوع مشخصه وارد کنید.</value>
+  </data>
+  <data name="Switch to another active default language instead." xml:space="preserve">
+    <value>ابتدا زبان پیش‌فرض فعال دیگری انتخاب کنید.</value>
+  </data>
+  <data name="Template ID must be positive." xml:space="preserve">
+    <value>شناسهٔ قالب باید مثبت باشد.</value>
+  </data>
+  <data name="Template IDs and names must be valid." xml:space="preserve">
+    <value>شناسه و نام قالب باید معتبر باشند.</value>
+  </data>
+  <data name="The default language must remain active." xml:space="preserve">
+    <value>زبان پیش‌فرض باید فعال بماند.</value>
+  </data>
+  <data name="The new default must be active." xml:space="preserve">
+    <value>زبان پیش‌فرض جدید باید فعال باشد.</value>
+  </data>
+  <data name="The new password must be different from the current password." xml:space="preserve">
+    <value>گذرواژهٔ جدید باید با گذرواژهٔ فعلی متفاوت باشد.</value>
+  </data>
+  <data name="Too many template mappings." xml:space="preserve">
+    <value>تعداد نگاشت‌های قالب بیش از حد مجاز است.</value>
+  </data>
+  <data name="Translation is too long." xml:space="preserve">
+    <value>ترجمه بیش از حد طولانی است.</value>
+  </data>
+  <data name="Unit is too long." xml:space="preserve">
+    <value>واحد بیش از حد طولانی است.</value>
+  </data>
+  <data name="Unsupported SMS provider." xml:space="preserve">
+    <value>ارائه‌دهندهٔ پیامک پشتیبانی نمی‌شود.</value>
+  </data>
+  <data name="User not found." xml:space="preserve">
+    <value>کاربر یافت نشد.</value>
+  </data>
+  <data name="UserId cannot be empty." xml:space="preserve">
+    <value>شناسهٔ کاربر نمی‌تواند خالی باشد.</value>
+  </data>
+  <data name="Valid group ID is required." xml:space="preserve">
+    <value>شناسهٔ گروه معتبر لازم است.</value>
+  </data>
+  <data name="VendorId must be a valid positive identifier." xml:space="preserve">
+    <value>شناسهٔ فروشنده باید عدد مثبت معتبر باشد.</value>
+  </data>
+  <data name="A catalog record with this language, code or assignment already exists." xml:space="preserve">
+    <value>رکوردی با این زبان، کد یا تخصیص در کاتالوگ وجود دارد.</value>
+  </data>
+  <data name="An active default catalog language is required; apply catalog migrations." xml:space="preserve">
+    <value>زبان پیش‌فرض فعال کاتالوگ لازم است؛ مهاجرت‌های کاتالوگ را اجرا کنید.</value>
+  </data>
+  <data name="Catalog default language is missing." xml:space="preserve">
+    <value>زبان پیش‌فرض کاتالوگ وجود ندارد.</value>
+  </data>
+  <data name="Language does not exist." xml:space="preserve">
+    <value>زبان وجود ندارد.</value>
+  </data>
+  <data name="SMS module configuration is missing; apply SMS migrations." xml:space="preserve">
+    <value>پیکربندی ماژول پیامک وجود ندارد؛ مهاجرت‌های پیامک را اجرا کنید.</value>
+  </data>
+  <data name="SMS provider configuration was not found." xml:space="preserve">
+    <value>پیکربندی ارائه‌دهندهٔ پیامک یافت نشد.</value>
+  </data>
+  <data name="SMS provider is disabled." xml:space="preserve">
+    <value>ارائه‌دهندهٔ پیامک غیرفعال است.</value>
+  </data>
+  <data name="Specification assignment does not exist." xml:space="preserve">
+    <value>تخصیص مشخصه وجود ندارد.</value>
+  </data>
+  <data name="Specification does not exist." xml:space="preserve">
+    <value>مشخصه وجود ندارد.</value>
+  </data>
+  <data name="The catalog record was changed by another editor." xml:space="preserve">
+    <value>رکورد کاتالوگ توسط ویرایشگر دیگری تغییر کرده است.</value>
+  </data>
+  <data name="The record changed or its row version is missing. Reload it before editing." xml:space="preserve">
+    <value>رکورد تغییر کرده یا نسخهٔ آن موجود نیست. پیش از ویرایش دوباره بارگذاری کنید.</value>
+  </data>
+  <data name="Unsupported SMS provider configuration." xml:space="preserve">
+    <value>پیکربندی ارائه‌دهندهٔ پیامک پشتیبانی نمی‌شود.</value>
+  </data>
+  <data name="Identified record not found for owner" xml:space="preserve">
+    <value>{0} با {1} «{2}» برای {3} «{4}» یافت نشد.</value>
+  </data>
+  <data name="Identified record already exists for owner" xml:space="preserve">
+    <value>{0} با {1} «{2}» برای {3} «{4}» از قبل وجود دارد.</value>
+  </data>
+  <data name="Accounting operation failed" xml:space="preserve"><value>عملیات حسابداری ناموفق بود.</value></data>
+  <data name="Accounting provider is not configured." xml:space="preserve"><value>اتصال به سامانهٔ حسابداری هنوز پیکربندی نشده است.</value></data>
+  <data name="Brand ID must be positive." xml:space="preserve"><value>شناسهٔ برند باید مثبت باشد.</value></data>
+  <data name="Item mapping identifiers and conversion factor must be positive." xml:space="preserve"><value>شناسه‌های نگاشت و ضریب تبدیل باید مثبت باشند.</value></data>
+  <data name="Local item was not found." xml:space="preserve"><value>آیتم محلی یافت نشد.</value></data>
+  <data name="Accounting item was not found." xml:space="preserve"><value>آیتم حسابداری یافت نشد.</value></data>
+  <data name="Accounting item belongs to another brand." xml:space="preserve"><value>آیتم حسابداری متعلق به برند دیگری است.</value></data>
+  <data name="Item unit conversion requires an approved mapping rule." xml:space="preserve"><value>تبدیل واحد آیتم به قانون نگاشت تأییدشده نیاز دارد.</value></data>
+  <data name="Local item is already mapped for this brand." xml:space="preserve"><value>آیتم محلی برای این برند قبلاً نگاشت شده است.</value></data>
+  <data name="Accounting item is already mapped for this brand." xml:space="preserve"><value>آیتم حسابداری برای این برند قبلاً نگاشت شده است.</value></data>
+  <data name="Active item mapping was not found." xml:space="preserve"><value>نگاشت فعال آیتم یافت نشد.</value></data>
+  <data name="Invalid accounting item pagination." xml:space="preserve"><value>صفحه‌بندی آیتم‌های حسابداری نامعتبر است.</value></data>
+  <data name="Representative operation failed" xml:space="preserve"><value>عملیات نماینده ناموفق بود.</value></data>
+  <data name="A valid representative code is required." xml:space="preserve"><value>کد معتبر نماینده لازم است.</value></data>
+  <data name="Representative code already exists; match the existing representative explicitly." xml:space="preserve"><value>کد نماینده وجود دارد؛ نمایندهٔ موجود را به‌صورت دستی تطبیق دهید.</value></data>
+  <data name="Local representative was not found." xml:space="preserve"><value>نمایندهٔ محلی یافت نشد.</value></data>
+  <data name="Representative belongs to another brand." xml:space="preserve"><value>نماینده متعلق به برند دیگری است.</value></data>
+  <data name="Accounting representative is already matched." xml:space="preserve"><value>نمایندهٔ حسابداری قبلاً تطبیق داده شده است.</value></data>
+  <data name="Local representative is already matched." xml:space="preserve"><value>نمایندهٔ محلی قبلاً تطبیق داده شده است.</value></data>
+  <data name="Representative identifiers must be positive." xml:space="preserve"><value>شناسه‌های نماینده باید مثبت باشند.</value></data>
+  <data name="Accounting representative was not found." xml:space="preserve"><value>نمایندهٔ حسابداری یافت نشد.</value></data>
+  <data name="Accounting representative belongs to another brand." xml:space="preserve"><value>نمایندهٔ حسابداری متعلق به برند دیگری است.</value></data>
+  <data name="Accounting representative was absent from the latest complete sync." xml:space="preserve"><value>نمایندهٔ حسابداری در آخرین همگام‌سازی کامل وجود نداشت.</value></data>
+  <data name="Representative code or accounting mapping already exists." xml:space="preserve"><value>کد نماینده یا نگاشت حسابداری از قبل وجود دارد.</value></data>
+  <data name="Representative accounting mapping already exists." xml:space="preserve"><value>نگاشت حسابداری نماینده از قبل وجود دارد.</value></data>
+  <data name="Brand was not found for accounting connection." xml:space="preserve"><value>برند برای اتصال حسابداری یافت نشد.</value></data>
+  <data name="Use an environment secret reference, not an API key." xml:space="preserve"><value>به‌جای کلید API، ارجاع به متغیر محیطی محرمانه وارد کنید.</value></data>
+  <data name="An HTTPS accounting base URL is required." xml:space="preserve"><value>نشانی پایهٔ HTTPS برای حسابداری لازم است.</value></data>
+  <data name="Pricing operation failed" xml:space="preserve"><value>عملیات قیمت‌گذاری ناموفق بود.</value></data>
+  <data name="Pricing update conflict" xml:space="preserve"><value>تداخل در به‌روزرسانی قیمت‌گذاری.</value></data>
+  <data name="Product must belong to the selected brand." xml:space="preserve"><value>محصول باید متعلق به برند انتخاب‌شده باشد.</value></data>
+  <data name="Factory price override is invalid." xml:space="preserve"><value>تنظیم دستی قیمت کارخانه نامعتبر است.</value></data>
+  <data name="Price override version is invalid." xml:space="preserve"><value>نسخهٔ تنظیم قیمت نامعتبر است.</value></data>
+  <data name="Price override changed; reload before editing." xml:space="preserve"><value>تنظیم قیمت تغییر کرده است؛ پیش از ویرایش دوباره بارگذاری کنید.</value></data>
+  <data name="Local item details are invalid." xml:space="preserve"><value>مشخصات آیتم محلی نامعتبر است.</value></data>
+  <data name="Invalid local item pagination." xml:space="preserve"><value>صفحه‌بندی آیتم‌های محلی نامعتبر است.</value></data>
+  <data name="Product composition requires distinct items with valid quantities." xml:space="preserve"><value>ترکیب محصول به آیتم‌های یکتا با مقدار معتبر نیاز دارد.</value></data>
+  <data name="Local item code already exists." xml:space="preserve"><value>کد آیتم محلی از قبل وجود دارد.</value></data>
+  <data name="Product composition contains an unknown local item." xml:space="preserve"><value>ترکیب محصول شامل آیتم محلی ناشناخته است.</value></data>
+</root>

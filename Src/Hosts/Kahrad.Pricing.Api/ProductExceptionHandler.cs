@@ -1,11 +1,13 @@
 using Kahrad.Pricing.Products.Application.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Kahrad.Pricing.Api.Localization;
+using Microsoft.Extensions.Localization;
 
 namespace Kahrad.Pricing.Api;
 
 public sealed class ProductExceptionHandler(
-    ILogger<ProductExceptionHandler> logger) : IExceptionHandler
+    ILogger<ProductExceptionHandler> logger, IStringLocalizer<ApiMessages> messages) : IExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(
         HttpContext httpContext,
@@ -14,6 +16,8 @@ public sealed class ProductExceptionHandler(
     {
         var (statusCode, title) = exception switch
         {
+            Kahrad.Pricing.Products.Domain.Exceptions.CatalogRuleException => (StatusCodes.Status400BadRequest, "Catalog validation failed"),
+            CatalogConflictException => (StatusCodes.Status409Conflict, "Catalog update conflict"),
             ProductOperationException => (StatusCodes.Status400BadRequest, "Product operation failed"),
             ProductNotFoundException => (StatusCodes.Status404NotFound, "Product not found"),
             ProductGroupNotFoundException => (StatusCodes.Status404NotFound, "Product group not found"),
@@ -35,8 +39,8 @@ public sealed class ProductExceptionHandler(
             new ProblemDetails
             {
                 Status = statusCode,
-                Title = title,
-                Detail = exception.Message
+                Title = ApiText.Translate(messages, title, "Product operation failed"),
+                Detail = ApiText.Translate(messages, exception.Message, title)
             },
             cancellationToken);
 

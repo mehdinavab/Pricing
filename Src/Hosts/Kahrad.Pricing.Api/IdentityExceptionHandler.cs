@@ -1,12 +1,14 @@
 using Kahrad.Pricing.Identity.Application.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Kahrad.Pricing.Api.Localization;
+using Microsoft.Extensions.Localization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kahrad.Pricing.Api;
 
 public sealed class IdentityExceptionHandler(
-    ILogger<IdentityExceptionHandler> logger) : IExceptionHandler
+    ILogger<IdentityExceptionHandler> logger, IStringLocalizer<ApiMessages> messages) : IExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(
         HttpContext httpContext,
@@ -35,10 +37,10 @@ public sealed class IdentityExceptionHandler(
             new ProblemDetails
             {
                 Status = statusCode,
-                Title = title,
+                Title = ApiText.Translate(messages, title, "Identity operation failed"),
                 Detail = statusCode == StatusCodes.Status401Unauthorized
                     ? null
-                    : exception.Message
+                    : ApiText.Translate(messages, exception.Message, title)
             },
             cancellationToken);
 

@@ -1,11 +1,13 @@
 using Kahrad.Pricing.Sms.Application.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Kahrad.Pricing.Api.Localization;
+using Microsoft.Extensions.Localization;
 
 namespace Kahrad.Pricing.Api;
 
 public sealed class SmsExceptionHandler(
-    ILogger<SmsExceptionHandler> logger) : IExceptionHandler
+    ILogger<SmsExceptionHandler> logger, IStringLocalizer<ApiMessages> messages) : IExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(
         HttpContext httpContext,
@@ -32,8 +34,8 @@ public sealed class SmsExceptionHandler(
             new ProblemDetails
             {
                 Status = statusCode,
-                Title = title,
-                Detail = exception.Message
+                Title = ApiText.Translate(messages, title, "SMS operation failed"),
+                Detail = ApiText.Translate(messages, exception.Message, title)
             },
             cancellationToken);
 

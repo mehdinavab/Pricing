@@ -1,0 +1,507 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <data name="The request is invalid." xml:space="preserve">
+    <value>الطلب غير صالح.</value>
+  </data>
+  <data name="The server encountered an error." xml:space="preserve">
+    <value>واجه الخادم خطأ.</value>
+  </data>
+  <data name="Identified record not found" xml:space="preserve">
+    <value>لم يتم العثور على {0} مع {1} «{2}».</value>
+  </data>
+  <data name="Identified record already exists" xml:space="preserve">
+    <value>{0} مع {1} «{2}» موجود بالفعل.</value>
+  </data>
+  <data name="product" xml:space="preserve">
+    <value>المنتج</value>
+  </data>
+  <data name="product group" xml:space="preserve">
+    <value>مجموعة المنتجات</value>
+  </data>
+  <data name="product feature" xml:space="preserve">
+    <value>ميزة المنتج</value>
+  </data>
+  <data name="product image" xml:space="preserve">
+    <value>صورة المنتج</value>
+  </data>
+  <data name="brand" xml:space="preserve">
+    <value>العلامة التجارية</value>
+  </data>
+  <data name="store" xml:space="preserve">
+    <value>المتجر</value>
+  </data>
+  <data name="vendor" xml:space="preserve">
+    <value>البائع</value>
+  </data>
+  <data name="guarantee" xml:space="preserve">
+    <value>الضمان</value>
+  </data>
+  <data name="guarantee certificate" xml:space="preserve">
+    <value>شهادة الضمان</value>
+  </data>
+  <data name="certificate" xml:space="preserve">
+    <value>الشهادة</value>
+  </data>
+  <data name="sms message" xml:space="preserve">
+    <value>الرسالة النصية</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>المعرف</value>
+  </data>
+  <data name="Public ID" xml:space="preserve">
+    <value>المعرف العام</value>
+  </data>
+  <data name="code" xml:space="preserve">
+    <value>الرمز</value>
+  </data>
+  <data name="number" xml:space="preserve">
+    <value>الرقم</value>
+  </data>
+  <data name="Forbidden" xml:space="preserve">
+    <value>الوصول غير مسموح.</value>
+  </data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>المصادقة مطلوبة.</value>
+  </data>
+  <data name="Resource not found" xml:space="preserve">
+    <value>لم يتم العثور على المورد.</value>
+  </data>
+  <data name="Brand not found" xml:space="preserve">
+    <value>لم يتم العثور على العلامة التجارية.</value>
+  </data>
+  <data name="Store not found" xml:space="preserve">
+    <value>لم يتم العثور على المتجر.</value>
+  </data>
+  <data name="Vendor not found" xml:space="preserve">
+    <value>لم يتم العثور على البائع.</value>
+  </data>
+  <data name="Guarantee not found" xml:space="preserve">
+    <value>لم يتم العثور على الضمان.</value>
+  </data>
+  <data name="Guarantee certificate not found" xml:space="preserve">
+    <value>لم يتم العثور على شهادة الضمان.</value>
+  </data>
+  <data name="Identity operation failed" xml:space="preserve">
+    <value>فشلت عملية المستخدم.</value>
+  </data>
+  <data name="Brand operation failed" xml:space="preserve">
+    <value>فشلت عملية العلامة التجارية.</value>
+  </data>
+  <data name="Guarantee operation failed" xml:space="preserve">
+    <value>فشلت عملية الضمان.</value>
+  </data>
+  <data name="Product operation failed" xml:space="preserve">
+    <value>فشلت عملية المنتج.</value>
+  </data>
+  <data name="SMS operation failed" xml:space="preserve">
+    <value>فشلت عملية الرسائل النصية.</value>
+  </data>
+  <data name="SMS message not found" xml:space="preserve">
+    <value>لم يتم العثور على الرسالة النصية.</value>
+  </data>
+  <data name="Product not found" xml:space="preserve">
+    <value>لم يتم العثور على المنتج.</value>
+  </data>
+  <data name="Product group not found" xml:space="preserve">
+    <value>لم يتم العثور على مجموعة المنتجات.</value>
+  </data>
+  <data name="Product feature not found" xml:space="preserve">
+    <value>لم يتم العثور على ميزة المنتج.</value>
+  </data>
+  <data name="Product image not found" xml:space="preserve">
+    <value>لم يتم العثور على صورة المنتج.</value>
+  </data>
+  <data name="Catalog update conflict" xml:space="preserve">
+    <value>تتعارض تغييرات الكتالوج مع نسخة أخرى.</value>
+  </data>
+  <data name="Catalog validation failed" xml:space="preserve">
+    <value>فشل التحقق من الكتالوج.</value>
+  </data>
+  <data name="The resource was changed by another request" xml:space="preserve">
+    <value>تم تغيير المورد بواسطة طلب آخر.</value>
+  </data>
+  <data name="A default-language translation is required before activating a product." xml:space="preserve">
+    <value>يلزم توفير ترجمة باللغة الافتراضية قبل تفعيل المنتج.</value>
+  </data>
+  <data name="A nonblank value is required." xml:space="preserve">
+    <value>يلزم إدخال قيمة غير فارغة.</value>
+  </data>
+  <data name="Active SMS provider is disabled." xml:space="preserve">
+    <value>مزود الرسائل النصية النشط معطل.</value>
+  </data>
+  <data name="Additional months must be between 1 and 120." xml:space="preserve">
+    <value>يجب أن تكون الأشهر الإضافية بين 1 و120.</value>
+  </data>
+  <data name="Alt text cannot exceed 250 characters." xml:space="preserve">
+    <value>يجب ألا يتجاوز النص البديل 250 حرفًا.</value>
+  </data>
+  <data name="An enabled persisted SMS provider configuration is required." xml:space="preserve">
+    <value>يلزم تكوين محفوظ ومفعل لمزود الرسائل النصية.</value>
+  </data>
+  <data name="Assignment IDs must be positive." xml:space="preserve">
+    <value>يجب أن تكون معرفات التعيين موجبة.</value>
+  </data>
+  <data name="At least one peer-to-peer item is required." xml:space="preserve">
+    <value>يلزم عنصر واحد على الأقل للرسائل الفردية.</value>
+  </data>
+  <data name="At least one phone number is required." xml:space="preserve">
+    <value>يلزم رقم هاتف واحد على الأقل.</value>
+  </data>
+  <data name="Base price cannot be negative." xml:space="preserve">
+    <value>لا يمكن أن يكون السعر الأساسي سالبًا.</value>
+  </data>
+  <data name="Beauty factor percentage must be between -100% and 1000%." xml:space="preserve">
+    <value>يجب أن تكون نسبة معامل الجمال بين ‎-100% و1000%.</value>
+  </data>
+  <data name="BrandId must be a valid positive identifier." xml:space="preserve">
+    <value>يجب أن يكون معرف العلامة التجارية موجبًا وصالحًا.</value>
+  </data>
+  <data name="Bulk SMS cannot exceed 1000 phone numbers per request." xml:space="preserve">
+    <value>لا يمكن أن يتجاوز طلب الرسائل الجماعية 1000 رقم.</value>
+  </data>
+  <data name="Cannot issue a certificate for an inactive guarantee plan." xml:space="preserve">
+    <value>لا يمكن إصدار شهادة لخطة ضمان غير نشطة.</value>
+  </data>
+  <data name="Catalog requires exactly one active default language." xml:space="preserve">
+    <value>يتطلب الكتالوج لغة افتراضية نشطة واحدة بالضبط.</value>
+  </data>
+  <data name="Code must contain only alphanumeric characters, underscores, or hyphens." xml:space="preserve">
+    <value>يجب أن يحتوي الرمز على أحرف لاتينية أو أرقام أو شرطات سفلية أو واصلات فقط.</value>
+  </data>
+  <data name="Commercial factor percentage must be between -100% and 1000%." xml:space="preserve">
+    <value>يجب أن تكون نسبة المعامل التجاري بين ‎-100% و1000%.</value>
+  </data>
+  <data name="Configuration key is too long." xml:space="preserve">
+    <value>مفتاح التكوين طويل جدًا.</value>
+  </data>
+  <data name="Date specification values must not contain a time of day." xml:space="preserve">
+    <value>يجب ألا تحتوي قيمة مواصفة التاريخ على وقت.</value>
+  </data>
+  <data name="Definition is too long." xml:space="preserve">
+    <value>التعريف طويل جدًا.</value>
+  </data>
+  <data name="Definition name is too long." xml:space="preserve">
+    <value>اسم التعريف طويل جدًا.</value>
+  </data>
+  <data name="Description cannot exceed 1000 characters." xml:space="preserve">
+    <value>يجب ألا يتجاوز الوصف 1000 حرف.</value>
+  </data>
+  <data name="Description cannot exceed 500 characters." xml:space="preserve">
+    <value>يجب ألا يتجاوز الوصف 500 حرف.</value>
+  </data>
+  <data name="Description is too long." xml:space="preserve">
+    <value>الوصف طويل جدًا.</value>
+  </data>
+  <data name="Display order cannot be negative." xml:space="preserve">
+    <value>لا يمكن أن يكون ترتيب العرض سالبًا.</value>
+  </data>
+  <data name="Entity and language IDs must be positive." xml:space="preserve">
+    <value>يجب أن يكون معرفا الكيان واللغة موجبين.</value>
+  </data>
+  <data name="Every active product needs a translation in the proposed default language." xml:space="preserve">
+    <value>يحتاج كل منتج نشط إلى ترجمة باللغة الافتراضية المقترحة.</value>
+  </data>
+  <data name="Expiry date must be after purchase date." xml:space="preserve">
+    <value>يجب أن يكون تاريخ الانتهاء بعد تاريخ الشراء.</value>
+  </data>
+  <data name="FamilyId cannot be empty." xml:space="preserve">
+    <value>لا يمكن أن يكون معرف العائلة فارغًا.</value>
+  </data>
+  <data name="Feature name cannot exceed 150 characters." xml:space="preserve">
+    <value>يجب ألا يتجاوز اسم الميزة 150 حرفًا.</value>
+  </data>
+  <data name="Feature name is required." xml:space="preserve">
+    <value>اسم الميزة مطلوب.</value>
+  </data>
+  <data name="Feature name or shared FeatureId is required." xml:space="preserve">
+    <value>يلزم اسم الميزة أو معرف الميزة المشتركة.</value>
+  </data>
+  <data name="Feature value cannot exceed 500 characters." xml:space="preserve">
+    <value>يجب ألا تتجاوز قيمة الميزة 500 حرف.</value>
+  </data>
+  <data name="Feature value is required." xml:space="preserve">
+    <value>قيمة الميزة مطلوبة.</value>
+  </data>
+  <data name="Group code can only contain letters, numbers, underscores and hyphens." xml:space="preserve">
+    <value>يجب أن يحتوي رمز المجموعة على أحرف وأرقام وشرطات سفلية وواصلات فقط.</value>
+  </data>
+  <data name="Group code cannot exceed 50 characters." xml:space="preserve">
+    <value>يجب ألا يتجاوز رمز المجموعة 50 حرفًا.</value>
+  </data>
+  <data name="Group code is required." xml:space="preserve">
+    <value>رمز المجموعة مطلوب.</value>
+  </data>
+  <data name="Group name cannot exceed 150 characters." xml:space="preserve">
+    <value>يجب ألا يتجاوز اسم المجموعة 150 حرفًا.</value>
+  </data>
+  <data name="Group name is required." xml:space="preserve">
+    <value>اسم المجموعة مطلوب.</value>
+  </data>
+  <data name="Guarantee duration must be greater than zero." xml:space="preserve">
+    <value>يجب أن تكون مدة الضمان أكبر من صفر.</value>
+  </data>
+  <data name="Guarantee must have a duration greater than 0 days." xml:space="preserve">
+    <value>يجب أن تتجاوز مدة الضمان صفر يوم.</value>
+  </data>
+  <data name="GuaranteeId must be a valid positive identifier." xml:space="preserve">
+    <value>يجب أن يكون معرف الضمان موجبًا وصالحًا.</value>
+  </data>
+  <data name="Image URL cannot exceed 1000 characters." xml:space="preserve">
+    <value>يجب ألا يتجاوز عنوان الصورة 1000 حرف.</value>
+  </data>
+  <data name="Image URL is required." xml:space="preserve">
+    <value>عنوان الصورة مطلوب.</value>
+  </data>
+  <data name="Invalid BCP-47 language code." xml:space="preserve">
+    <value>رمز اللغة BCP-47 غير صالح.</value>
+  </data>
+  <data name="Invalid SMS log pagination." xml:space="preserve">
+    <value>ترقيم صفحات سجل الرسائل غير صالح.</value>
+  </data>
+  <data name="Invalid catalog pagination." xml:space="preserve">
+    <value>ترقيم صفحات الكتالوج غير صالح.</value>
+  </data>
+  <data name="Invalid refresh token." xml:space="preserve">
+    <value>رمز التحديث غير صالح.</value>
+  </data>
+  <data name="Invalid translation target." xml:space="preserve">
+    <value>هدف الترجمة غير صالح.</value>
+  </data>
+  <data name="Invalid username or password." xml:space="preserve">
+    <value>اسم المستخدم أو كلمة المرور غير صحيحة.</value>
+  </data>
+  <data name="Invalid value type." xml:space="preserve">
+    <value>نوع القيمة غير صالح.</value>
+  </data>
+  <data name="InvalidIranianShabaError" xml:space="preserve">
+    <value>رقم الشبا الإيراني غير صالح.</value>
+  </data>
+  <data name="InvalidNationalCodeError" xml:space="preserve">
+    <value>الرقم الوطني غير صالح.</value>
+  </data>
+  <data name="InvalidPhoneNumberError" xml:space="preserve">
+    <value>رقم الهاتف غير صالح.</value>
+  </data>
+  <data name="Language name is too long." xml:space="preserve">
+    <value>اسم اللغة طويل جدًا.</value>
+  </data>
+  <data name="Line number cannot exceed 30 characters." xml:space="preserve">
+    <value>يجب ألا يتجاوز رقم الخط 30 حرفًا.</value>
+  </data>
+  <data name="Line number is too long." xml:space="preserve">
+    <value>رقم الخط طويل جدًا.</value>
+  </data>
+  <data name="Message cannot exceed 1000 characters." xml:space="preserve">
+    <value>يجب ألا تتجاوز الرسالة 1000 حرف.</value>
+  </data>
+  <data name="Message text is required." xml:space="preserve">
+    <value>نص الرسالة مطلوب.</value>
+  </data>
+  <data name="NationalCodeIsRequiredError" xml:space="preserve">
+    <value>الرقم الوطني مطلوب.</value>
+  </data>
+  <data name="Numeric specification values must fit decimal(18,4) without rounding." xml:space="preserve">
+    <value>يجب أن تتسع قيمة المواصفة الرقمية في decimal(18,4) دون تقريب.</value>
+  </data>
+  <data name="OTP code cannot exceed 20 characters." xml:space="preserve">
+    <value>يجب ألا يتجاوز رمز التحقق 20 حرفًا.</value>
+  </data>
+  <data name="OTP code is required." xml:space="preserve">
+    <value>رمز التحقق مطلوب.</value>
+  </data>
+  <data name="Only product descriptions are localized." xml:space="preserve">
+    <value>يمكن ترجمة أوصاف المنتجات فقط.</value>
+  </data>
+  <data name="Only textual specification values can be translated." xml:space="preserve">
+    <value>يمكن ترجمة قيم المواصفات النصية فقط.</value>
+  </data>
+  <data name="Peer-to-peer SMS cannot exceed 500 items per request." xml:space="preserve">
+    <value>لا يمكن أن يتجاوز طلب الرسائل الفردية 500 عنصر.</value>
+  </data>
+  <data name="PhoneNumberIsRequiredError" xml:space="preserve">
+    <value>رقم الهاتف مطلوب.</value>
+  </data>
+  <data name="Previous language is not default." xml:space="preserve">
+    <value>اللغة السابقة ليست افتراضية.</value>
+  </data>
+  <data name="Price adjustment percentage must be between 0 and 100." xml:space="preserve">
+    <value>يجب أن تكون نسبة تعديل السعر بين 0 و100.</value>
+  </data>
+  <data name="Price effect percentage must be between -100% and 1000%." xml:space="preserve">
+    <value>يجب أن تكون نسبة تأثير السعر بين ‎-100% و1000%.</value>
+  </data>
+  <data name="Product ID must be positive." xml:space="preserve">
+    <value>يجب أن يكون معرف المنتج موجبًا.</value>
+  </data>
+  <data name="Product code cannot exceed 100 characters." xml:space="preserve">
+    <value>يجب ألا يتجاوز رمز المنتج 100 حرف.</value>
+  </data>
+  <data name="Product code is required." xml:space="preserve">
+    <value>رمز المنتج مطلوب.</value>
+  </data>
+  <data name="Product content is too long." xml:space="preserve">
+    <value>محتوى المنتج طويل جدًا.</value>
+  </data>
+  <data name="Product name cannot exceed 250 characters." xml:space="preserve">
+    <value>يجب ألا يتجاوز اسم المنتج 250 حرفًا.</value>
+  </data>
+  <data name="Product name is required." xml:space="preserve">
+    <value>اسم المنتج مطلوب.</value>
+  </data>
+  <data name="ProductId must be a valid positive identifier." xml:space="preserve">
+    <value>يجب أن يكون معرف المنتج موجبًا وصالحًا.</value>
+  </data>
+  <data name="Provider name is too long." xml:space="preserve">
+    <value>اسم المزود طويل جدًا.</value>
+  </data>
+  <data name="Provider receipt is too long." xml:space="preserve">
+    <value>إيصال المزود طويل جدًا.</value>
+  </data>
+  <data name="PurchaseDate is required." xml:space="preserve">
+    <value>تاريخ الشراء مطلوب.</value>
+  </data>
+  <data name="Role not found." xml:space="preserve">
+    <value>لم يتم العثور على الدور.</value>
+  </data>
+  <data name="RoleId cannot be empty." xml:space="preserve">
+    <value>لا يمكن أن يكون معرف الدور فارغًا.</value>
+  </data>
+  <data name="SMS log has already completed." xml:space="preserve">
+    <value>اكتمل سجل الرسالة النصية بالفعل.</value>
+  </data>
+  <data name="SMS module is disabled." xml:space="preserve">
+    <value>وحدة الرسائل النصية معطلة.</value>
+  </data>
+  <data name="Sales factor percentage must be between -100% and 1000%." xml:space="preserve">
+    <value>يجب أن تكون نسبة معامل المبيعات بين ‎-100% و1000%.</value>
+  </data>
+  <data name="Shared feature does not exist." xml:space="preserve">
+    <value>الميزة المشتركة غير موجودة.</value>
+  </data>
+  <data name="Supply exactly one value matching the specification type." xml:space="preserve">
+    <value>قدم قيمة واحدة بالضبط مطابقة لنوع المواصفة.</value>
+  </data>
+  <data name="Switch to another active default language instead." xml:space="preserve">
+    <value>اختر لغة افتراضية نشطة أخرى أولًا.</value>
+  </data>
+  <data name="Template ID must be positive." xml:space="preserve">
+    <value>يجب أن يكون معرف القالب موجبًا.</value>
+  </data>
+  <data name="Template IDs and names must be valid." xml:space="preserve">
+    <value>يجب أن تكون معرفات القوالب وأسماؤها صالحة.</value>
+  </data>
+  <data name="The default language must remain active." xml:space="preserve">
+    <value>يجب أن تظل اللغة الافتراضية نشطة.</value>
+  </data>
+  <data name="The new default must be active." xml:space="preserve">
+    <value>يجب أن تكون اللغة الافتراضية الجديدة نشطة.</value>
+  </data>
+  <data name="The new password must be different from the current password." xml:space="preserve">
+    <value>يجب أن تختلف كلمة المرور الجديدة عن الحالية.</value>
+  </data>
+  <data name="Too many template mappings." xml:space="preserve">
+    <value>عدد تعيينات القوالب كبير جدًا.</value>
+  </data>
+  <data name="Translation is too long." xml:space="preserve">
+    <value>الترجمة طويلة جدًا.</value>
+  </data>
+  <data name="Unit is too long." xml:space="preserve">
+    <value>الوحدة طويلة جدًا.</value>
+  </data>
+  <data name="Unsupported SMS provider." xml:space="preserve">
+    <value>مزود الرسائل النصية غير مدعوم.</value>
+  </data>
+  <data name="User not found." xml:space="preserve">
+    <value>لم يتم العثور على المستخدم.</value>
+  </data>
+  <data name="UserId cannot be empty." xml:space="preserve">
+    <value>لا يمكن أن يكون معرف المستخدم فارغًا.</value>
+  </data>
+  <data name="Valid group ID is required." xml:space="preserve">
+    <value>يلزم معرف مجموعة صالح.</value>
+  </data>
+  <data name="VendorId must be a valid positive identifier." xml:space="preserve">
+    <value>يجب أن يكون معرف البائع موجبًا وصالحًا.</value>
+  </data>
+  <data name="A catalog record with this language, code or assignment already exists." xml:space="preserve">
+    <value>يوجد سجل كتالوج بهذه اللغة أو الرمز أو التعيين بالفعل.</value>
+  </data>
+  <data name="An active default catalog language is required; apply catalog migrations." xml:space="preserve">
+    <value>تلزم لغة افتراضية نشطة للكتالوج؛ طبّق ترحيلات الكتالوج.</value>
+  </data>
+  <data name="Catalog default language is missing." xml:space="preserve">
+    <value>لغة الكتالوج الافتراضية غير موجودة.</value>
+  </data>
+  <data name="Language does not exist." xml:space="preserve">
+    <value>اللغة غير موجودة.</value>
+  </data>
+  <data name="SMS module configuration is missing; apply SMS migrations." xml:space="preserve">
+    <value>تكوين وحدة الرسائل النصية مفقود؛ طبّق ترحيلات الرسائل.</value>
+  </data>
+  <data name="SMS provider configuration was not found." xml:space="preserve">
+    <value>لم يتم العثور على تكوين مزود الرسائل النصية.</value>
+  </data>
+  <data name="SMS provider is disabled." xml:space="preserve">
+    <value>مزود الرسائل النصية معطل.</value>
+  </data>
+  <data name="Specification assignment does not exist." xml:space="preserve">
+    <value>تعيين المواصفة غير موجود.</value>
+  </data>
+  <data name="Specification does not exist." xml:space="preserve">
+    <value>المواصفة غير موجودة.</value>
+  </data>
+  <data name="The catalog record was changed by another editor." xml:space="preserve">
+    <value>تم تغيير سجل الكتالوج بواسطة محرر آخر.</value>
+  </data>
+  <data name="The record changed or its row version is missing. Reload it before editing." xml:space="preserve">
+    <value>تغير السجل أو نسخة الصف مفقودة. أعد تحميله قبل التعديل.</value>
+  </data>
+  <data name="Unsupported SMS provider configuration." xml:space="preserve">
+    <value>تكوين مزود الرسائل النصية غير مدعوم.</value>
+  </data>
+  <data name="Identified record not found for owner" xml:space="preserve">
+    <value>لم يتم العثور على {0} مع {1} «{2}» لدى {3} «{4}».</value>
+  </data>
+  <data name="Identified record already exists for owner" xml:space="preserve">
+    <value>{0} مع {1} «{2}» موجود بالفعل لدى {3} «{4}».</value>
+  </data>
+  <data name="Accounting operation failed" xml:space="preserve"><value>فشلت عملية المحاسبة.</value></data>
+  <data name="Accounting provider is not configured." xml:space="preserve"><value>اتصال نظام المحاسبة غير مهيأ بعد.</value></data>
+  <data name="Brand ID must be positive." xml:space="preserve"><value>يجب أن يكون معرف العلامة التجارية موجبًا.</value></data>
+  <data name="Item mapping identifiers and conversion factor must be positive." xml:space="preserve"><value>يجب أن تكون معرفات الربط ومعامل التحويل موجبة.</value></data>
+  <data name="Local item was not found." xml:space="preserve"><value>لم يتم العثور على العنصر المحلي.</value></data>
+  <data name="Accounting item was not found." xml:space="preserve"><value>لم يتم العثور على عنصر المحاسبة.</value></data>
+  <data name="Accounting item belongs to another brand." xml:space="preserve"><value>عنصر المحاسبة يتبع علامة تجارية أخرى.</value></data>
+  <data name="Item unit conversion requires an approved mapping rule." xml:space="preserve"><value>يتطلب تحويل وحدة العنصر قاعدة ربط معتمدة.</value></data>
+  <data name="Local item is already mapped for this brand." xml:space="preserve"><value>العنصر المحلي مرتبط بهذه العلامة التجارية بالفعل.</value></data>
+  <data name="Accounting item is already mapped for this brand." xml:space="preserve"><value>عنصر المحاسبة مرتبط بهذه العلامة التجارية بالفعل.</value></data>
+  <data name="Active item mapping was not found." xml:space="preserve"><value>لم يتم العثور على ربط عنصر نشط.</value></data>
+  <data name="Invalid accounting item pagination." xml:space="preserve"><value>ترقيم صفحات عناصر المحاسبة غير صالح.</value></data>
+  <data name="Representative operation failed" xml:space="preserve"><value>فشلت عملية الممثل.</value></data>
+  <data name="A valid representative code is required." xml:space="preserve"><value>يلزم رمز ممثل صالح.</value></data>
+  <data name="Representative code already exists; match the existing representative explicitly." xml:space="preserve"><value>رمز الممثل موجود؛ طابق الممثل الحالي بشكل صريح.</value></data>
+  <data name="Local representative was not found." xml:space="preserve"><value>لم يتم العثور على الممثل المحلي.</value></data>
+  <data name="Representative belongs to another brand." xml:space="preserve"><value>الممثل يتبع علامة تجارية أخرى.</value></data>
+  <data name="Accounting representative is already matched." xml:space="preserve"><value>ممثل المحاسبة مطابق بالفعل.</value></data>
+  <data name="Local representative is already matched." xml:space="preserve"><value>الممثل المحلي مطابق بالفعل.</value></data>
+  <data name="Representative identifiers must be positive." xml:space="preserve"><value>يجب أن تكون معرفات الممثل موجبة.</value></data>
+  <data name="Accounting representative was not found." xml:space="preserve"><value>لم يتم العثور على ممثل المحاسبة.</value></data>
+  <data name="Accounting representative belongs to another brand." xml:space="preserve"><value>ممثل المحاسبة يتبع علامة تجارية أخرى.</value></data>
+  <data name="Accounting representative was absent from the latest complete sync." xml:space="preserve"><value>لم يظهر ممثل المحاسبة في آخر مزامنة كاملة.</value></data>
+  <data name="Representative code or accounting mapping already exists." xml:space="preserve"><value>رمز الممثل أو ربط المحاسبة موجود بالفعل.</value></data>
+  <data name="Representative accounting mapping already exists." xml:space="preserve"><value>ربط محاسبة الممثل موجود بالفعل.</value></data>
+  <data name="Brand was not found for accounting connection." xml:space="preserve"><value>لم يتم العثور على العلامة التجارية لاتصال المحاسبة.</value></data>
+  <data name="Use an environment secret reference, not an API key." xml:space="preserve"><value>استخدم مرجع سر بيئي بدلًا من مفتاح API.</value></data>
+  <data name="An HTTPS accounting base URL is required." xml:space="preserve"><value>يلزم عنوان HTTPS أساسي للمحاسبة.</value></data>
+  <data name="Pricing operation failed" xml:space="preserve"><value>فشلت عملية التسعير.</value></data>
+  <data name="Pricing update conflict" xml:space="preserve"><value>تعارض في تحديث التسعير.</value></data>
+  <data name="Product must belong to the selected brand." xml:space="preserve"><value>يجب أن ينتمي المنتج إلى العلامة التجارية المحددة.</value></data>
+  <data name="Factory price override is invalid." xml:space="preserve"><value>تعديل سعر المصنع غير صالح.</value></data>
+  <data name="Price override version is invalid." xml:space="preserve"><value>نسخة تعديل السعر غير صالحة.</value></data>
+  <data name="Price override changed; reload before editing." xml:space="preserve"><value>تغير تعديل السعر؛ أعد التحميل قبل التحرير.</value></data>
+  <data name="Local item details are invalid." xml:space="preserve"><value>تفاصيل العنصر المحلي غير صالحة.</value></data>
+  <data name="Invalid local item pagination." xml:space="preserve"><value>ترقيم صفحات العناصر المحلية غير صالح.</value></data>
+  <data name="Product composition requires distinct items with valid quantities." xml:space="preserve"><value>يتطلب تكوين المنتج عناصر مختلفة بكميات صالحة.</value></data>
+  <data name="Local item code already exists." xml:space="preserve"><value>رمز العنصر المحلي موجود بالفعل.</value></data>
+  <data name="Product composition contains an unknown local item." xml:space="preserve"><value>يحتوي تكوين المنتج على عنصر محلي غير معروف.</value></data>
+</root>
