@@ -46,4 +46,13 @@
   <ItemGroup>
     <ProjectReference Include="..\..\BuildingBlocks\Kahrad.Pricing.BuildingBlocks.Infrastructure\Kahrad.Pricing.BuildingBlocks.Infrastructure.csproj" />
   </ItemGroup>
+  <!-- These assemblies are loaded by name from this host's Serilog configuration. -->
+  <ItemGroup>
+    <PackageReference Include="Serilog.Sinks.Console" />
+    <PackageReference Include="Serilog.Sinks.Seq" />
+    <PackageReference Include="Serilog.Expressions" />
+    <PackageReference Include="Serilog.Enrichers.Environment" />
+    <PackageReference Include="Serilog.Enrichers.Process" />
+    <PackageReference Include="Serilog.Enrichers.Thread" />
+  </ItemGroup>
 </Project>
