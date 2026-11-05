@@ -19,6 +19,9 @@ public class SmsMessageDto
     public DateTime? SentAtUtc { get; init; }
     public string? ProviderMessageId { get; init; }
     public decimal? Cost { get; init; }
+    public long ProviderConfigurationId { get; init; }
+    public string Provider { get; init; } = null!;
+    public DateTime? NextAttemptAtUtc { get; init; }
     public int RetryCount { get; init; }
     public string? FailureReason { get; init; }
     public DateTime CreatedAtUtc { get; init; }

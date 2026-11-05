@@ -40,7 +40,8 @@ public sealed class SmsMessageRepository(SmsDbContext context) : ISmsMessageRepo
         CancellationToken cancellationToken = default)
     {
         return await context.Messages
-            .Where(x => x.Status == SmsStatus.Pending && x.SendDateUtc <= utcNow && utcNow <= x.ExpiresAtUtc)
+            .Where(x => context.ProviderConfigurations.Any(p => p.Id == x.ProviderConfigurationId && p.IsEnabled))
+            .Where(x => x.Status == SmsStatus.Pending && x.SendDateUtc <= utcNow && (!x.NextAttemptAtUtc.HasValue || x.NextAttemptAtUtc <= utcNow) && utcNow <= x.ExpiresAtUtc)
             .OrderBy(x => x.SendDateUtc)
             .ThenBy(x => x.Id)
             .Take(batchSize)
@@ -89,6 +90,29 @@ public sealed class SmsMessageRepository(SmsDbContext context) : ISmsMessageRepo
     {
         context.Messages.UpdateRange(messages);
         await context.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task StartAttemptAsync(SmsMessage message, SmsLog log, CancellationToken cancellationToken = default)
+    {
+        context.Messages.Update(message);
+        context.Logs.Add(log);
+        // EF SaveChanges is transactional: the claim and started log either both commit or neither does.
+        await context.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task CompleteAttemptAsync(SmsMessage message, SmsLog log, CancellationToken cancellationToken = default)
+    {
+        context.Messages.Update(message);
+        context.Logs.Update(log);
+        await context.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task<IReadOnlyCollection<SmsLog>> GetLogsAsync(long messageId, int page, int pageSize, CancellationToken cancellationToken = default)
+    {
+        if (page < 1 || pageSize is < 1 or > 100) throw new ArgumentOutOfRangeException(nameof(pageSize));
+        return await context.Logs.AsNoTracking().Where(x => x.SmsMessageId == messageId)
+            .OrderBy(x => x.AttemptNumber).ThenBy(x => x.Id)
+            .Skip(checked((page - 1) * pageSize)).Take(pageSize).ToListAsync(cancellationToken);
     }
 
     public IQueryable<SmsMessage> GetQueryable()

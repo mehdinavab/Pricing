@@ -11,6 +11,9 @@ public sealed class SmsMessageConfiguration : IEntityTypeConfiguration<SmsMessag
         builder.ToTable("Messages", "sms");
 
         builder.HasKey(x => x.Id);
+        builder.HasIndex(x => x.IsDeleted);
+        builder.HasOne<SmsProviderConfiguration>().WithMany().HasForeignKey(x => x.ProviderConfigurationId)
+            .OnDelete(DeleteBehavior.Restrict);
 
         builder.Property(x => x.PublicId)
             .IsRequired();
@@ -71,8 +74,9 @@ public sealed class SmsMessageConfiguration : IEntityTypeConfiguration<SmsMessag
         builder.Property(x => x.RetryCount)
             .HasDefaultValue(0);
 
-        builder.Property(x => x.MaxRetries)
-            .HasDefaultValue(3);
+        builder.Property(x => x.Provider).HasMaxLength(30).HasDefaultValue("SmsIr");
+        builder.Property(x => x.NextAttemptAtUtc);
+        builder.HasIndex(x => new { x.Status, x.NextAttemptAtUtc, x.SendDateUtc });
 
         builder.Property(x => x.FailureReason)
             .HasMaxLength(2000);

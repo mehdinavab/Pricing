@@ -1,62 +1,61 @@
 using Kahrad.Pricing.BuildingBlocks.Domain.Common;
 using Kahrad.Pricing.Sms.Domain.Enums;
-using Microsoft.EntityFrameworkCore;
-using Sieve.Attributes;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Kahrad.Pricing.Sms.Domain.Entities;
 
-[Table("Messages", Schema = "sms")]
-[Index(nameof(PublicId), IsUnique = true)]
-[Index(nameof(BatchId))]
-[Index(nameof(Status))]
-[Index(nameof(Type))]
-[Index(nameof(SendDateUtc))]
-[Index(nameof(ExpiresAtUtc))]
-[Index(nameof(PhoneNumber))]
-[Index(nameof(IsDeleted))]
+
+
+
+
+
+
+
+
 public sealed class SmsMessage : BaseEntity
 {
-    [Sieve(CanFilter = true, CanSort = true)]
+
     public Guid BatchId { get; private set; }
 
-    [Sieve(CanFilter = true, CanSort = true)]
     public string PhoneNumber { get; private set; } = null!;
 
     public string? MessageBody { get; private set; }
 
-    [Sieve(CanFilter = true, CanSort = true)]
     public SmsType Type { get; private set; }
 
-    [Sieve(CanFilter = true, CanSort = true)]
     public SmsStatus Status { get; private set; } = SmsStatus.Pending;
 
-    [Sieve(CanFilter = true, CanSort = true)]
     public int? TemplateId { get; private set; }
 
     public string? TemplateParameters { get; private set; }
 
-    [Sieve(CanFilter = true, CanSort = true)]
     public string? LineNumber { get; private set; }
 
-    [Sieve(CanFilter = true, CanSort = true)]
     public DateTime SendDateUtc { get; private set; }
 
-    [Sieve(CanFilter = true, CanSort = true)]
     public DateTime ExpiresAtUtc { get; private set; }
 
-    [Sieve(CanFilter = true, CanSort = true)]
     public DateTime? SentAtUtc { get; private set; }
 
-    [Sieve(CanFilter = true, CanSort = true)]
     public string? ProviderMessageId { get; private set; }
 
     public decimal? Cost { get; private set; }
 
-    [Sieve(CanFilter = true, CanSort = true)]
     public int RetryCount { get; private set; }
 
-    public int MaxRetries { get; private set; } = 3;
+    public DateTime? NextAttemptAtUtc { get; private set; }
+
+    public long ProviderConfigurationId { get; private set; }
+
+    public string Provider { get; private set; } = "SmsIr";
+
+    public void AssignProvider(SmsProviderConfiguration configuration)
+    {
+        ArgumentNullException.ThrowIfNull(configuration);
+        if (configuration.Id <= 0 || !configuration.IsEnabled)
+            throw new InvalidOperationException("An enabled persisted SMS provider configuration is required.");
+        Provider = configuration.Provider;
+        ProviderConfigurationId = configuration.Id;
+    }
 
     public string? FailureReason { get; private set; }
 
@@ -72,8 +71,7 @@ public sealed class SmsMessage : BaseEntity
         DateTime sendDateUtc,
         int? templateId = null,
         string? templateParameters = null,
-        string? lineNumber = null,
-        int maxRetries = 3)
+        string? lineNumber = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(phoneNumber);
 
@@ -87,7 +85,6 @@ public sealed class SmsMessage : BaseEntity
         SendDateUtc = sendDateUtc;
         ExpiresAtUtc = sendDateUtc.AddDays(1);
         Status = SmsStatus.Pending;
-        MaxRetries = maxRetries;
         RetryCount = 0;
     }
 
@@ -175,7 +172,7 @@ public sealed class SmsMessage : BaseEntity
 
     public bool IsReadyToSend(DateTime utcNow)
     {
-        return Status == SmsStatus.Pending && utcNow >= SendDateUtc && utcNow <= ExpiresAtUtc;
+        return Status == SmsStatus.Pending && utcNow >= SendDateUtc && (!NextAttemptAtUtc.HasValue || utcNow >= NextAttemptAtUtc) && utcNow <= ExpiresAtUtc;
     }
 
     public void MarkAsSending(DateTime utcNow)
@@ -194,14 +191,15 @@ public sealed class SmsMessage : BaseEntity
         SetUpdated(null, utcNow);
     }
 
-    public void MarkAsFailed(string reason, bool canRetry, DateTime utcNow)
+    public void MarkAsFailed(string reason, bool canRetry, DateTime utcNow, int maxAttempts, TimeSpan retryDelay)
     {
         RetryCount++;
         FailureReason = reason;
 
-        if (canRetry && RetryCount < MaxRetries && utcNow <= ExpiresAtUtc)
+        if (canRetry && RetryCount < maxAttempts && utcNow.Add(retryDelay) <= ExpiresAtUtc)
         {
-            Status = SmsStatus.Pending; // Available for next retry attempt
+            Status = SmsStatus.Pending;
+            NextAttemptAtUtc = utcNow.Add(retryDelay);
         }
         else
         {

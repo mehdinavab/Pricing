@@ -11,6 +11,10 @@ public sealed class SmsDbContext : DbContext
 
     public DbSet<SmsMessage> Messages => Set<SmsMessage>();
 
+    public DbSet<SmsLog> Logs => Set<SmsLog>();
+    public DbSet<SmsProviderConfiguration> ProviderConfigurations => Set<SmsProviderConfiguration>();
+    public DbSet<SmsModuleConfiguration> ModuleConfigurations => Set<SmsModuleConfiguration>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

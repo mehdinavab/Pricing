@@ -41,5 +41,9 @@ public interface ISmsMessageRepository
         IEnumerable<SmsMessage> messages,
         CancellationToken cancellationToken = default);
 
+    Task StartAttemptAsync(SmsMessage message, SmsLog log, CancellationToken cancellationToken = default);
+    Task CompleteAttemptAsync(SmsMessage message, SmsLog log, CancellationToken cancellationToken = default);
+    Task<IReadOnlyCollection<SmsLog>> GetLogsAsync(long messageId, int page, int pageSize, CancellationToken cancellationToken = default);
+
     IQueryable<SmsMessage> GetQueryable();
 }

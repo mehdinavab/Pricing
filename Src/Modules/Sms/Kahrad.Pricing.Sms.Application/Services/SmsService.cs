@@ -13,13 +13,15 @@ namespace Kahrad.Pricing.Sms.Application.Services;
 public sealed class SmsService(
     ISmsMessageRepository smsMessageRepository,
     IMapper mapper,
-    ISieveProcessor sieveProcessor) : ISmsService
+    ISieveProcessor sieveProcessor,
+    ISmsConfigurationRepository configurations) : ISmsService
 {
     public async Task<SmsBatchResponse> SendBulkAsync(
         SendBulkSmsRequest request,
         Guid? currentUserId = null,
         CancellationToken cancellationToken = default)
     {
+        var provider = await GetActiveProviderAsync(cancellationToken);
         var batchId = Guid.NewGuid();
         var utcNow = DateTime.UtcNow;
         var sendDateUtc = request.SendDateUtc.HasValue && request.SendDateUtc.Value > utcNow
@@ -34,6 +36,7 @@ public sealed class SmsService(
                 request.Message,
                 sendDateUtc,
                 request.LineNumber);
+            msg.AssignProvider(provider);
             msg.SetCreated(currentUserId, utcNow);
             return msg;
         }).ToList();
@@ -54,6 +57,7 @@ public sealed class SmsService(
         Guid? currentUserId = null,
         CancellationToken cancellationToken = default)
     {
+        var provider = await GetActiveProviderAsync(cancellationToken);
         var batchId = Guid.NewGuid();
         var utcNow = DateTime.UtcNow;
         var sendDateUtc = request.SendDateUtc.HasValue && request.SendDateUtc.Value > utcNow
@@ -68,6 +72,7 @@ public sealed class SmsService(
                 item.Message,
                 sendDateUtc,
                 request.LineNumber);
+            msg.AssignProvider(provider);
             msg.SetCreated(currentUserId, utcNow);
             return msg;
         }).ToList();
@@ -88,6 +93,7 @@ public sealed class SmsService(
         Guid? currentUserId = null,
         CancellationToken cancellationToken = default)
     {
+        var provider = await GetActiveProviderAsync(cancellationToken);
         var batchId = Guid.NewGuid();
         var utcNow = DateTime.UtcNow;
         var sendDateUtc = request.SendDateUtc.HasValue && request.SendDateUtc.Value > utcNow
@@ -106,6 +112,7 @@ public sealed class SmsService(
             sendDateUtc,
             request.LineNumber);
 
+        message.AssignProvider(provider);
         message.SetCreated(currentUserId, utcNow);
 
         await smsMessageRepository.AddAsync(message, cancellationToken);
@@ -124,10 +131,11 @@ public sealed class SmsService(
         Guid? currentUserId = null,
         CancellationToken cancellationToken = default)
     {
+        var provider = await GetActiveProviderAsync(cancellationToken);
         var batchId = Guid.NewGuid();
         var utcNow = DateTime.UtcNow;
 
-        var parameters = request.Parameters ?? new Dictionary<string, string>();
+        var parameters = request.Parameters is null ? new Dictionary<string, string>() : new Dictionary<string, string>(request.Parameters);
         if (!parameters.ContainsKey("Code"))
         {
             parameters["Code"] = request.Code;
@@ -144,6 +152,7 @@ public sealed class SmsService(
             parametersJson,
             request.LineNumber);
 
+        message.AssignProvider(provider);
         message.SetCreated(currentUserId, utcNow);
 
         await smsMessageRepository.AddAsync(message, cancellationToken);
@@ -213,6 +222,25 @@ public sealed class SmsService(
             filter.Page ?? 1,
             filter.PageSize ?? 20,
             totalCount);
+    }
+
+    public async Task<IReadOnlyCollection<SmsLogDto>> GetLogsAsync(long messageId, int page = 1, int pageSize = 20, CancellationToken cancellationToken = default)
+    {
+        if (page < 1 || pageSize is < 1 or > 100 || (long)(page - 1) * pageSize > int.MaxValue)
+            throw new Kahrad.Pricing.Sms.Application.Exceptions.SmsOperationException("Invalid SMS log pagination.");
+        if (await smsMessageRepository.GetByIdAsync(messageId, cancellationToken) is null)
+            throw new Kahrad.Pricing.Sms.Application.Exceptions.SmsNotFoundException(messageId);
+        var logs = await smsMessageRepository.GetLogsAsync(messageId, page, pageSize, cancellationToken);
+        return mapper.Map<List<SmsLogDto>>(logs);
+    }
+
+    private async Task<SmsProviderConfiguration> GetActiveProviderAsync(CancellationToken cancellationToken)
+    {
+        var module = await configurations.GetModuleAsync(cancellationToken);
+        if (!module.IsEnabled) throw new Kahrad.Pricing.Sms.Application.Exceptions.SmsOperationException("SMS module is disabled.");
+        var provider = await configurations.GetProviderAsync(module.ActiveProviderConfigurationId, cancellationToken);
+        if (!provider.IsEnabled) throw new Kahrad.Pricing.Sms.Application.Exceptions.SmsOperationException("Active SMS provider is disabled.");
+        return provider;
     }
 
     private static void EnsureStableSort(SmsQueryDto filter)

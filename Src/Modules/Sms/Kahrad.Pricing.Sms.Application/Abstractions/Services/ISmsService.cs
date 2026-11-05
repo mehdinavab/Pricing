@@ -25,6 +25,8 @@ public interface ISmsService
         Guid? currentUserId = null,
         CancellationToken cancellationToken = default);
 
+    Task<IReadOnlyCollection<SmsLogDto>> GetLogsAsync(long messageId, int page = 1, int pageSize = 20, CancellationToken cancellationToken = default);
+
     Task<SmsMessageDto?> GetByIdAsync(
         long id,
         CancellationToken cancellationToken = default);

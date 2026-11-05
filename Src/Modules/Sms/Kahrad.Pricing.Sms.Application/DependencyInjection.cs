@@ -17,6 +17,7 @@ public static class DependencyInjection
         services.AddAutoMapper(cfg => { }, assembly);
 
         services.AddScoped<ISmsService, SmsService>();
+        services.AddScoped<ISmsOutboxProcessor, SmsOutboxProcessor>();
 
         return services;
     }

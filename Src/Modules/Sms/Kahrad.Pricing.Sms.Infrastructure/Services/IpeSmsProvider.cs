@@ -21,6 +21,7 @@ public sealed class IpeSmsProvider(
         string? lineNumber = null,
         CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         var numbers = phoneNumbers.ToArray();
         if (numbers.Length == 0)
             return SmsProviderResult.Failure("No phone numbers provided.");
@@ -29,14 +30,13 @@ public sealed class IpeSmsProvider(
 
         if (string.IsNullOrWhiteSpace(_options.ApiKey))
         {
-            logger.LogWarning("SMS.ir API key is not configured. Simulating bulk send to {Count} numbers.", numbers.Length);
-            return SmsProviderResult.Success($"simulated-bulk-{Guid.NewGuid()}", 0);
+            return SmsProviderResult.Failure("SMS.ir API key is not configured.");
         }
 
         try
         {
             var client = new SmsIr(_options.ApiKey);
-            var response = await client.BulkSendAsync(line, message, numbers);
+            var response = await client.BulkSendAsync(line, message, numbers).WaitAsync(TimeSpan.FromSeconds(_options.TimeoutSeconds), cancellationToken);
 
             if (response?.Data != null)
             {
@@ -45,17 +45,18 @@ public sealed class IpeSmsProvider(
                     (decimal?)response.Data.Cost);
             }
 
-            return SmsProviderResult.Failure(response?.Message ?? "Bulk send failed on provider.");
+            return SmsProviderResult.Failure("SMS.ir returned no receipt; investigate delivery before resending.", outcomeUnknown: true);
         }
-        catch (SmsIrException ex)
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested) { throw; }
+        catch (SmsIrException)
         {
-            logger.LogError(ex, "SMS.ir bulk send failed with status {Status}: {Message}", ex.Status, ex.Message);
-            return SmsProviderResult.Failure(ex.Message);
+            logger.LogWarning("SMS.ir request failed; delivery requires investigation.");
+            return SmsProviderResult.Failure("SMS.ir request failed; delivery outcome may be unknown.", outcomeUnknown: true);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            logger.LogError(ex, "Unexpected error occurred during SMS.ir bulk send.");
-            return SmsProviderResult.Failure(ex.Message);
+            logger.LogWarning("SMS.ir request failed; delivery requires investigation.");
+            return SmsProviderResult.Failure("SMS.ir request failed; delivery outcome may be unknown.", outcomeUnknown: true);
         }
     }
 
@@ -64,6 +65,7 @@ public sealed class IpeSmsProvider(
         string? lineNumber = null,
         CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         var itemList = items.ToList();
         if (itemList.Count == 0)
             return SmsProviderResult.Failure("No items provided.");
@@ -74,14 +76,13 @@ public sealed class IpeSmsProvider(
 
         if (string.IsNullOrWhiteSpace(_options.ApiKey))
         {
-            logger.LogWarning("SMS.ir API key is not configured. Simulating peer-to-peer send to {Count} recipients.", numbers.Length);
-            return SmsProviderResult.Success($"simulated-p2p-{Guid.NewGuid()}", 0);
+            return SmsProviderResult.Failure("SMS.ir API key is not configured.");
         }
 
         try
         {
             var client = new SmsIr(_options.ApiKey);
-            var response = await client.LikeToLikeSendAsync(line, numbers, messages);
+            var response = await client.LikeToLikeSendAsync(line, numbers, messages).WaitAsync(TimeSpan.FromSeconds(_options.TimeoutSeconds), cancellationToken);
 
             if (response?.Data != null)
             {
@@ -90,17 +91,18 @@ public sealed class IpeSmsProvider(
                     (decimal?)response.Data.Cost);
             }
 
-            return SmsProviderResult.Failure(response?.Message ?? "Peer-to-peer send failed on provider.");
+            return SmsProviderResult.Failure("SMS.ir returned no receipt; investigate delivery before resending.", outcomeUnknown: true);
         }
-        catch (SmsIrException ex)
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested) { throw; }
+        catch (SmsIrException)
         {
-            logger.LogError(ex, "SMS.ir like-to-like send failed with status {Status}: {Message}", ex.Status, ex.Message);
-            return SmsProviderResult.Failure(ex.Message);
+            logger.LogWarning("SMS.ir request failed; delivery requires investigation.");
+            return SmsProviderResult.Failure("SMS.ir request failed; delivery outcome may be unknown.", outcomeUnknown: true);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            logger.LogError(ex, "Unexpected error occurred during SMS.ir like-to-like send.");
-            return SmsProviderResult.Failure(ex.Message);
+            logger.LogWarning("SMS.ir request failed; delivery requires investigation.");
+            return SmsProviderResult.Failure("SMS.ir request failed; delivery outcome may be unknown.", outcomeUnknown: true);
         }
     }
 
@@ -111,20 +113,17 @@ public sealed class IpeSmsProvider(
         string? lineNumber = null,
         CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         if (string.IsNullOrWhiteSpace(_options.ApiKey))
         {
-            logger.LogWarning(
-                "SMS.ir API key is not configured. Simulating template send (TemplateId: {TemplateId}) to {PhoneNumber}.",
-                templateId,
-                phoneNumber);
-            return SmsProviderResult.Success($"simulated-template-{Guid.NewGuid()}", 0);
+            return SmsProviderResult.Failure("SMS.ir API key is not configured.");
         }
 
         try
         {
             var client = new SmsIr(_options.ApiKey);
             var templateParams = parameters.Select(kv => new VerifySendParameter(kv.Key, kv.Value)).ToArray();
-            var response = await client.VerifySendAsync(phoneNumber, templateId, templateParams);
+            var response = await client.VerifySendAsync(phoneNumber, templateId, templateParams).WaitAsync(TimeSpan.FromSeconds(_options.TimeoutSeconds), cancellationToken);
 
             if (response?.Data != null)
             {
@@ -133,17 +132,18 @@ public sealed class IpeSmsProvider(
                     (decimal?)response.Data.Cost);
             }
 
-            return SmsProviderResult.Failure(response?.Message ?? "Template send failed on provider.");
+            return SmsProviderResult.Failure("SMS.ir returned no receipt; investigate delivery before resending.", outcomeUnknown: true);
         }
-        catch (SmsIrException ex)
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested) { throw; }
+        catch (SmsIrException)
         {
-            logger.LogError(ex, "SMS.ir verify send failed with status {Status}: {Message}", ex.Status, ex.Message);
-            return SmsProviderResult.Failure(ex.Message);
+            logger.LogWarning("SMS.ir request failed; delivery requires investigation.");
+            return SmsProviderResult.Failure("SMS.ir request failed; delivery outcome may be unknown.", outcomeUnknown: true);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            logger.LogError(ex, "Unexpected error occurred during SMS.ir verify send.");
-            return SmsProviderResult.Failure(ex.Message);
+            logger.LogWarning("SMS.ir request failed; delivery requires investigation.");
+            return SmsProviderResult.Failure("SMS.ir request failed; delivery outcome may be unknown.", outcomeUnknown: true);
         }
     }
 

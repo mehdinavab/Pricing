@@ -9,5 +9,6 @@ public sealed class SmsMappingProfile : Profile
     public SmsMappingProfile()
     {
         CreateMap<SmsMessage, SmsMessageDto>();
+        CreateMap<SmsLog, SmsLogDto>();
     }
 }

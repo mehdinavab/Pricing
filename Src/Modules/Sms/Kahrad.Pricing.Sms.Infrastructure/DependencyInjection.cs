@@ -1,7 +1,5 @@
 using Kahrad.Pricing.Sms.Application.Abstractions.Persistence;
 using Kahrad.Pricing.Sms.Application.Abstractions.Services;
-using Kahrad.Pricing.Sms.Infrastructure.Background;
-using Kahrad.Pricing.Sms.Infrastructure.Options;
 using Kahrad.Pricing.Sms.Infrastructure.Persistence;
 using Kahrad.Pricing.Sms.Infrastructure.Persistence.Repositories;
 using Kahrad.Pricing.Sms.Infrastructure.Services;
@@ -40,22 +38,17 @@ public static class DependencyInjection
             options.ThrowExceptions = true;
         });
 
-        var smsSection = configuration.GetSection(SmsIrOptions.SectionName);
-        services.Configure<SmsIrOptions>(options =>
-        {
-            options.ApiKey = smsSection["ApiKey"];
-            options.LineNumber = smsSection["LineNumber"];
-        });
-
         services.AddScoped<SmsSieveProcessor>();
         services.TryAddScoped<ISieveProcessor, SmsSieveProcessor>();
 
         services.AddScoped<ISmsMessageRepository, SmsMessageRepository>();
-        services.AddScoped<ISmsProvider, IpeSmsProvider>();
-        services.AddScoped<ISmsOutboxProcessor, SmsOutboxProcessor>();
+        services.AddScoped<ISmsConfigurationRepository, SmsConfigurationRepository>();
+        services.AddSingleton(_ => new KavenegarTransport(new HttpClient(new SocketsHttpHandler
+        {
+            PooledConnectionLifetime = TimeSpan.FromMinutes(5)
+        }) { Timeout = Timeout.InfiniteTimeSpan }));
+        services.AddScoped<ISmsProviderResolver, SmsProviderResolver>();
 
-        // Background worker checking for unsent/expired SMS every 2 minutes
-        services.AddHostedService<SmsBackgroundWorker>();
 
         return services;
     }
