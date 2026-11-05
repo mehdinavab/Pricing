@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Kahrad.Pricing.Representatives.Domain\Kahrad.Pricing.Representatives.Domain.csproj" />
+    <ProjectReference Include="..\..\AccountingIntegration\Kahrad.Pricing.AccountingIntegration.Application\Kahrad.Pricing.AccountingIntegration.Application.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Kahrad.Pricing.BuildingBlocks.Application\Kahrad.Pricing.BuildingBlocks.Application.csproj" />
   </ItemGroup>
 
