@@ -10,6 +10,8 @@
     <PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio"><PrivateAssets>all</PrivateAssets></PackageReference>
     <ProjectReference Include="../../../Src/Modules/Pricing/Kahrad.Pricing.Pricing.Engine/Kahrad.Pricing.Pricing.Engine.csproj" />
+    <ProjectReference Include="../../../Src/Modules/Pricing/Kahrad.Pricing.Pricing.Application/Kahrad.Pricing.Pricing.Application.csproj" />
+    <ProjectReference Include="../../../Src/Modules/Sales/Kahrad.Pricing.Sales.Domain/Kahrad.Pricing.Sales.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
