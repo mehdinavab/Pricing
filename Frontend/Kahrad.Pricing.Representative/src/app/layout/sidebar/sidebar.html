@@ -1,0 +1,52 @@
+<aside id="primary-navigation" class="sidebar" [class.open]="isOpen()">
+  <div class="sidebar-header">
+    <div class="brand-mark" aria-hidden="true">K</div>
+    <div class="brand-copy">
+      <strong>{{ i18n.translate('appShortName') }}</strong>
+      <span>{{ i18n.translate('loginEyebrow') }}</span>
+    </div>
+    <button
+      class="close-button"
+      type="button"
+      [attr.aria-label]="i18n.translate('closeMenu')"
+      (click)="close()"
+    >
+      ×
+    </button>
+  </div>
+
+  <nav [attr.aria-label]="i18n.translate('navigationLabel')">
+    @for (item of navigation; track item.route) {
+      <a
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="close()"
+      >
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M3 13h8V3H3v10Zm0 8h8v-6H3v6Zm10 0h8V11h-8v10Zm0-18v6h8V3h-8Z" />
+        </svg>
+        <span>{{ i18n.translate(item.label) }}</span>
+      </a>
+    }
+  </nav>
+
+  <div class="sidebar-footer">
+    <app-language-switcher />
+    <div class="user-card">
+      <div class="avatar" aria-hidden="true">
+        {{ authentication.currentUser()?.displayName?.slice(0, 1)?.toUpperCase() }}
+      </div>
+      <div>
+        <span>{{ i18n.translate('signedInAs') }}</span>
+        <strong>{{ authentication.currentUser()?.displayName }}</strong>
+      </div>
+    </div>
+    <button class="logout-button" type="button" (click)="logout()">
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path d="M10 17v-2h5V9h-5V7l5-4 5 4v2h-3v6h3v2l-5 4-5-4ZM4 3h7v2H6v14h5v2H4V3Z" />
+      </svg>
+      {{ i18n.translate('logout') }}
+    </button>
+  </div>
+</aside>

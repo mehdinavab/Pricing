@@ -1,0 +1,26 @@
+<app-sidebar [isOpen]="menuOpen()" (closeRequested)="menuOpen.set(false)" />
+
+@if (menuOpen()) {
+  <button
+    class="backdrop"
+    type="button"
+    [attr.aria-label]="i18n.translate('closeMenu')"
+    (click)="menuOpen.set(false)"
+  ></button>
+}
+
+<div class="content-shell">
+  <header class="mobile-header">
+    <button
+      type="button"
+      [attr.aria-label]="i18n.translate('openMenu')"
+      aria-controls="primary-navigation"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="menuOpen.set(true)"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <strong>{{ i18n.translate('appShortName') }}</strong>
+  </header>
+  <router-outlet />
+</div>

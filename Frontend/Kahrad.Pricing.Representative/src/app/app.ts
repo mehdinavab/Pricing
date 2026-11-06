@@ -1,12 +1,9 @@
-import { Component, inject } from '@angular/core';
-import { LocalizationService } from './localization/localization.service';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: false,
-  styleUrl: './app.scss',
-  templateUrl: './app.html',
+  imports: [RouterOutlet],
+  template: '<router-outlet />',
 })
-export class App {
-  protected readonly i18n = inject(LocalizationService);
-}
+export class App {}

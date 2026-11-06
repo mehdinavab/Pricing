@@ -16,7 +16,25 @@
 
 :root {
   --app-font: Inter, 'Segoe UI', Arial, sans-serif;
+  --primary: #157a7d;
+  --primary-strong: #0f6164;
+  --primary-soft: #e4f4f3;
+  --focus: rgb(21 122 125 / 28%);
+  --surface: #fff;
+  --surface-muted: #f7f8fb;
+  --page-background: #f5f7fb;
+  --text: #162033;
+  --text-muted: #526078;
+  --text-subtle: #69758a;
+  --border: #dfe4ee;
+  --border-strong: #a9b3c4;
+  --danger: #b42335;
+  --sidebar-hidden-translation: -100%;
   color-scheme: light;
+}
+
+:root:dir(rtl) {
+  --sidebar-hidden-translation: 100%;
 }
 
 :root:lang(fa),
@@ -46,5 +64,11 @@ textarea {
 
 body {
   min-width: 20rem;
-  background: #f5f7fb;
+  background: var(--page-background);
+  color: var(--text);
+}
+
+app-root {
+  display: block;
+  min-height: 100dvh;
 }

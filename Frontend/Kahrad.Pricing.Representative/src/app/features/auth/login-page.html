@@ -1,0 +1,72 @@
+<main class="login-page">
+  <section class="brand-panel" aria-hidden="true">
+    <div class="brand-mark">K</div>
+    <div>
+      <span>{{ i18n.translate('loginEyebrow') }}</span>
+      <strong>{{ i18n.translate('appTitle') }}</strong>
+    </div>
+    <div class="brand-copy">
+      <p>{{ i18n.translate('dashboardTitle') }}</p>
+      <span>{{ i18n.translate('dashboardDescription') }}</span>
+    </div>
+  </section>
+
+  <section class="form-panel">
+    <div class="form-wrap">
+      <div class="form-toolbar">
+        <div class="mobile-brand" aria-hidden="true">K</div>
+        <app-language-switcher />
+      </div>
+
+      <header>
+        <p class="eyebrow">{{ i18n.translate('loginEyebrow') }}</p>
+        <h1>{{ i18n.translate('loginTitle') }}</h1>
+        <p>{{ i18n.translate('loginDescription') }}</p>
+      </header>
+
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <label for="username">{{ i18n.translate('usernameLabel') }}</label>
+        <input
+          id="username"
+          type="text"
+          formControlName="username"
+          autocomplete="username"
+          [placeholder]="i18n.translate('usernamePlaceholder')"
+          [attr.aria-invalid]="form.controls.username.invalid && form.controls.username.touched"
+          aria-describedby="username-error"
+        />
+        <div id="username-error" class="field-error" aria-live="polite">
+          @if (form.controls.username.invalid && form.controls.username.touched) {
+            {{ i18n.translate('usernameRequired') }}
+          }
+        </div>
+
+        <label for="password">{{ i18n.translate('passwordLabel') }}</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          autocomplete="current-password"
+          [placeholder]="i18n.translate('passwordPlaceholder')"
+          [attr.aria-invalid]="form.controls.password.invalid && form.controls.password.touched"
+          aria-describedby="password-error"
+        />
+        <div id="password-error" class="field-error" aria-live="polite">
+          @if (form.controls.password.invalid && form.controls.password.touched) {
+            {{ i18n.translate('passwordRequired') }}
+          }
+        </div>
+
+        @if (submitFailed()) {
+          <p class="submit-error" role="alert">{{ i18n.translate('loginError') }}</p>
+        }
+
+        <button class="submit-button" type="submit" [disabled]="isSubmitting()">
+          {{ i18n.translate(isSubmitting() ? 'signingIn' : 'signIn') }}
+        </button>
+      </form>
+
+      <p class="demo-notice">{{ i18n.translate('demoNotice') }}</p>
+    </div>
+  </section>
+</main>
