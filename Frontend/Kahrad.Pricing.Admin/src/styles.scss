@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Iran Sans';
+  src: url('/Fonts/IRANSans/IRANSans-web.woff') format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Iran Sans';
+  src: url('/Fonts/IRANSans/IRANSansWeb(FaNum)_Medium.ttf') format('truetype');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500 700;
+}
+
+:root {
+  --app-font: Inter, 'Segoe UI', Arial, sans-serif;
+  color-scheme: light;
+}
+
+:root:lang(fa),
+:root:lang(ar) {
+  --app-font: 'Iran Sans', Tahoma, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--app-font);
+}
+
+body {
+  min-width: 20rem;
+  background: #f5f7fb;
+}

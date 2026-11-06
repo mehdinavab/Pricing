@@ -1,0 +1,155 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+}
+
+.app-shell {
+  min-height: 100dvh;
+  background:
+    radial-gradient(circle at 10% 0%, rgb(76 95 255 / 14%), transparent 32rem),
+    #f5f7fb;
+  color: #162033;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.25rem clamp(1rem, 4vw, 4rem);
+  border-block-end: 1px solid #dfe4ee;
+  background: rgb(255 255 255 / 88%);
+  backdrop-filter: blur(12px);
+}
+
+.brand-copy {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 0.3rem;
+  color: #53627a;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-block-start: 0;
+}
+
+h1 {
+  margin-block-end: 0;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+}
+
+.language-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border: 1px solid #d9dfeb;
+  border-radius: 0.85rem;
+  background: #f7f8fb;
+}
+
+.language-switcher button {
+  min-height: 2.35rem;
+  padding-inline: 0.85rem;
+  border: 0;
+  border-radius: 0.6rem;
+  background: transparent;
+  color: #4b5870;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.language-switcher button:hover {
+  background: #e9edff;
+  color: #273ec7;
+}
+
+.language-switcher button:focus-visible {
+  outline: 3px solid rgb(58 83 222 / 35%);
+  outline-offset: 2px;
+}
+
+.language-switcher button.is-active {
+  background: #3047c9;
+  color: #fff;
+  box-shadow: 0 0.25rem 0.75rem rgb(48 71 201 / 24%);
+}
+
+.main-content {
+  display: grid;
+  place-items: center;
+  min-height: calc(100dvh - 6rem);
+  padding: clamp(1.5rem, 5vw, 5rem);
+}
+
+.welcome-card {
+  width: min(100%, 43rem);
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  border: 1px solid #e1e6ef;
+  border-radius: 1.5rem;
+  background: #fff;
+  box-shadow: 0 1.5rem 4rem rgb(32 48 79 / 10%);
+}
+
+.status-dot {
+  display: inline-block;
+  width: 0.72rem;
+  height: 0.72rem;
+  margin-block-end: 1.25rem;
+  border-radius: 50%;
+  background: #26a269;
+  box-shadow: 0 0 0 0.35rem rgb(38 162 105 / 14%);
+}
+
+h2 {
+  margin-block-end: 0.85rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.16;
+}
+
+.welcome-card > p {
+  max-width: 36rem;
+  margin-block-end: 2rem;
+  color: #5b687c;
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.status-card {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem;
+  border-inline-start: 0.25rem solid #3047c9;
+  border-start-start-radius: 0.25rem;
+  border-end-start-radius: 0.25rem;
+  border-start-end-radius: 0.8rem;
+  border-end-end-radius: 0.8rem;
+  background: #f0f3ff;
+  color: #33405a;
+}
+
+.status-card span {
+  line-height: 1.7;
+}
+
+@media (max-width: 42rem) {
+  .app-header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .language-switcher {
+    align-self: flex-start;
+  }
+}

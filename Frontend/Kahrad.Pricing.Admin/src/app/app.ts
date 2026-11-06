@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LocalizationService } from './localization/localization.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,5 @@ import { Component, signal } from '@angular/core';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('Kahrad.Pricing.Admin');
+  protected readonly i18n = inject(LocalizationService);
 }
