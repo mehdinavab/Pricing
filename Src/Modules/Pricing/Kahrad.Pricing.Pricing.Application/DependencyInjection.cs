@@ -8,6 +8,8 @@ public static class DependencyInjection
     public static IServiceCollection AddPricingApplication(this IServiceCollection services)
     {
         services.AddScoped<ProductPriceOverrideService>();
+        services.AddScoped<PricingPolicyService>();
+        services.AddScoped<ProductPricePreviewService>();
         return services;
     }
 }

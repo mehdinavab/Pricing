@@ -21,6 +21,7 @@ public static class DependencyInjection
         services.AddScoped<IAccountingInvoiceReader, AccountingInvoiceReader>();
         services.AddScoped<IAccountingSyncRunReader, AccountingSyncRunReader>();
         services.AddScoped<IAccountingConnectionStore, AccountingConnectionStore>();
+        services.AddScoped<IEffectiveItemPriceReader, EffectiveItemPriceReader>();
         services.AddScoped<IAccountingProviderClient, NotConfiguredAccountingProviderClient>();
         return services;
     }
