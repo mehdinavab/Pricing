@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+:root {
+  --main-color: #cba04f;
+  --footer-color: #0a2b25;
+  --body-color: #f6fbff;
+}
+
+body {
+  background-color: var(--body-color);
+}
+
+html[lang='fa'],
+html[lang='fa-IR'],
+html[lang='ar'] {
+  font-family: IRANYekanX, sans-serif;
+}
+
+html[lang='en'],
+html[lang='en-US'] {
+  font-family: SansPro, sans-serif;
+}

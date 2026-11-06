@@ -1,0 +1,124 @@
+.kahrad_search_single_product .kahrad_single_product_properties p.product_properties_value {
+    font-size: 22px;
+    font-weight: 500;
+    color: #d2a34c !important;
+}
+
+.kahrad_search_single_product .kahrad_single_product_properties p.price_properties_value {
+    font-size: 27px;
+    font-weight: bold;
+    color: #f5b53f !important;
+}
+.kahrad_single_product_properties .discount_price_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.kahrad_single_product_properties .discount_price_box .main_price{
+    font-size: 18px;
+    font-weight: 500;
+    color: #f5b53f !important;
+    position: relative;
+    width: max-content;
+}
+.kahrad_single_product_properties .discount_price_box .discount_price{
+    font-size: 27px;
+    font-weight: bold;
+    color: #f5b53f !important;
+    position: relative;
+    width: max-content;
+}
+.kahrad_single_product_properties .discount_price_box .main_price:after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-7deg);
+    background: #b42828;
+}
+.search_again_product{
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    gap: 10px;
+}
+.search_again_product input[type="text"] {
+    height: 45px;
+    width: 220px;
+    border-radius: 6px;
+    outline: none;
+    border: solid 2px #c99d4b;
+    padding: 0 10px;
+}
+.search_again_product input::placeholder{
+    font-family: inherit;
+    font-family: IRANYekanX, sans-serif;
+}
+.search_again_product button {
+    border: none;
+    height: 45px;
+    width: max-content;
+    padding: 0 20px;
+    background: #0c3f36;
+    color: #ffff;
+    border-radius: 6px;
+    font-family: inherit;
+    cursor: pointer;
+}
+.kahrad_archive_box_price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.kahrad_archive_box_price span{
+    line-height: 15px;
+    position: relative;
+}
+.kahrad_archive_box_price .main_price:after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-7deg);
+    background: #b42828;
+
+}
+.kahrad_archive_box_price.has_discount{
+
+    margin-bottom: 13px !important;
+    margin-top: -8px;
+}
+.discount_label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #c23b3b;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1em;
+}
+.single_discount_label {
+
+    background: #c23b3b;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1em;
+}

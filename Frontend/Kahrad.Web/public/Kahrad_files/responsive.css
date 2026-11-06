@@ -1,0 +1,289 @@
+@media screen and (max-width: 1440px) {
+    .kahrad_main_under_collection > div > img {
+        max-height: 359px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .kahrad_main_under_collection > div > img {
+        max-height: 254px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .kahrad_main_top {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .kahrad_main_collection_row h2 {
+        font-size: 24px;
+    }
+
+    .kahrad_main_more_collection_link {
+        font-size: 20px;
+        gap: 5px;
+    }
+
+    .kahrad_main_collection_row svg {
+        width: 26px;
+        height: 30px;
+    }
+
+    .kahrad_main_under_collection .link {
+        gap: 20px;
+        font-size: 19px;
+        top: 15px;
+    }
+
+    .kahrad_main_under_collection > div {
+        border-bottom: solid 1px #454545;
+        text-align: center;
+    }
+
+    .kahrad_main_under_collection > div > img {
+        max-height: 330px;
+        width: auto;
+        border-left: none !important;
+        text-align: center;
+        border-right: none !important;
+    }
+
+    .home_video_sec video, .kahrad_main_top_footer video {
+        height: 85vh !important;
+        object-fit: cover;
+    }
+
+    .kahrad_header_row {
+        margin-top: 10px;
+    }
+
+    .kahrad_header_row .icon {
+        width: 80px;
+        height: auto;
+        margin-top: 5px;
+    }
+
+    .kahrad_header {
+        min-height: 305px;
+    }
+
+    .kahrad_main_special_product .detail {
+        padding: 10px;
+    }
+
+    .kahrad_main_special_product .detail .box {
+        width: 48%;
+    }
+
+    .kahrad_main_special_product .detail span {
+        font-size: 16px;
+    }
+
+    .kahrad_main_special_product .detail .full_box {
+        height: auto;
+        padding-bottom: 30px;
+    }
+
+    .kahrad_main_warranty .title.first {
+        margin-right: 0;
+    }
+
+    .kahrad_main_warranty .title.second {
+        margin-left: 0;
+    }
+
+    .kahrad_main_warranty .title {
+        width: 80%;
+        margin-top: 0;
+        font-size: 24px;
+        padding: 10px 16px;
+
+    }
+
+    .kahrad_main_warranty .title.first span {
+        top: 5px;
+        left: -24px;
+    }
+
+    .kahrad_main_warranty .title.second span {
+        top: 5px;
+        right: -24px;
+    }
+
+    .kahrad_main_warranty .title span {
+        width: 42px;
+        height: 42px;
+    }
+
+    .kahrad_main_warranty .kahrad_row p {
+        width: 80% !important;
+        margin: 0 0 25px 0 !important;
+        font-size: 20px;
+    }
+
+    .kahrad_footer_section_div .details > div span {
+        font-size: 16px;
+    }
+
+    .kahrad_footer_section_div .details > div a {
+        font-size: 13px;
+    }
+
+    .kahrad_footer_section_div .logo {
+        width: 40%;
+    }
+
+    .kahrad_footer_section_div .under p {
+        font-size: 12px;
+    }
+
+    .kahrad_main_collection {
+        margin-top: -65px;
+    }
+
+    #myText {
+        width: 100%;
+    }
+
+    #myCanvas_box {
+        width: 100%;
+    }
+
+    #myCanvas_box canvas {
+        width: 100%;
+    }
+
+    .kahrad_header_row_change_language span {
+        font-size: 12px;
+    }
+
+    .kahrad_main_under_collection .link > img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .kahrad_top_video_archive_title {
+        font-size: 20px;
+    }
+
+    .kahrad_products_archive_short_description h2 {
+        font-size: 30px;
+    }
+
+    .kahrad_products_archive_short_description_text {
+        font-size: 17px;
+    }
+
+    .kahrad_list_product_archive h2 {
+        font-size: 34px;
+    }
+
+    #myText p {
+        font-size: 24px;
+        text-align: justify;
+    }
+
+    .kahrad_archive_product_navar p {
+        font-size: 16px;
+    }
+
+    .kahrad_archive_product_navar a {
+        font-size: 14px;
+    }
+
+    .kahrad_top_video_archive_link {
+        font-size: 16px;
+    }
+
+    .kahrad_archive_product_main_description h2 {
+        font-size: 30px;
+    }
+
+    .kahrad_single_product_top h1 {
+        font-size: 30px;
+    }
+
+    .kahrad_single_product_properties h2 {
+        font-size: 22px;
+    }
+
+    .kahrad_single_product_properties p {
+        font-size: 14px;
+    }
+
+    .kahrad_product_images_swiper .swiper-slide img {
+        max-height: 400px;
+    }
+
+    .kahrad_single_product_content_title {
+        font-size: 28px;
+    }
+
+    .kahrad_comment_form input[type='submit'] {
+        font-size: 12px;
+        padding: 10px 14px;
+    }
+    .kahrad_filter_main_col{
+        display: none;
+    }
+    .kahrad_filter_main_title{
+        margin-bottom: 25px;
+        position: relative;
+        border: solid 1px #a87918;
+        padding:12px 10px;
+        border-radius: 6px;
+        font-size: 17px;
+    }
+    .kahrad_filter_main_title:after{
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: 20px;
+        width: 9px;
+        height: 9px;
+        border-right: solid 2px #ffffff;
+        border-bottom: solid 2px #ffffff;
+        transform: rotate(45deg);
+        transition: all 0.2s linear;
+    }
+    .kahrad_filter_main_title.active:after{
+        transform: rotate(223deg);
+        transition: all 0.2s linear;
+
+    }
+    .kahrad_store_archive_title h1{
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .kahrad_header {
+        min-height: 170px;
+    }
+
+    .kahrad_main_collection {
+        margin-top: -51px;
+    }
+
+    .kahrad_main_top {
+        margin-top: -170px !important;
+    }
+
+    .kahrad_top_video_archive {
+        margin-top: -131px;
+    }
+
+    .kahrad_single_product {
+        margin-top: -131px;
+        padding-top: 20px;
+    }
+
+
+}
+
+@media screen and (max-width: 375px) {
+    .kahrad_main_collection {
+        margin-top: -65px;
+    }
+}

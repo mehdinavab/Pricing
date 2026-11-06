@@ -1,0 +1,16 @@
+<template>
+  <video
+    class="kahrad_main_top"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-hidden="true"
+  >
+    <source
+      src="https://kahrad.com/wp-content/uploads/2024/10/Img-58000000.mp4"
+      type="video/mp4"
+    />
+  </video>
+</template>
