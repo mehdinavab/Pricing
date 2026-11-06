@@ -24,47 +24,202 @@
         <p>{{ i18n.translate('loginDescription') }}</p>
       </header>
 
-      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-        <label for="username">{{ i18n.translate('usernameLabel') }}</label>
-        <input
-          id="username"
-          type="text"
-          formControlName="username"
-          autocomplete="username"
-          [placeholder]="i18n.translate('usernamePlaceholder')"
-          [attr.aria-invalid]="form.controls.username.invalid && form.controls.username.touched"
-          aria-describedby="username-error"
-        />
-        <div id="username-error" class="field-error" aria-live="polite">
-          @if (form.controls.username.invalid && form.controls.username.touched) {
-            {{ i18n.translate('usernameRequired') }}
-          }
-        </div>
-
-        <label for="password">{{ i18n.translate('passwordLabel') }}</label>
-        <input
-          id="password"
-          type="password"
-          formControlName="password"
-          autocomplete="current-password"
-          [placeholder]="i18n.translate('passwordPlaceholder')"
-          [attr.aria-invalid]="form.controls.password.invalid && form.controls.password.touched"
-          aria-describedby="password-error"
-        />
-        <div id="password-error" class="field-error" aria-live="polite">
-          @if (form.controls.password.invalid && form.controls.password.touched) {
-            {{ i18n.translate('passwordRequired') }}
-          }
-        </div>
-
-        @if (submitFailed()) {
-          <p class="submit-error" role="alert">{{ i18n.translate('loginError') }}</p>
-        }
-
-        <button class="submit-button" type="submit" [disabled]="isSubmitting()">
-          {{ i18n.translate(isSubmitting() ? 'signingIn' : 'signIn') }}
+      <div
+        class="sign-in-tabs"
+        role="tablist"
+        [attr.aria-label]="i18n.translate('signInMethod')"
+      >
+        <button
+          id="password-tab"
+          type="button"
+          role="tab"
+          aria-controls="password-panel"
+          [attr.aria-selected]="mode() === 'password'"
+          [attr.tabindex]="mode() === 'password' ? 0 : -1"
+          [class.active]="mode() === 'password'"
+          (click)="setMode('password')"
+        >
+          {{ i18n.translate('passwordSignIn') }}
         </button>
-      </form>
+        <button
+          id="otp-tab"
+          type="button"
+          role="tab"
+          aria-controls="otp-panel"
+          [attr.aria-selected]="mode() === 'otp'"
+          [attr.tabindex]="mode() === 'otp' ? 0 : -1"
+          [class.active]="mode() === 'otp'"
+          (click)="setMode('otp')"
+        >
+          {{ i18n.translate('otpSignIn') }}
+        </button>
+      </div>
+
+      @if (mode() === 'password') {
+        <form
+          id="password-panel"
+          role="tabpanel"
+          aria-labelledby="password-tab"
+          [formGroup]="passwordForm"
+          (ngSubmit)="submitPassword()"
+          novalidate
+        >
+          <label for="username">{{ i18n.translate('usernameLabel') }}</label>
+          <input
+            id="username"
+            type="text"
+            formControlName="username"
+            autocomplete="username"
+            [placeholder]="i18n.translate('usernamePlaceholder')"
+            [attr.aria-invalid]="
+              passwordForm.controls.username.invalid &&
+              passwordForm.controls.username.touched
+            "
+            aria-describedby="username-error"
+          />
+          <div id="username-error" class="field-error" aria-live="polite">
+            @if (
+              passwordForm.controls.username.invalid &&
+              passwordForm.controls.username.touched
+            ) {
+              {{ i18n.translate('usernameRequired') }}
+            }
+          </div>
+
+          <label for="password">{{ i18n.translate('passwordLabel') }}</label>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            autocomplete="current-password"
+            [placeholder]="i18n.translate('passwordPlaceholder')"
+            [attr.aria-invalid]="
+              passwordForm.controls.password.invalid &&
+              passwordForm.controls.password.touched
+            "
+            aria-describedby="password-error"
+          />
+          <div id="password-error" class="field-error" aria-live="polite">
+            @if (
+              passwordForm.controls.password.invalid &&
+              passwordForm.controls.password.touched
+            ) {
+              {{ i18n.translate('passwordRequired') }}
+            }
+          </div>
+
+          @if (submitFailed()) {
+            <p class="submit-error" role="alert">{{ i18n.translate('loginError') }}</p>
+          }
+
+          <button class="submit-button" type="submit" [disabled]="isSubmitting()">
+            {{ i18n.translate(isSubmitting() ? 'signingIn' : 'signIn') }}
+          </button>
+        </form>
+      } @else if (otpStep() === 'request') {
+        <form
+          id="otp-panel"
+          role="tabpanel"
+          aria-labelledby="otp-tab"
+          [formGroup]="otpRequestForm"
+          (ngSubmit)="requestOtp()"
+          novalidate
+        >
+          <p class="otp-guidance">{{ i18n.translate('otpRequestDescription') }}</p>
+          <label for="phone-number">{{ i18n.translate('phoneNumberLabel') }}</label>
+          <input
+            id="phone-number"
+            class="numeric-input"
+            type="tel"
+            inputmode="tel"
+            formControlName="phoneNumber"
+            autocomplete="tel"
+            [placeholder]="i18n.translate('phoneNumberPlaceholder')"
+            [attr.aria-invalid]="
+              otpRequestForm.controls.phoneNumber.invalid &&
+              otpRequestForm.controls.phoneNumber.touched
+            "
+            aria-describedby="phone-number-error"
+          />
+          <div id="phone-number-error" class="field-error" aria-live="polite">
+            @if (
+              otpRequestForm.controls.phoneNumber.invalid &&
+              otpRequestForm.controls.phoneNumber.touched
+            ) {
+              {{ i18n.translate('phoneNumberInvalid') }}
+            }
+          </div>
+
+          @if (submitFailed()) {
+            <p class="submit-error" role="alert">{{ i18n.translate('otpRequestError') }}</p>
+          }
+
+          <button class="submit-button" type="submit" [disabled]="isSubmitting()">
+            {{ i18n.translate(isSubmitting() ? 'sendingCode' : 'sendCode') }}
+          </button>
+        </form>
+      } @else {
+        <form
+          id="otp-panel"
+          role="tabpanel"
+          aria-labelledby="otp-tab"
+          [formGroup]="otpCodeForm"
+          (ngSubmit)="verifyOtp()"
+          novalidate
+        >
+          <p class="otp-guidance">{{ i18n.translate('otpVerifyDescription') }}</p>
+          <strong class="phone-preview" dir="ltr">
+            {{ otpRequestForm.controls.phoneNumber.value }}
+          </strong>
+
+          <label for="otp-code">{{ i18n.translate('otpCodeLabel') }}</label>
+          <input
+            id="otp-code"
+            class="numeric-input otp-code"
+            type="text"
+            inputmode="numeric"
+            formControlName="code"
+            autocomplete="one-time-code"
+            maxlength="10"
+            [placeholder]="i18n.translate('otpCodePlaceholder')"
+            [attr.aria-invalid]="
+              otpCodeForm.controls.code.invalid && otpCodeForm.controls.code.touched
+            "
+            aria-describedby="otp-code-error"
+          />
+          <div id="otp-code-error" class="field-error" aria-live="polite">
+            @if (otpCodeForm.controls.code.invalid && otpCodeForm.controls.code.touched) {
+              {{ i18n.translate('otpCodeInvalid') }}
+            }
+          </div>
+
+          @if (submitFailed()) {
+            <p class="submit-error" role="alert">{{ i18n.translate('otpVerifyError') }}</p>
+          }
+
+          <button class="submit-button" type="submit" [disabled]="isSubmitting()">
+            {{ i18n.translate(isSubmitting() ? 'verifyingCode' : 'verifyCode') }}
+          </button>
+
+          <div class="otp-actions">
+            <button type="button" class="text-button" (click)="changePhoneNumber()">
+              {{ i18n.translate('changePhoneNumber') }}
+            </button>
+            <button
+              type="button"
+              class="text-button"
+              [disabled]="resendSeconds() > 0 || isSubmitting()"
+              (click)="requestOtp()"
+            >
+              @if (resendSeconds() > 0) {
+                {{ i18n.translate('resendIn') }} {{ resendSeconds() }}
+              } @else {
+                {{ i18n.translate('resendCode') }}
+              }
+            </button>
+          </div>
+        </form>
+      }
 
       <p class="demo-notice">{{ i18n.translate('demoNotice') }}</p>
     </div>
