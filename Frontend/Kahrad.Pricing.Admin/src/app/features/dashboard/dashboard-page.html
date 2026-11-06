@@ -1,0 +1,26 @@
+<main class="dashboard-page">
+  <header>
+    <p>{{ i18n.translate('welcomeBack') }}, {{ authentication.currentUser()?.displayName }}</p>
+    <h1>{{ i18n.translate('dashboardTitle') }}</h1>
+    <span>{{ i18n.translate('dashboardDescription') }}</span>
+  </header>
+
+  <section class="metrics" [attr.aria-label]="i18n.translate('dashboardMetricsLabel')">
+    @for (metric of metrics; track metric.label) {
+      <article class="metric-card">
+        <span class="metric-icon" [class]="metric.tone" aria-hidden="true"></span>
+        <strong>{{ metricValue(metric) }}</strong>
+        <h2>{{ i18n.translate(metric.label) }}</h2>
+        <p>{{ i18n.translate(metric.hint) }}</p>
+      </article>
+    }
+  </section>
+
+  <section class="activity-card">
+    <div>
+      <span class="activity-mark" aria-hidden="true"></span>
+    </div>
+    <h2>{{ i18n.translate('recentActivity') }}</h2>
+    <p>{{ i18n.translate('activityEmpty') }}</p>
+  </section>
+</main>

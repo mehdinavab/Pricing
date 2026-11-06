@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { App } from './app';
-import { AppRoutingModule } from './app-routing-module';
 import { LocalizationService } from './localization/localization.service';
 
 describe('App', () => {
@@ -10,35 +10,27 @@ describe('App', () => {
     document.documentElement.dir = 'ltr';
 
     await TestBed.configureTestingModule({
-      imports: [AppRoutingModule],
-      declarations: [App],
+      imports: [App],
+      providers: [provideRouter([])],
     }).compileComponents();
   });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should render the English administration title', async () => {
-    const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Kahrad Pricing Administration',
-    );
+  it('should apply the English administration title', () => {
+    TestBed.inject(LocalizationService);
+    expect(document.title).toBe('Kahrad Pricing Administration');
   });
 
   it('should switch to Persian and apply RTL document metadata', () => {
-    const fixture = TestBed.createComponent(App);
     const localization = TestBed.inject(LocalizationService);
 
     localization.setLanguage('fa');
-    fixture.detectChanges();
 
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('مدیریت قیمت‌گذاری کهراد');
+    expect(document.title).toBe('مدیریت قیمت‌گذاری کهراد');
     expect(document.documentElement.lang).toBe('fa');
     expect(document.documentElement.dir).toBe('rtl');
     expect(localStorage.getItem('kahrad.pricing.admin.language')).toBe('fa');

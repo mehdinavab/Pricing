@@ -1,0 +1,9 @@
+.not-found-page { min-height: 100dvh; padding: 1.5rem; background: var(--page-background); }
+.toolbar { display: flex; justify-content: flex-end; }
+section { display: grid; justify-items: center; width: min(100%, 38rem); margin: 14vh auto 0; padding: clamp(2rem, 6vw, 4.5rem); border: 1px solid var(--border); border-radius: 1.25rem; background: var(--surface); text-align: center; box-shadow: 0 1rem 3rem rgb(31 43 80 / 7%); }
+section > span { color: var(--primary); font-size: clamp(4rem, 13vw, 8rem); font-weight: 900; line-height: 1; opacity: .17; }
+h1 { margin: 1rem 0 .75rem; color: var(--text); font-size: clamp(1.6rem, 4vw, 2.3rem); }
+p { margin: 0 0 1.75rem; color: var(--text-muted); line-height: 1.75; }
+a { display: inline-flex; align-items: center; min-height: 2.8rem; padding-inline: 1.25rem; border-radius: .75rem; background: var(--primary); color: #fff; font-weight: 800; text-decoration: none; }
+a:hover { background: var(--primary-strong); }
+a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }

@@ -6,15 +6,46 @@ export type TextDirection = 'ltr' | 'rtl';
 
 const ENGLISH_TRANSLATIONS = {
   appTitle: 'Kahrad Pricing Administration',
-  eyebrow: 'Product pricing platform',
-  welcome: 'Welcome to the administration workspace',
-  description: 'Manage products, pricing policies, and operational settings from one place.',
+  appShortName: 'Kahrad Admin',
   languageSelector: 'Choose display language',
-  english: 'English',
-  persian: 'Persian',
-  arabic: 'Arabic',
-  statusTitle: 'Localization is ready',
-  statusBody: 'Language preference and text direction are applied across the application.',
+  loginEyebrow: 'Administration portal',
+  loginTitle: 'Welcome back',
+  loginDescription: 'Sign in to manage products, pricing, and representatives.',
+  usernameLabel: 'Username',
+  usernamePlaceholder: 'Enter your username',
+  usernameRequired: 'Username is required.',
+  passwordLabel: 'Password',
+  passwordPlaceholder: 'Enter your password',
+  passwordRequired: 'Password is required.',
+  signIn: 'Sign in',
+  signingIn: 'Signing in…',
+  loginError: 'We could not sign you in. Check your details and try again.',
+  demoNotice: 'Base UI only: connect this form to the approved identity API before production.',
+  navigationLabel: 'Primary navigation',
+  dashboard: 'Dashboard',
+  logout: 'Sign out',
+  openMenu: 'Open navigation',
+  closeMenu: 'Close navigation',
+  signedInAs: 'Signed in as',
+  welcomeBack: 'Welcome back',
+  dashboardTitle: 'Pricing operations at a glance',
+  dashboardDescription: 'A focused overview of the catalog and pricing workspace.',
+  dashboardMetricsLabel: 'Dashboard metrics',
+  metricProducts: 'Products',
+  metricProductsHint: 'Catalog records ready for management',
+  metricPricing: 'Pricing policies',
+  metricPricingHint: 'Brand and representative rules',
+  metricRepresentatives: 'Representatives',
+  metricRepresentativesHint: 'Profiles and commercial access',
+  metricStatus: 'System status',
+  metricStatusHint: 'Core services are available',
+  statusOnline: 'Online',
+  recentActivity: 'Recent activity',
+  activityEmpty: 'Operational activity will appear here as modules are connected.',
+  notFoundCode: '404',
+  notFoundTitle: 'Page not found',
+  notFoundDescription: 'The address may be incorrect or the page may have moved.',
+  backToDashboard: 'Back to dashboard',
 } as const;
 
 export type TranslationKey = keyof typeof ENGLISH_TRANSLATIONS;
@@ -24,40 +55,102 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
   en: ENGLISH_TRANSLATIONS,
   fa: {
     appTitle: 'مدیریت قیمت‌گذاری کهراد',
-    eyebrow: 'سامانه قیمت‌گذاری محصولات',
-    welcome: 'به فضای مدیریت خوش آمدید',
-    description: 'محصولات، سیاست‌های قیمت‌گذاری و تنظیمات عملیاتی را از یک محل مدیریت کنید.',
+    appShortName: 'مدیریت کهراد',
     languageSelector: 'انتخاب زبان نمایش',
-    english: 'انگلیسی',
-    persian: 'فارسی',
-    arabic: 'عربی',
-    statusTitle: 'چندزبانه‌سازی آماده است',
-    statusBody: 'زبان انتخاب‌شده و جهت متن در سراسر برنامه اعمال می‌شود.',
+    loginEyebrow: 'پرتال مدیریت',
+    loginTitle: 'خوش آمدید',
+    loginDescription: 'برای مدیریت محصولات، قیمت‌گذاری و نمایندگان وارد شوید.',
+    usernameLabel: 'نام کاربری',
+    usernamePlaceholder: 'نام کاربری را وارد کنید',
+    usernameRequired: 'نام کاربری الزامی است.',
+    passwordLabel: 'رمز عبور',
+    passwordPlaceholder: 'رمز عبور را وارد کنید',
+    passwordRequired: 'رمز عبور الزامی است.',
+    signIn: 'ورود',
+    signingIn: 'در حال ورود…',
+    loginError: 'ورود انجام نشد. اطلاعات را بررسی و دوباره تلاش کنید.',
+    demoNotice: 'نسخه پایه رابط کاربری است؛ پیش از انتشار به سامانه هویت مورد تأیید متصل شود.',
+    navigationLabel: 'منوی اصلی',
+    dashboard: 'داشبورد',
+    logout: 'خروج',
+    openMenu: 'باز کردن منو',
+    closeMenu: 'بستن منو',
+    signedInAs: 'کاربر فعال',
+    welcomeBack: 'خوش آمدید',
+    dashboardTitle: 'نمای کلی عملیات قیمت‌گذاری',
+    dashboardDescription: 'مروری متمرکز بر فضای مدیریت کاتالوگ و قیمت‌گذاری.',
+    dashboardMetricsLabel: 'شاخص‌های داشبورد',
+    metricProducts: 'محصولات',
+    metricProductsHint: 'رکوردهای آماده مدیریت در کاتالوگ',
+    metricPricing: 'سیاست‌های قیمت‌گذاری',
+    metricPricingHint: 'قوانین برند و نمایندگان',
+    metricRepresentatives: 'نمایندگان',
+    metricRepresentativesHint: 'پروفایل‌ها و دسترسی تجاری',
+    metricStatus: 'وضعیت سامانه',
+    metricStatusHint: 'سرویس‌های اصلی در دسترس هستند',
+    statusOnline: 'برخط',
+    recentActivity: 'فعالیت‌های اخیر',
+    activityEmpty: 'پس از اتصال ماژول‌ها، فعالیت‌های عملیاتی در این بخش نمایش داده می‌شود.',
+    notFoundCode: '۴۰۴',
+    notFoundTitle: 'صفحه پیدا نشد',
+    notFoundDescription: 'ممکن است نشانی اشتباه باشد یا صفحه جابه‌جا شده باشد.',
+    backToDashboard: 'بازگشت به داشبورد',
   },
   ar: {
     appTitle: 'إدارة تسعير كهراد',
-    eyebrow: 'منصة تسعير المنتجات',
-    welcome: 'مرحباً بك في مساحة الإدارة',
-    description: 'أدر المنتجات وسياسات التسعير والإعدادات التشغيلية من مكان واحد.',
+    appShortName: 'إدارة كهراد',
     languageSelector: 'اختر لغة العرض',
-    english: 'الإنجليزية',
-    persian: 'الفارسية',
-    arabic: 'العربية',
-    statusTitle: 'دعم اللغات جاهز',
-    statusBody: 'يتم تطبيق اللغة المختارة واتجاه النص في جميع أجزاء التطبيق.',
+    loginEyebrow: 'بوابة الإدارة',
+    loginTitle: 'مرحباً بعودتك',
+    loginDescription: 'سجّل الدخول لإدارة المنتجات والتسعير والممثلين.',
+    usernameLabel: 'اسم المستخدم',
+    usernamePlaceholder: 'أدخل اسم المستخدم',
+    usernameRequired: 'اسم المستخدم مطلوب.',
+    passwordLabel: 'كلمة المرور',
+    passwordPlaceholder: 'أدخل كلمة المرور',
+    passwordRequired: 'كلمة المرور مطلوبة.',
+    signIn: 'تسجيل الدخول',
+    signingIn: 'جارٍ تسجيل الدخول…',
+    loginError: 'تعذر تسجيل الدخول. تحقق من البيانات وحاول مرة أخرى.',
+    demoNotice: 'هذه واجهة أساسية؛ اربط النموذج بخدمة الهوية المعتمدة قبل النشر.',
+    navigationLabel: 'التنقل الرئيسي',
+    dashboard: 'لوحة المعلومات',
+    logout: 'تسجيل الخروج',
+    openMenu: 'فتح القائمة',
+    closeMenu: 'إغلاق القائمة',
+    signedInAs: 'المستخدم الحالي',
+    welcomeBack: 'مرحباً بعودتك',
+    dashboardTitle: 'نظرة عامة على عمليات التسعير',
+    dashboardDescription: 'ملخص مركز لمساحة إدارة الكتالوج والتسعير.',
+    dashboardMetricsLabel: 'مؤشرات لوحة المعلومات',
+    metricProducts: 'المنتجات',
+    metricProductsHint: 'سجلات الكتالوج الجاهزة للإدارة',
+    metricPricing: 'سياسات التسعير',
+    metricPricingHint: 'قواعد العلامات التجارية والممثلين',
+    metricRepresentatives: 'الممثلون',
+    metricRepresentativesHint: 'الملفات والصلاحيات التجارية',
+    metricStatus: 'حالة النظام',
+    metricStatusHint: 'الخدمات الأساسية متاحة',
+    statusOnline: 'متصل',
+    recentActivity: 'النشاط الأخير',
+    activityEmpty: 'سيظهر النشاط التشغيلي هنا بعد ربط الوحدات.',
+    notFoundCode: '٤٠٤',
+    notFoundTitle: 'الصفحة غير موجودة',
+    notFoundDescription: 'قد يكون العنوان غير صحيح أو تم نقل الصفحة.',
+    backToDashboard: 'العودة إلى لوحة المعلومات',
   },
 };
 
 export interface LanguageOption {
   readonly code: SupportedLanguage;
   readonly direction: TextDirection;
-  readonly labelKey: TranslationKey;
+  readonly shortLabel: string;
 }
 
 const LANGUAGE_OPTIONS: readonly LanguageOption[] = [
-  { code: 'en', direction: 'ltr', labelKey: 'english' },
-  { code: 'fa', direction: 'rtl', labelKey: 'persian' },
-  { code: 'ar', direction: 'rtl', labelKey: 'arabic' },
+  { code: 'en', direction: 'ltr', shortLabel: 'EN' },
+  { code: 'fa', direction: 'rtl', shortLabel: 'فا' },
+  { code: 'ar', direction: 'rtl', shortLabel: 'ع' },
 ];
 
 @Injectable({ providedIn: 'root' })
@@ -86,12 +179,11 @@ export class LocalizationService {
   }
 
   private resolveInitialLanguage(): SupportedLanguage {
-    const storedLanguage = this.readStoredLanguage();
-    if (storedLanguage) {
-      return storedLanguage;
-    }
-
-    return this.normalizeLanguage(this.document.defaultView?.navigator.language) ?? 'en';
+    return (
+      this.readStoredLanguage() ??
+      this.normalizeLanguage(this.document.defaultView?.navigator.language) ??
+      'en'
+    );
   }
 
   private readStoredLanguage(): SupportedLanguage | null {
@@ -108,21 +200,18 @@ export class LocalizationService {
     try {
       this.document.defaultView?.localStorage.setItem(this.storageKey, language);
     } catch {
-      // The selected language still applies when browser storage is unavailable.
+      // Language still applies when preference storage is unavailable.
     }
   }
 
   private normalizeLanguage(language: string | null | undefined): SupportedLanguage | null {
-    const languageCode = language?.trim().toLowerCase().split('-')[0];
-    return languageCode === 'en' || languageCode === 'fa' || languageCode === 'ar'
-      ? languageCode
-      : null;
+    const code = language?.trim().toLowerCase().split('-')[0];
+    return code === 'en' || code === 'fa' || code === 'ar' ? code : null;
   }
 
   private applyDocumentLanguage(language: SupportedLanguage): void {
-    const root = this.document.documentElement;
-    root.lang = language;
-    root.dir = language === 'en' ? 'ltr' : 'rtl';
+    this.document.documentElement.lang = language;
+    this.document.documentElement.dir = language === 'en' ? 'ltr' : 'rtl';
     this.document.title = TRANSLATIONS[language].appTitle;
   }
 }
