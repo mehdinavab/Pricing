@@ -72,3 +72,16 @@ app-root {
   display: block;
   min-height: 100dvh;
 }
+
+.sign-in-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: .35rem; margin-block-end: 1.75rem; padding: .3rem; border: 1px solid var(--border); border-radius: .85rem; background: var(--surface-muted); }
+.sign-in-tabs button { min-height: 2.65rem; border: 0; border-radius: .65rem; background: transparent; color: var(--text-muted); cursor: pointer; font: inherit; font-size: .8rem; font-weight: 800; }
+.sign-in-tabs button:hover { color: var(--primary); }
+.sign-in-tabs button:focus-visible, .text-button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.sign-in-tabs button.active { background: var(--surface); color: var(--primary); box-shadow: 0 .2rem .8rem rgb(31 43 80 / 8%); }
+.otp-guidance { margin: 0 0 1.25rem; color: var(--text-muted); font-size: .83rem; line-height: 1.7; }
+.phone-preview { margin-block: -.65rem 1.25rem; color: var(--text); font-size: .9rem; }
+.numeric-input { direction: ltr; text-align: start; }
+.otp-code { letter-spacing: .35em; text-align: center; }
+.otp-actions { display: flex; justify-content: space-between; gap: 1rem; margin-block-start: 1rem; }
+.text-button { min-height: 2.5rem; padding-inline: .25rem; border: 0; background: transparent; color: var(--primary); cursor: pointer; font: inherit; font-size: .78rem; font-weight: 750; }
+.text-button:disabled { color: var(--text-subtle); cursor: not-allowed; }
