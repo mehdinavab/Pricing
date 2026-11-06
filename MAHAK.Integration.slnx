@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="Src/MAHAK.Integration.Api/MAHAK.Integration.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="Tests/MAHAK.Integration.Tests/MAHAK.Integration.Tests.csproj" />
+  </Folder>
+</Solution>

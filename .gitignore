@@ -6,6 +6,10 @@
 # dotenv files
 .env
 
+# MAHAK deployment secrets
+**/appsettings.Production.json
+**/appsettings.Local.json
+
 # User-specific files
 *.rsuser
 *.suo
