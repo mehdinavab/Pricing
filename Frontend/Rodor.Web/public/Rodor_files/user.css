@@ -1,0 +1,161 @@
+/***** single page *****/
+.kahrad_search_single_product video {
+    width: 100%;
+    height: auto;
+}
+.kahrad_product_images_swiper{
+    border-radius: 0px;
+    border: 1px solid #d9d9d9 !important;
+    aspect-ratio: 1;
+}
+.kahrad_product_images_swiper .swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+.kahrad_product_images_swiper .swiper-slide img {
+    display: block;
+    width: auto;
+    height: 100%;
+    max-height: 600px;
+    object-fit: cover;
+}
+.kahrad_product_images_thumbSwiper {
+    margin-top: 25px;
+}
+
+.kahrad_product_images_thumbSwiper img {
+    display: block;
+}
+
+.kahrad_product_images_thumbSwiper .swiper-slide {
+    border-radius: 0px;
+    border: 1px solid #d9d9d9 !important;
+    transition: .2s;
+    cursor: pointer;
+}
+.kahrad_product_images_thumbSwiper .swiper-slide:hover {
+    border: 1px solid #2e2e2e !important;
+}
+.kahrad_single_product_properties h2{
+    font-size: 34px;
+    font-weight: 500;
+}
+.kahrad_single_product_properties h3{
+    font-size: 28px;
+    font-weight: 500;
+}
+.kahrad_single_product_box_buy {
+    background: #f6f6f6;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+.kahrad_single_product_box_buy p {
+    margin: 0;
+}
+.table_of_product_properties_value{
+    width: 100%;
+    max-width: 400px;
+}
+.table_of_product_properties_value tr:nth-child(even){
+    background: #f6f6f6;
+}
+.table_of_product_properties_value td{
+    padding: 10px;
+}
+.table_of_product_properties_value p{
+    font-size: 17px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0;
+}
+.table_of_product_properties_value p.product_properties_value{
+    font-size: 16px;
+    font-weight: 400;
+    color: #777777;
+    text-align: center;
+}
+.kahrad_box_price{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+.kahrad_box_price p{
+    font-size: 34px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+}
+.kahrad_box_price p.kahrad_box_price_title{
+    font-size: 14px;
+    font-weight: 400;
+    color: #777777;
+    margin: 0;
+}
+
+.kahrad_form_new_buy {
+    background: #f3eae5;
+    padding: 25px;
+    margin-bottom: 45px;
+    border-radius: 12px;
+}
+
+.kahrad_form_group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.kahrad_form_group label{
+    color: #000000;
+    font-size: 16px;
+}
+
+.kahrad_form_group input, .kahrad_form_group select {
+    height: 40px;
+    border-radius: 3px;
+    padding: 0 15px;
+    border: solid 1px #a6684a;
+    direction: rtl;
+    text-align: right;
+    font-family: IRANYekanX, sans-serif;
+}
+
+.select2-container--default .select2-selection--single {
+    height: 40px !important;
+    border-radius: 3px;
+    padding: 0 15px;
+    border: solid 1px #a6684a !important;
+    direction: rtl;
+    text-align: right;
+    font-family: IRANYekanX, sans-serif;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    height: 35px !important;
+}
+
+.kahrad_form_group input::placeholder, .kahrad_form_group select::placeholder {
+    font-family: IRANYekanX, sans-serif;
+}
+
+.kahrad_form_new_buy button {
+    padding: 15px 30px;
+    font-family: IRANYekanX, sans-serif;
+    font-size: 14px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    background: #a6684a;
+    color: #ffffff;
+
+}

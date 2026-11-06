@@ -1,0 +1,271 @@
+
+/*Begin Instagram elementor*/
+.list-instagram-global-grid {
+    display: flex;
+}
+
+.wrap-instagram-popup .mfp-image-holder .mfp-content{
+    max-width: 600px;
+    margin: 50px;
+}
+.mfp-arrow-left:before,
+.mfp-arrow-right:before
+{
+    display: none;
+}
+.mfp-arrow-left:after{
+    border: none;
+    height: auto;
+    width: auto;
+    color: #fff;
+    margin: 0;
+    border-left: none;
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+    content: "\f104";
+    position: unset;
+    font-size: 30px;
+}
+.mfp-arrow-right:after{
+    border: none;
+    height: auto;
+    width: auto;
+    color: #fff;
+    margin: 0;
+    border-left: none;
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+    content: "\f105";
+    position: unset;
+    font-size: 30px;
+}
+/*meida widescreen*/
+.list-instagram-global-grid.item-instagram-global-{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: flex-start;
+     margin: 0 -7px;
+}
+.list-instagram-global-grid .item-instagram{
+    flex-basis: 33.33%;
+    margin-bottom: 15px;
+}
+.list-instagram-global-grid .item-instagram a{
+    padding: 0 7px;
+    overflow: hidden;
+    transition: .25s;
+}
+.list-instagram-global-grid .item-instagram a:hover img{
+    transform: scale(0.9);
+    transition: .25s;
+}
+
+/*------------- Instagram item style 1 ------------*/
+.elbzotech-instagram .swiper-slide:nth-child(2n) .item-instagram-global- .icon_star{
+    order: 1;
+}
+.elbzotech-instagram .swiper-slide:nth-child(2n) .item-instagram-global- .item-instagram-inner{
+    order: 2;
+}
+.item-instagram-global-{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+}
+.item-instagram-global-global- .item-instagram
+{
+     position: relative;
+     overflow: hidden;
+}
+.item-instagram-global- .item-instagram-inner{
+    position: relative;
+}
+
+.item-instagram-global- .instagram-text-follow svg{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.3s ease-in-out 0s;
+    opacity: 0;
+    width: 36px;
+    height: 36px;
+}
+.item-instagram-global-:hover .instagram-text-follow svg{
+    transition: all 0.3s ease-in-out 0s;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+.item-instagram-global-:hover .instagram-text-follow svg:hover path{
+    fill: var(--bzo-main-color);
+}
+
+.item-instagram-global- .instagram-text-follow{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+.item-instagram-global-:hover .instagram-text-follow{
+    opacity: 1;
+    visibility: visible;
+}
+
+.item-instagram-global- .instagram-text-follow .text{
+    font-size: 18px;
+}
+.item-instagram-global- .img-wrap img{
+    transition: all 0.3s ease-out 0s;
+    -webkit-transition: all 0.3s ease-out 0s;
+}
+.item-instagram-global- .img-wrap{
+    display: flex;
+    position: relative;
+}
+.item-instagram-global- .item-instagram-inner .img-wrap::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+.item-instagram-global- .item-instagram-inner:hover .img-wrap::before{
+    opacity: 1;
+    visibility: visible;
+}
+@media(max-width: 880px){
+    .item-instagram-global-{
+        gap: 15px;
+    }
+}
+/*--------------------------------*/
+/*End Instagram elementor*/
+@media(max-width: 1200px){
+}
+@media(max-width: 1024px){
+}
+@media(max-width: 880px){
+    .item-instagram-global- .instagram-text-follow svg{
+        width: 30px;
+        height: 30px;
+    }
+}
+@media(max-width: 767px){
+}
+
+/*------------- Instagram item style 2 ------------*/
+.item-instagram-global-style2 .icon_star{
+    display: none;
+}
+
+.item-instagram-global-style2{
+
+}
+.item-instagram-global-global-style2 .item-instagram
+{
+     position: relative;
+     overflow: hidden;
+}
+.item-instagram-global-style2 .item-instagram-inner{
+    position: relative;
+}
+
+.item-instagram-global-style2 .instagram-text-follow svg{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.3s ease-in-out 0s;
+    opacity: 0;
+    width: 36px;
+    height: 36px;
+}
+.item-instagram-global-style2:hover .instagram-text-follow svg{
+    transition: all 0.3s ease-in-out 0s;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+.item-instagram-global-style2:hover .instagram-text-follow svg:hover path{
+    fill: var(--bzo-main-color);
+}
+
+.item-instagram-global-style2 .instagram-text-follow{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+.item-instagram-global-style2:hover .instagram-text-follow{
+    opacity: 1;
+    visibility: visible;
+}
+
+.item-instagram-global-style2 .instagram-text-follow .text{
+    font-size: 18px;
+}
+.item-instagram-global-style2 .img-wrap img{
+    transition: all 0.3s ease-out 0s;
+    -webkit-transition: all 0.3s ease-out 0s;
+}
+.item-instagram-global-style2 .img-wrap{
+    display: flex;
+    position: relative;
+}
+.item-instagram-global-style2 .item-instagram-inner .img-wrap::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+.item-instagram-global-style2 .item-instagram-inner:hover .img-wrap::before{
+    opacity: 1;
+    visibility: visible;
+}
+@media(max-width: 880px){
+    .item-instagram-global-style2{
+        gap: 15px;
+    }
+}
+/*--------------------------------*/
+/*End Instagram elementor*/
+@media(max-width: 1200px){
+}
+@media(max-width: 1024px){
+}
+@media(max-width: 880px){
+    .item-instagram-global-style2 .instagram-text-follow svg{
+        width: 30px;
+        height: 30px;
+    }
+}
+@media(max-width: 767px){
+}

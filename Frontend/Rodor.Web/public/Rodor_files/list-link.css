@@ -1,0 +1,17 @@
+
+/*Begin List link, icon elementor*/
+.elbzotech-list-link-global{
+    display: flex;
+}
+.elbzotech-list-link-global-block{   
+    flex-direction: column;
+}
+.elbzotech-list-link-global a{
+    display: flex;
+    align-items: center;
+}
+.elbzotech-list-link-global span.icon-image-link{
+    display: flex;
+}
+/*----------------------*/
+/*End List link, icon elementor*/

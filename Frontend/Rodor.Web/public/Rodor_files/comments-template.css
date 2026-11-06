@@ -1,0 +1,313 @@
+/************************************
+Display comment single post, page by comments_template()
+************************************/
+/*Begin Comment list post*/ 
+.bzotech-blog-list-comment .title-comment-post{
+    margin: 0px;
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+} 
+
+.bzotech-blog-list-comment .title-comment-post #cancel-comment-reply-link{
+  margin-left: 20px;
+  display: inline-block;
+  font-weight: 700;
+}
+.bzotech-blog-list-comment .title-comment-post #cancel-comment-reply-link:hover{
+  text-decoration: underline;
+}
+.bzotech-blog-list-comment{
+    margin-top: 40px;
+}
+.bzotech-blog-form-comment{
+    padding: 60px;
+    border: 1px solid var(--bzo-border-color);
+    margin-top: 40px;
+}
+@media(max-width: 1200px){
+    .bzotech-blog-form-comment{
+        padding: 30px;
+    }
+}
+@media(max-width: 767px){
+    .bzotech-blog-form-comment {
+        padding: 0;
+        border: none;
+    }
+}
+.bzotech-blog-form-comment .comment-reply-title{
+    color: var(--bzo-title_typo-color);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: capitalize;
+    margin: 0px;
+    margin-bottom: 8px;
+}
+.theme-demo4 .single-blog-style2 .bzotech-blog-form-comment .comment-reply-title,
+.theme-demo3 .single-blog-style2 .bzotech-blog-form-comment .comment-reply-title
+{
+    font-weight: 400;
+}
+.bzotech-blog-form-comment .comment-form-cookies-consent label{
+    font-weight: 400;
+    margin-left: 25px;
+    vertical-align: middle;
+        margin-bottom: 0px;
+}
+.bzotech-blog-form-comment .comment-form-cookies-consent{
+  margin-bottom: 30px;
+  position: relative;
+}
+.bzotech-blog-form-comment .comment-form-cookies-consent input[type="checkbox"]{
+   margin-top:0px;
+    position: absolute;
+    top:6px;
+}
+.bzotech-blog-form-comment .comment-form .contact-email,
+.bzotech-blog-form-comment .comment-form .contact-site, 
+.bzotech-blog-form-comment .comment-form .contact-name {
+    margin-bottom: 30px;
+}
+
+.bzotech-blog-form-comment .comment-form .contact-message{
+    margin-bottom: 30px;
+       clear: both;
+   display: flex;
+}
+.bzotech-blog-form-comment .comment-form input[type="text"],
+.bzotech-blog-form-comment .comment-form textarea
+ {
+    width: 100%;
+    border:1px solid var(--bzo-border-color);
+}
+.bzotech-blog-form-comment .comment-form .form-submit
+ {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.bzotech-blog-form-comment .comment-form .form-submit .elbzotech-bt-default
+ {
+   width: 100%;
+}
+.bzotech-blog-form-comment .comment-form .control-group
+ {
+    margin-bottom: 20px;
+}
+.bzotech-blog-list-comment .title-line{
+    margin-bottom: 40px;
+}
+
+.bzotech-blog-list-comment .comment-list{
+    list-style: none;
+    padding-left: 0px;
+        margin-bottom: 0px;
+}
+.bzotech-blog-list-comment .comment-list .comment-thumb img{
+    border-radius: 50%;
+    height: auto;
+    border: 1px solid var(--bzo-main-color);
+}
+.bzotech-blog-list-comment .comment-list .comment-thumb{
+       width: 55px;
+    min-width: 55px;
+    line-height: 0;
+}
+.bzotech-blog-list-comment .comment-list .comment-info{
+    padding-left: 0px;
+    padding-top: 0px;
+    width: calc(100% - 50px);
+    position: relative;
+    margin-left: 15px;
+}
+.bzotech-blog-list-comment .comment-list .comment-info .author-name,
+.bzotech-blog-list-comment .comment-list .comment-info .author-name a
+{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: capitalize;
+}
+.bzotech-blog-list-comment .comment-list .comment-info .author-name a:hover{
+    color: var(--bzo-main-color);
+}
+.bzotech-blog-list-comment .comment-list .comment-info .author-date
+{
+    font-size: 14px;
+    color: #898989;
+        width: calc(100% - 150px);
+}
+.bzotech-blog-list-comment .comment-list .comment-info .author-name span
+{
+    font-size: 18px;
+    color: #000;
+    margin-left: 30px;
+    display: inline-block;
+    font-weight: 400;
+}
+.bzotech-blog-list-comment .comment-list .comment-info .author-name
+{
+    margin-bottom: 5px;
+        width: calc(100% - 150px);
+}
+
+.bzotech-blog-list-comment .comment-list .comment-info .content-comment>p:last-child{
+    margin-bottom: 0px;
+}
+.bzotech-blog-list-comment .comment-list .comment-info .date{
+    margin-top: 12px;
+    display: inline-block;
+    font-size: 16px;
+    color: #999;
+}
+.bzotech-blog-list-comment .comment-list .comment-info .date span{
+    margin-right:5px;
+}
+.bzotech-blog-list-comment .item-comment .desc-comment-text{
+    margin-top: 30px;
+}
+.bzotech-blog-list-comment .comment-list>li .item-comment {
+    border: 1px solid var(--bzo-border-color);
+    padding: 30px;
+    margin-top: 30px;
+}
+.bzotech-blog-list-comment .comment-list>li:first-child>.item-comment {
+    margin-top: 0px;
+
+}
+.comment-list .comment-reply-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0;
+    border-bottom: 1px solid var(--bzo-gray-color);
+    line-height: 22px;
+}
+.comment-list .comment-reply-link:hover{
+    border-color: var(--bzo-main-color);
+}
+.comment-list .comment-respond{
+    margin-bottom:30px;
+    padding: 0;
+    border: none;
+    margin-top: 30px;
+}
+#cancel-comment-reply-link{
+    font-size: 20px;
+}
+
+.comment-list ul{
+    list-style: none;
+}
+.comment-list .content-comment ul {
+    list-style: disc;
+}
+.comment-list .children{
+    padding-left: 95px;
+}
+@media (max-width: 1366px){
+
+    .comment-list .children {
+        padding-left: 60px;
+    }
+    
+}
+@media (max-width: 991px){
+
+    .comment-list .children {
+        padding-left: 32px;
+    }
+    
+}
+@media (max-width: 768px){
+
+    .comment-list .children {
+        padding-left: 0px;
+    }
+}
+@media (max-width: 767px){
+   .comment-list .comment-reply-link{
+    position: unset;
+    margin-top: 20px;
+   }
+}
+/*End Comment list post*/
+
+/*Begin Comment form post*/
+.bzotech-blog-form-comment .comment-form .contact-name .title-label,
+.bzotech-blog-form-comment .comment-form .contact-email .title-label,
+.bzotech-blog-form-comment .comment-form .contact-site .title-label,
+.bzotech-blog-form-comment .comment-form .contact-message .title-label{
+    display: block;
+    font-weight: 400;
+    font-size:16px;
+    margin-bottom: 9px;
+}
+.bzotech-blog-form-comment .comment-form .contact-name .title-label span,
+.bzotech-blog-form-comment .comment-form .contact-email .title-label span,
+.bzotech-blog-form-comment .comment-form .contact-site .title-label span,
+.bzotech-blog-form-comment .comment-form .contact-message .title-label span{
+    color: #FF3B3B;
+}
+.bzotech-blog-form-comment .comment-form input[type="text"]{
+    height: 50px;
+}
+.bzotech-blog-form-comment .comment-form input[type="text"], 
+.bzotech-blog-form-comment .comment-form textarea{
+    width: 100%;
+    padding: 0px 20px;
+    font-size: var(--bzo-body_typo-font-size);
+    background: #fff;
+    border-radius: 0px;
+} 
+.bzotech-blog-form-comment .comment-form textarea{
+    padding-top: 14px;
+    height: 140px;
+}
+.bzotech-blog-form-comment .comment-form input[type="text"]::-webkit-input-placeholder,
+.bzotech-blog-form-comment .comment-form textarea::-webkit-input-placeholder 
+{ /* Edge */
+  color: #666;
+}
+
+.bzotech-blog-form-comment .comment-form textarea:-ms-input-placeholder, 
+.bzotech-blog-form-comment .comment-form input[type="text"]:-ms-input-placeholder 
+{ /* Internet Explorer 10-11 */
+  color: #666;
+}
+
+.bzotech-blog-form-comment .comment-form textarea::placeholder, 
+.bzotech-blog-form-comment .comment-form input[type="text"]::placeholder 
+{
+  color: #666;
+}
+
+p.no-comments{
+    margin-bottom: 0px;
+    margin-top: 50px;
+    background: #f5f5f5;
+    padding: 15px 20px;
+    color: var(--bzo-main-color);
+    border-radius: 0px;
+}
+.comment-list li.ping-track-back {
+    margin-bottom: 35px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.comment-list .ping-track-back .edit-link{
+    color: #000;
+    margin-left: 10px;
+}
+.comment-list .ping-track-back .edit-link i{
+    margin-right: 3px;
+}
+/*End comment form post*/
+@media(max-width: 1200px){
+}
+@media(max-width: 767px){
+}

@@ -1,13 +1,173 @@
-<!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
-</html>
+<!doctype html><html lang="en-US" class="yes-js js_active js csstransitions"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Rodor</title><style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style><style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style><style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style><link href="/Rodor_files/wc-blocks.css" id="wc-blocks-style-css" media="all" rel="stylesheet"/><style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style><link href="/Rodor_files/styles.css" id="wpml-blocks-css" media="all" rel="stylesheet"/><link href="/Rodor_files/styles(1).css" id="contact-form-7-css" media="all" rel="stylesheet"/><link href="/Rodor_files/sr7.css" id="sr7css-css" media="all" rel="stylesheet"/><link href="/Rodor_files/user.css" id="nirweb_main_css-css" media="all" rel="stylesheet"/><link href="/Rodor_files/woocommerce-layout.css" id="woocommerce-layout-css" media="all" rel="stylesheet"/><link href="/Rodor_files/woocommerce-smallscreen.css" id="woocommerce-smallscreen-css" media="only screen and (max-width: 768px)" rel="stylesheet"/><link href="/Rodor_files/woocommerce.css" id="woocommerce-general-css" media="all" rel="stylesheet"/><style id="woocommerce-inline-inline-css">
+.woocommerce form .form-row .required { visibility: visible; }
+/*# sourceURL=woocommerce-inline-inline-css */
+</style><link href="/Rodor_files/style.min.css" id="wpml-legacy-dropdown-0-css" media="all" rel="stylesheet"/><style id="wpml-legacy-dropdown-0-inline-css">
+.wpml-ls-statics-shortcode_actions, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu, .wpml-ls-statics-shortcode_actions a {border-color:#EEEEEE;}.wpml-ls-statics-shortcode_actions a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link:link {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:hover,.wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:focus, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:hover, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:focus {color:#000000;background-color:#eeeeee;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language > a {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover>a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a:focus {color:#000000;background-color:#eeeeee;}
+/*# sourceURL=wpml-legacy-dropdown-0-inline-css */
+</style><link href="/Rodor_files/style(1).min.css" id="wpml-legacy-horizontal-list-0-css" media="all" rel="stylesheet"/><style id="wpml-legacy-horizontal-list-0-inline-css">
+.wpml-ls-statics-footer{background-color:transparent;}.wpml-ls-statics-footer, .wpml-ls-statics-footer .wpml-ls-sub-menu, .wpml-ls-statics-footer a {border-color:transparent;}.wpml-ls-statics-footer a, .wpml-ls-statics-footer .wpml-ls-sub-menu a, .wpml-ls-statics-footer .wpml-ls-sub-menu a:link, .wpml-ls-statics-footer li:not(.wpml-ls-current-language) .wpml-ls-link, .wpml-ls-statics-footer li:not(.wpml-ls-current-language) .wpml-ls-link:link {color:#393939;background-color:#F5F5F5;}.wpml-ls-statics-footer a, .wpml-ls-statics-footer .wpml-ls-sub-menu a:hover,.wpml-ls-statics-footer .wpml-ls-sub-menu a:focus, .wpml-ls-statics-footer .wpml-ls-sub-menu a:link:hover, .wpml-ls-statics-footer .wpml-ls-sub-menu a:link:focus {color:#000000;background-color:#FFFFFF;}.wpml-ls-statics-footer .wpml-ls-current-language > a {color:#393939;background-color:#F5F5F5;}.wpml-ls-statics-footer .wpml-ls-current-language:hover>a, .wpml-ls-statics-footer .wpml-ls-current-language>a:focus {color:#000000;background-color:#FFFFFF;}
+#lang_sel img, #lang_sel_list img, #lang_sel_footer img { display: inline; }
+/*# sourceURL=wpml-legacy-horizontal-list-0-inline-css */
+</style><link href="/Rodor_files/jquery.selectBox.css" id="jquery-selectBox-css" media="all" rel="stylesheet"/><link href="/Rodor_files/prettyPhoto.css" id="woocommerce_prettyPhoto_css-css" media="all" rel="stylesheet"/><link href="/Rodor_files/style.css" id="yith-wcwl-main-css" media="all" rel="stylesheet"/><style id="yith-wcwl-main-inline-css">
+ :root { --add-to-wishlist-icon-color: #000000; --added-to-wishlist-icon-color: #000000; --rounded-corners-radius: 16px; --add-to-cart-rounded-corners-radius: 16px; --color-headers-background: #F4F4F4; --feedback-duration: 3s } 
+/*# sourceURL=yith-wcwl-main-inline-css */
+</style><link href="/Rodor_files/add-to-wishlist.css" id="yith-wcwl-add-to-wishlist-css" media="all" rel="stylesheet"/><style id="yith-wcwl-add-to-wishlist-inline-css">
+ :root { --add-to-wishlist-icon-color: #000000; --added-to-wishlist-icon-color: #000000; --rounded-corners-radius: 16px; --add-to-cart-rounded-corners-radius: 16px; --color-headers-background: #F4F4F4; --feedback-duration: 3s } 
+/*# sourceURL=yith-wcwl-add-to-wishlist-inline-css */
+</style><link href="/Rodor_files/brands.css" id="brands-styles-css" media="all" rel="stylesheet"/><link href="/Rodor_files/reset.css" id="bzotech-reset-css" media="all" rel="stylesheet"/><link href="/Rodor_files/typography.css" id="bzotech-typography-css" media="all" rel="stylesheet"/><link href="/Rodor_files/layout.css" id="bzotech-layout-css" media="all" rel="stylesheet"/><link href="/Rodor_files/theme-unit-test.css" id="bzotech-theme-unit-test-css" media="all" rel="stylesheet"/><link href="/Rodor_files/class-style.css" id="bzotech-class-style-css" media="all" rel="stylesheet"/><link href="/Rodor_files/jquery-ui.min.css" id="jquery-ui-css" media="all" rel="stylesheet"/><link href="/Rodor_files/all.min.css" id="font-awesome-all-css" media="all" rel="stylesheet"/><link href="/Rodor_files/fontawesome.min.css" id="elementor-icons-shared-0-css" media="all" rel="stylesheet"/><link href="/Rodor_files/ekiticons.css" id="elementskit-css-icon-control-css" media="all" rel="stylesheet"/><link href="/Rodor_files/bzoicon.css" id="bzoicon-css-icon-control-css" media="all" rel="stylesheet"/><link href="/Rodor_files/line-awesome.min.css" id="lineawesome-css" media="all" rel="stylesheet"/><link href="/Rodor_files/magnific-popup.css" id="magnific-popup-css" media="all" rel="stylesheet"/><link href="/Rodor_files/jquery.fancybox.min.css" id="jquery-fancybox-css" media="all" rel="stylesheet"/><link href="/Rodor_files/slick.css" id="slick-css" media="all" rel="stylesheet"/><link href="/Rodor_files/swiper.min.css" id="swiper-css" media="all" rel="stylesheet"/><link href="/Rodor_files/button.css" id="bzotech-side-wide-global-button-css" media="all" rel="stylesheet"/><link href="/Rodor_files/comments-template.css" id="bzotech-side-wide-global-comments-template-css" media="all" rel="stylesheet"/><link href="/Rodor_files/effect-libs.css" id="bzotech-side-wide-global-effect-libs-css" media="all" rel="stylesheet"/><link href="/Rodor_files/nav-slider.css" id="bzotech-side-wide-global-nav-slider-css" media="all" rel="stylesheet"/><link href="/Rodor_files/page-404.css" id="bzotech-side-wide-global-page-404-css" media="all" rel="stylesheet"/><link href="/Rodor_files/post-items.css" id="bzotech-side-wide-global-post-items-css" media="all" rel="stylesheet"/><link href="/Rodor_files/preload.css" id="bzotech-side-wide-global-preload-css" media="all" rel="stylesheet"/><link href="/Rodor_files/product-items.css" id="bzotech-side-wide-global-product-items-css" media="all" rel="stylesheet"/><link href="/Rodor_files/siderbar-widget.css" id="bzotech-side-wide-global-siderbar-widget-css" media="all" rel="stylesheet"/><link href="/Rodor_files/single-product.css" id="bzotech-single-product-css" media="all" rel="stylesheet"/><link href="/Rodor_files/style(1).css" id="bzotech-theme-style-css" media="all" rel="stylesheet"/><link href="/Rodor_files/custom-style.css" id="bzotech-theme-custom-style-css" media="all" rel="stylesheet"/><link href="/Rodor_files/mobi-style.css" id="bzotech-mobi-style-css" media="all" rel="stylesheet"/><link href="/Rodor_files/style(2).css" id="bzotech-theme-default-css" media="all" rel="stylesheet"/><link href="/Rodor_files/jquery.dataTables.css" id="jquery-fixedheadertable-style-css" media="all" rel="stylesheet"/><link href="/Rodor_files/compare.css" id="yith_woocompare_page-css" media="all" rel="stylesheet"/><link href="/Rodor_files/widget.css" id="yith-woocompare-widget-css" media="all" rel="stylesheet"/><link href="/Rodor_files/elementor-icons.min.css" id="elementor-icons-css" media="all" rel="stylesheet"/><link href="/Rodor_files/custom-frontend.min.css" id="elementor-frontend-css" media="all" rel="stylesheet"/><link href="/Rodor_files/post-19601.css" id="elementor-post-19601-css" media="all" rel="stylesheet"/><link href="/Rodor_files/heading.css" id="bzotech-el-heading-css" media="all" rel="stylesheet"/><link href="/Rodor_files/fadeInDown.min.css" id="e-animation-fadeInDown-css" media="all" rel="stylesheet"/><link href="/Rodor_files/fadeInRight.min.css" id="e-animation-fadeInRight-css" media="all" rel="stylesheet"/><link href="/Rodor_files/slider.css" id="bzotech-el-slider-css" media="all" rel="stylesheet"/><link href="/Rodor_files/info-box.css" id="bzotech-el-info-box-css" media="all" rel="stylesheet"/><link href="/Rodor_files/button(1).css" id="bzotech-el-button-css" media="all" rel="stylesheet"/><link href="/Rodor_files/fadeIn.min.css" id="e-animation-fadeIn-css" media="all" rel="stylesheet"/><link href="/Rodor_files/fadeInLeft.min.css" id="e-animation-fadeInLeft-css" media="all" rel="stylesheet"/><link href="/Rodor_files/products.css" id="bzotech-el-products-css" media="all" rel="stylesheet"/><link href="/Rodor_files/zoomIn.min.css" id="e-animation-zoomIn-css" media="all" rel="stylesheet"/><link href="/Rodor_files/banner-info.css" id="bzotech-el-banner-info-css" media="all" rel="stylesheet"/><link href="/Rodor_files/fadeInUp.min.css" id="e-animation-fadeInUp-css" media="all" rel="stylesheet"/><link href="/Rodor_files/widget-image.min.css" id="widget-image-css" media="all" rel="stylesheet"/><link href="/Rodor_files/instagram.css" id="bzotech-el-instagram-css" media="all" rel="stylesheet"/><link href="/Rodor_files/post-1853.css" id="elementor-post-1853-css" media="all" rel="stylesheet"/><link href="/Rodor_files/line-awesome.css" id="elementor-icons-shared-2-css" media="all" rel="stylesheet"/><link href="/Rodor_files/line-awesome.css" id="elementor-icons-lineicons-css" media="all" rel="stylesheet"/><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style><style id="wp-custom-css">
+.mouse-cursor.text-css-e {
+    display: none;
+}
+h2.gform_title {
+    display: none;
+}
+p.gform_required_legend {
+    display: none;
+}
+</style><link href="/Rodor_files/front.css" id="woocommerce-currency-switcher-css" media="all" rel="stylesheet"/><link href="/Rodor_files/post-12195.css" id="elementor-post-12195-css" media="all" rel="stylesheet"/><link href="/Rodor_files/logo.css" id="bzotech-el-logo-css" media="all" rel="stylesheet"/><link href="/Rodor_files/post-12204.css" id="elementor-post-12204-css" media="all" rel="stylesheet"/><link href="/Rodor_files/mailchimp.css" id="bzotech-el-mailchimp-css" media="all" rel="stylesheet"/><link href="/Rodor_files/list-link.css" id="bzotech-el-list-link-css" media="all" rel="stylesheet"/><link href="/Rodor_files/t0.css" rel="stylesheet" type="text/css"/><style id="css-ddslick" type="text/css">.dd-select{ border-radius:2px; border:solid 1px #ccc; position:relative; cursor:pointer;}.dd-desc { color:#aaa; display:block; overflow: hidden; font-weight:normal; line-height: 1.4em; }.dd-selected{ overflow:hidden; display:block; padding:10px; font-weight:bold;}.dd-pointer{ width:0; height:0; position:absolute; right:10px; top:50%; margin-top:-3px;}.dd-pointer-down{ border:solid 5px transparent; border-top:solid 5px #000; }.dd-pointer-up{border:solid 5px transparent !important; border-bottom:solid 5px #000 !important; margin-top:-8px;}.dd-options{ border:solid 1px #ccc; border-top:none; list-style:none; box-shadow:0px 1px 5px #ddd; display:none; position:absolute; z-index:2000; margin:0; padding:0;background:#fff; overflow:auto;}.dd-option{ padding:10px; display:block; border-bottom:solid 1px #ddd; overflow:hidden; text-decoration:none; color:#333; cursor:pointer;-webkit-transition: all 0.25s ease-in-out; -moz-transition: all 0.25s ease-in-out;-o-transition: all 0.25s ease-in-out;-ms-transition: all 0.25s ease-in-out; }.dd-options > li:last-child > .dd-option{ border-bottom:none;}.dd-option:hover{ background:#f3f3f3; color:#000;}.dd-selected-description-truncated { text-overflow: ellipsis; white-space:nowrap; }.dd-option-selected { background:#f6f6f6; }.dd-option-image, .dd-selected-image { vertical-align:middle; float:left; margin-right:5px; max-width:64px;}.dd-image-right { float:right; margin-right:15px; margin-left:5px;}.dd-container{ position:relative;} .dd-selected-text { font-weight:bold}</style><style type="text/css">.fancybox-margin{margin-right:15px;}</style><link href="/Rodor_files/revicons.css" rel="stylesheet" type="text/css"/><link href="/Rodor_files/sr7.lp.css" rel="stylesheet" type="text/css"/><style>.f1l1o3bf{font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, Arial;font-style:normal;font-weight:400}.f1l1o3bf button, .f1l1o3bf input, .f1l1o3bf textarea{font-family:inherit}.f4ofdyf{border:0.5px solid var(--origin-color-border-base-subdued);border-radius:8px;cursor:pointer;height:24px;transition:width 150ms cubic-bezier(0.05, 0.6, 0, 1), height 150ms cubic-bezier(0.05, 0.6, 0, 1), border-radius 150ms cubic-bezier(0.05, 0.6, 0, 1);width:24px}.f137tu7e{flex-shrink:0;transform:scale(1);transition:transform 150ms cubic-bezier(0.05, 0.6, 0, 1)}[data-origin-mode="dark"] .f137tu7e{--origin-color-logo-grammarly-light:var(--origin-color-logo-grammarly-dark);--origin-color-logo-grammarly-primary:var(--origin-color-logo-grammarly-default)}.ftwgcg0{-moz-appearance:none;-webkit-appearance:none;align-items:flex-start;appearance:none;background:transparent;border:none;color:inherit;cursor:pointer;display:flex;font:inherit;height:32px;justify-content:flex-start;padding:0;width:32px}.ftwgcg0:hover .f4ofdyf{border-radius:12px;height:32px;width:32px}.ftwgcg0:hover .f137tu7e{transform:scale(1.25)}.f13cnbb7 .f4ofdyf{border-radius:12px;height:32px;width:32px}.f13cnbb7 .f137tu7e{transform:scale(1.25)}.f8ia88a{--origin-color-button-ghost-content-default:#714cb6;--origin-color-button-ghost-content-states:#533192;--origin-color-button-primary-fill-active:#3f256f;--origin-color-button-primary-fill-default:#714cb6;--origin-color-button-primary-fill-hover:#533192;--origin-font-weight-heading-xsmall:600}[data-origin-mode="dark"] .f8ia88a{--origin-color-button-ghost-content-default:#d4c7ff;--origin-color-button-ghost-content-states:#bea1f5;--origin-color-button-primary-content-default:#141413;--origin-color-button-primary-fill-active:#e8e0ff;--origin-color-button-primary-fill-default:#bea1f5;--origin-color-button-primary-fill-hover:#d4c7ff}.f347vxz{font-weight:600}</style><link href="/Rodor_files/sr7.nav.css" rel="stylesheet" type="text/css"/><link href="/Rodor_files/sr7.media.css" rel="stylesheet" type="text/css"/><style class="sr7-inline-css" id="SR7_3_1_navigationstyles">#SR7_3_1 .zeus.sr7-arrows {
+  cursor:pointer;
+  min-width:70px;
+  min-height:70px;
+  position:absolute;
+  display:block;
+  z-index:1000;
+  border-radius:50%;   
+  overflow:hidden;
+  background:rgba(0,0,0,0.1);
+}
+
+#SR7_3_1 .zeus.sr7-arrows:before {
+  font-family: 'revicons';
+  font-size:20px;
+  color:#ffffff;
+  display:block;
+  line-height: 70px;
+  text-align: center;    
+  z-index:2;
+  position:relative;
+}
+#SR7_3_1 .zeus.sr7-arrows.sr7-leftarrow:before {
+  content: '\e824';
+}
+#SR7_3_1 .zeus.sr7-arrows.sr7-rightarrow:before {
+  content: '\e825';
+}
+
+#SR7_3_1 .zeus .tp-title-wrap {
+  background:rgba(0,0,0,0.5);
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+  position:absolute;
+  opacity:0;
+  transform:scale(0);
+  -webkit-transform:scale(0);
+   transition: all 0.3s;
+  -webkit-transition:all 0.3s;
+  -moz-transition:all 0.3s;
+   border-radius:50%;
+ }
+#SR7_3_1 .zeus .sr7-nav-img {
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  background-position:center center;
+  background-size:cover;
+  border-radius:50%;
+  transform:translatex(-100%);
+  -webkit-transform:translatex(-100%);
+   transition: all 0.3s;
+  -webkit-transition:all 0.3s;
+  -moz-transition:all 0.3s;
+
+ }
+#SR7_3_1 .zeus.sr7-rightarrow .sr7-nav-img {
+    transform:translatex(100%);
+  -webkit-transform:translatex(100%);
+      }
+#SR7_3_1 .zeus.sr7-arrows.sr7-touchhover .sr7-nav-img {
+  transform:translatex(0);
+  -webkit-transform:translatex(0);
+  opacity:1;
+}
+      
+#SR7_3_1 .zeus.sr7-arrows.sr7-touchhover .tp-title-wrap {
+  transform:scale(1);
+  -webkit-transform:scale(1);
+  opacity:1;
+}
+ #SR7_3_1 .bzo_bullets.sr7-bullets {
+}
+#SR7_3_1 .bzo_bullets.sr7-bullets:before {
+	content:' ';
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:transparent;
+	padding:10px;
+	margin-left:-10px;margin-top:-10px;
+	box-sizing:content-box;
+}
+#SR7_3_1 .bzo_bullets .sr7-bullet {
+	width:12px;
+	height:12px;
+	position:absolute;
+	background:#aaa;
+    background:rgba(255,255,255,0.5);
+	cursor: pointer;
+	box-sizing:content-box;
+}
+#SR7_3_1 .bzo_bullets .sr7-bullet.sr7-touchhover,
+#SR7_3_1 .bzo_bullets .sr7-bullet.selected {
+	background:rgb(255,255,255);
+}
+#SR7_3_1 .bzo_bullets .sr7-bullimg {
+}
+#SR7_3_1 .bzo_bullets .sr7-bullet-title {
+}
+</style><style id="bzotech-theme-style-inline-css">
+:root {
+            --bzo-main-color: #2e2e2e;
+            --bzo-main-color2: #9f6744;
+            --bzo-main-color-lighten: rgba(46, 46, 46, 0.2);
+            --bzo-main-color-lighten2: rgba(46, 46, 46, 0.45);
+            --bzo-gray-color: #454545;
+            --bzo-border-color: #d9d9d9;
+            --bzo-body-background: #ffffff;
+            --bzo-container-width: 1560px;
+            --bzo-preload-background: #2e2e2e; 
+            --bzo-gutter: 15px;
+            --bzo-gutter-minus: -15px;
+            --bzo-letter-spacing-body: 0.08px;
+           --bzo-body_typo-font-family:Jost;--bzo-body_typo-google:1;--bzo-body_typo-font-size:16px;--bzo-body_typo-line-height:1.5em;--bzo-body_typo-color:#727272;
+           --bzo-title_typo-font-family:Jost;--bzo-title_typo-google:1;--bzo-title_typo-color:#2E2E2E;
+        }
+/*# sourceURL=bzotech-theme-style-inline-css */
+</style><link href="/Rodor_files/css2" media="all" property="stylesheet" rel="stylesheet" type="text/css"/><script src="/Rodor_files/swiper.js"></script></head><body class="home wp-singular page-template page-template-elementor-template page-template-elementor-template-php page page-id-1853 wp-theme-bw-giftxtore wp-child-theme-bw-giftxtore-child theme-bw-giftxtore woocommerce-js body-sidebar-type-default theme-ver-1.7.5 elementor-default elementor-kit-19601 elementor-page elementor-page-1853 currency-usd e--ua-blink e--ua-chrome e--ua-webkit preload-remove"><div id="app"></div><script type="module" src="/src/main.ts"></script></body></html>

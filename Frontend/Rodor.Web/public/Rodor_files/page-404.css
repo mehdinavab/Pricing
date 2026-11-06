@@ -1,0 +1,57 @@
+/*Begin 404 page*/
+.error404 .main-page-default{
+    
+}
+.error404 .wrap-bread-crumb{
+    display: none;
+}
+
+.content-default-404 .text{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.content-default-404 .desc{
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 30px;
+    max-width: 1120px;
+}
+.content-default-404 .img-number{
+    display: inline-block;
+}
+.content-default-404 .elbzotech-bt-default{
+    margin-top: 30px;
+}
+@media(max-width: 1200px){
+    .content-default-404 .desc {
+        font-size: 18px;
+    }
+    .content-default-404 .img-number {
+        max-width: 80%;
+    }
+    .content-default-404 .text {
+        font-size: 38px;
+        line-height: 48px;
+    }
+    .content-default-404 .title120{
+        font-size: 100px;
+    }
+}
+@media(max-width: 767px){
+    .content-default-404 .title120{
+        font-size: 80px;
+    }
+    .content-default-404 .text {
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-size: 32px;
+        line-height: 38px;
+    }
+    .content-default-404 .desc {
+        font-size: 14px;
+    }
+    .content-default-404 .elbzotech-bt-default {
+        margin-top: 20px;
+    }
+}
+/*End 404 page*/

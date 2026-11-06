@@ -1,0 +1,205 @@
+/*Begin Custom Button*/
+/*woocommerce button*/
+.woocommerce #respond input#submit.disabled, .woocommerce #respond input#submit:disabled, .woocommerce #respond input#submit:disabled[disabled], .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce a.button:disabled[disabled], .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled]{
+    border: 1px solid var(--bzo-main-color);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 11px 25px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 0px;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    font-family: var(--bzo-body_typo-font-family);
+    overflow: hidden;
+    transition: .2s;
+    background: var(--bzo-main-color);
+    position: relative;
+    overflow: hidden;
+    opacity: 0.6;
+}
+
+.woocommerce #respond input#submit.disabled:hover, .woocommerce #respond input#submit:disabled:hover, .woocommerce #respond input#submit:disabled[disabled]:hover, .woocommerce a.button.disabled:hover, .woocommerce a.button:disabled:hover, .woocommerce a.button:disabled[disabled]:hover, .woocommerce button.button.disabled:hover, .woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover, .woocommerce input.button.disabled:hover, .woocommerce input.button:disabled:hover, .woocommerce input.button:disabled[disabled]:hover{
+    color: #fff;
+    border-color: var(--bzo-main-color2);
+    background: var(--bzo-main-color2);
+}
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt,
+.button,
+.wishlist_table .product-add-to-cart a,
+.woocommerce #respond input#submit, .woocommerce a.button,
+.woocommerce a.button.alt, .woocommerce button.button, 
+.woocommerce input.button{
+    border: 1px solid var(--bzo-main-color);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 11px 25px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 0px;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    font-family: var(--bzo-body_typo-font-family);
+    overflow: hidden;
+    transition: .2s;
+    background: var(--bzo-main-color);
+    position: relative;
+    overflow: hidden;
+}
+
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:hover,
+.button:hover,
+.wishlist_table .product-add-to-cart a:hover,
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover,
+.woocommerce a.button.alt:hover, .woocommerce button.button:hover, 
+.woocommerce input.button:hover{
+    color: #fff;
+    border-color: var(--bzo-main-color2);
+    background: var(--bzo-main-color2);
+}
+
+/* btn default */
+
+.woocommerce div.product form.cart button.single_add_to_cart_button,
+.elbzotech-bt-default{
+    border: 1px solid var(--bzo-main-color);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 11px 25px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 0px;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    font-family: var(--bzo-body_typo-font-family);
+    overflow: hidden;
+    transition: .3s;
+    background: var(--bzo-main-color);
+    position: relative;
+    overflow: hidden;
+}
+.woocommerce div.product form.cart button.single_add_to_cart_button:hover,
+.elbzotech-bt-default:hover,
+.elbzotech-bt-default:focus
+{
+    color: var(--bzo-main-color);
+    background: #fff;
+    
+}
+
+@media(max-width: 767px){
+    .elbzotech-bt-default{
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/*==== btn style 2 ====*/
+.elbzotech-bt-style2{
+    border: 1px solid var(--bzo-main-color);
+    color: var(--bzo-main-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 11px 25px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 0px;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    font-family: var(--bzo-body_typo-font-family);
+    overflow: hidden;
+    transition: .3s;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+.elbzotech-bt-style2:focus,
+.elbzotech-bt-style2:hover{
+    border-color:  var(--bzo-main-color);
+    color: #fff;
+    background-color: var(--bzo-main-color);
+}
+
+/*btn style 3*/
+.elbzotech-bt-style3{
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--bzo-main-color);
+    border-bottom: 1px solid var(--bzo-main-color);
+    transition: .3s;
+}
+.elbzotech-bt-style3:hover{
+    color: var(--bzo-main-color2);
+    border-color: var(--bzo-main-color2);
+}
+/*-- btn quick view detail --*/
+
+.detail-quickview{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--bzo-title_typo-color);
+    text-transform: uppercase;
+    margin-top: 20px;
+    display: inline-block;
+}
+.detail-quickview span {
+    border-bottom: 1px solid var(--bzo-title_typo-color);
+}
+.detail-quickview i {
+    margin-left: 5px;
+}
+.detail-quickview:hover {
+    color: var(--bzo-main-color);    
+}
+.detail-quickview:hover span {
+    border-color: var(--bzo-main-color);
+}
+/*-- end btn quick view detail --*/
+
+/*--- effect hover btn --*/
+.wishlist_compare_single_product a,
+.item-list-default .product-extra-link-defaut2 .list-compare-wishlist a,    
+.item-grid-product- .item-product .product-extra-link a{
+    position: relative;
+    overflow: hidden;
+}
+.wishlist_compare_single_product a::after,
+.item-list-default .product-extra-link-defaut2 .list-compare-wishlist a::after,    
+.item-grid-product- .item-product .product-extra-link a::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    border-radius: 0px;
+    top: 0;
+    right: 0;
+    left: auto;
+    z-index: -1;
+    transition: all .3s ease;
+    background: var(--bzo-main-color2);
+}
+.wishlist_compare_single_product a::after{
+    background: var(--bzo-main-color);
+}
+.wishlist_compare_single_product a:hover::after,
+.item-list-default .product-extra-link-defaut2 .list-compare-wishlist a:hover::after,
+.item-grid-product- .item-product .product-extra-link a:hover::after{
+    width: 100%;
+    right: auto;
+    left: 0;
+    transition: all .3s ease;
+}

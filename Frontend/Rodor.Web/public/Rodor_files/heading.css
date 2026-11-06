@@ -1,0 +1,25 @@
+/*Begin Elementor Heading*/
+.elbzotech-text-editor-global p:last-child{
+    margin-bottom: 0px;
+}
+.elementor-widget.elementor-widget-bzotech-heading:not(:last-child) {
+    margin-bottom: 0px;
+}
+.elbzotech-heading-global__line{
+    display: block;
+    height: 2px;
+    width: 100%;
+}
+.mouse-cursor{
+ display:inline-block;
+  white-space: nowrap;
+  padding:10px;
+  background:#3498DB;
+  position:absolute; 
+  top:50%; left:50%; font-size:14px; text-transform:uppercase;
+  transform: translateY(-50%) translateX(-50%);
+  color:#fff;
+}
+.abcd .elementor-widget-container{
+	padding: 300px 0;
+}

@@ -1,0 +1,238 @@
+
+/*Begin Banner info elementor*/
+.background-overlay{
+    z-index: 1;
+}
+.background-overlay .background-overlay-color{
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 0;
+}
+.elbzotech-banner-info-global-wrap{
+    position: relative;
+}
+
+.elbzotech-banner-info-global-wrap .elbzotech-banner-info{
+    z-index: 1;
+}
+
+.elbzotech-info-inner{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+/* hover effect banner default */
+.banners-effect .elbzotech-banner-info-global-elbzotech-bndf .elbzotech-banner-info-global-thumb{
+    border-radius: 15px;
+    position: relative;
+}
+.banners-effect .elbzotech-banner-info-global-elbzotech-bndf .elbzotech-banner-info-global-thumb::before{
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+    -webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+}
+.banners-effect .elbzotech-banner-info-global-elbzotech-bndf .elbzotech-banner-info-global-thumb:hover::before{
+    -webkit-animation: shine .85s;
+    animation: shine .85s;
+}
+
+/* end hover effect banner default */
+.elbzotech-banner-info-global-elbzotech-bndf .elbzotech-banner-info-global-thumb a:hover{
+    cursor: pointer;
+}
+.elbzotech-banner-info-global-elbzotech-bndf .elbzotech-text-item{
+    margin: 0px;
+}
+.elbzotech-banner-info-global-elbzotech-bndf .elbzotech-banner-info{
+    display: flex;
+}
+.elbzotech-banner-info-global-elbzotech-bndf .btwrapinfo-container-flex-e,
+.elbzotech-banner-info-global-elbzotech-bndf .elbzotech-bt-custom
+{
+    display: flex;
+}
+.info-banner2 .link-bg-banner{
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+}
+.inner-left{
+    left: 0;
+}
+.inner-right{
+    right: 0;
+}
+.inner-center{
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.inner-top{
+    top: 0;
+}
+.inner-bottom{
+    bottom: 0;
+}
+.inner-middle{
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.elbzotech-banner-info-global-thumb{
+    transition: all 0.3s ease-out 0s;
+    -webkit-transition: all 0.3s ease-out 0s;
+}
+.elbzotech-banner-info-global-thumb img{
+    max-width: 100%;
+    transition: all 0.3s ease-out 0s;
+    -webkit-transition: all 0.3s ease-out 0s;
+}
+.elbzotech-banner-info-global-thumb.elbzotech-hidden img{
+    width: 100%;
+}
+@media(max-width: 767px){
+    .elbzotech-banner-info-global-thumb.elbzotech-hidden img{
+        width: auto;
+    }
+}
+.elbzotech-hidden .adv-thumb-link,
+.elbzotech-banner-info-global-wrap.elbzotech-hidden
+{
+    overflow: hidden;
+}
+.elbzotech-inherit .adv-thumb-link{
+    overflow: inherit;
+}
+
+
+/*---------------style 2--------------------*/
+.elbzotech-banner-info-global-style2  .icon-button-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.elbzotech-banner-info-global-style2  .icon-button-video img{
+    width: auto;
+}
+/*End banner info elementor*/
+
+/*---------------style 3--------------------*/
+.elbzotech-banner-info-global-style3{
+    position: relative;
+    overflow: hidden;
+}
+.elbzotech-banner-info-global-style3 .elbzotech-banner-info-global-thumb>a{
+   display: flex;;
+}
+.elbzotech-banner-info-global-style3 .elbzotech-banner-info-global-thumb img{
+    transition: transform 0.4s;
+        -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+}
+.elbzotech-banner-info-global-style3:hover .elbzotech-banner-info-global-thumb img{
+        -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.elbzotech-banner-info-global-style3 .info-banner{
+    position: absolute;
+    top: auto;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    padding: 30px;
+    height: 88px;
+    background-color: #FFFFFFCC;
+    transition: all 0.3s ease-out 0s;
+    -webkit-transition: all 0.3s ease-out 0s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+}
+.elbzotech-banner-info-global-style3:hover .info-banner{
+    height: 190px;
+ justify-content: center;
+    
+}
+.elbzotech-banner-info-global-style3 .info-banner .title-item{
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 26px;
+    font-weight: 600;
+    transition: all 0.3s ease-out 0s;
+    -webkit-transition: all 0.3s ease-out 0s;
+}
+.elbzotech-banner-info-global-style3 .info-banner .desc-item{
+    opacity: 0;
+    margin-bottom: 15px;
+    transition: all 0.3s ease-out 0s;
+    -webkit-transition: all 0.3s ease-out 0s;
+}
+.elbzotech-banner-info-global-style3 .info-banner .elbzotech-bt-style3{
+    opacity: 0;
+}
+
+.elbzotech-banner-info-global-style3:hover .info-banner .desc-item,
+.elbzotech-banner-info-global-style3:hover .info-banner .elbzotech-bt-style3
+{
+    opacity: 1;
+}
+@media(max-width: 1366px){
+    .elbzotech-banner-info-global-style3 .info-banner .title-item {
+        font-size: 20px;
+    }
+    .elbzotech-banner-info-global-style3 .info-banner{
+           height: 77px;
+    }
+}
+@media(max-width: 1200px){
+    .elbzotech-banner-info-global-style3 .info-banner .title-item {
+        font-size: 16px;
+    }
+    .elbzotech-banner-info-global-style3 .info-banner{
+        height: 58px;
+        padding: 20px 15px;
+    }
+    .elbzotech-banner-info-global-style3 .info-banner .elbzotech-bt-style3 {
+        font-size: 12px;
+    }
+    .elbzotech-banner-info-global-style3 .info-banner .desc-item {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .elbzotech-banner-info-global-style3 .info-banner .desc-item,
+    .elbzotech-banner-info-global-style3 .info-banner .title-item{
+        margin-bottom: 10px;
+    }
+    .elbzotech-banner-info-global-style3 .info-banner{
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+    }
+}
+/*End banner info elementor*/
+
