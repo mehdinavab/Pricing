@@ -16,6 +16,8 @@ public sealed class IdentityDbContext : IdentityDbContext<ApplicationUser, Appli
 
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
+    public DbSet<OtpChallenge> OtpChallenges => Set<OtpChallenge>();
+
     public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
 
     protected override void OnModelCreating(ModelBuilder builder)

@@ -51,6 +51,23 @@ public sealed class SmsDeliveryTests
     }
 
     [Fact]
+    public void Otp_delivery_expires_with_the_authentication_challenge()
+    {
+        var challengeExpiry = Now.AddMinutes(5);
+
+        var message = SmsMessage.CreateOtp(
+            Guid.NewGuid(),
+            "09121234567",
+            "123456",
+            Now,
+            challengeExpiry);
+
+        Assert.Equal(challengeExpiry, message.ExpiresAtUtc);
+        Assert.True(message.IsReadyToSend(challengeExpiry));
+        Assert.True(message.IsExpired(challengeExpiry.AddTicks(1)));
+    }
+
+    [Fact]
     public void Backoff_is_exponential_and_capped()
     {
         var retry = new SmsModuleConfiguration(1, initialRetryDelaySeconds: 10, maxRetryDelaySeconds: 30);

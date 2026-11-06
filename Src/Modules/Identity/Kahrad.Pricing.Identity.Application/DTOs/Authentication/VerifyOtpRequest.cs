@@ -5,6 +5,9 @@ namespace Kahrad.Pricing.Identity.Application.DTOs.Authentication;
 public sealed class VerifyOtpRequest
 {
     [Required]
+    public Guid RequestId { get; init; }
+
+    [Required]
     [Phone]
     [StringLength(20)]
     public string PhoneNumber { get; init; } = string.Empty;

@@ -148,6 +148,7 @@ public sealed class SmsService(
             request.PhoneNumber,
             request.Code,
             utcNow,
+            request.ExpiresAtUtc,
             request.TemplateId,
             parametersJson,
             request.LineNumber);

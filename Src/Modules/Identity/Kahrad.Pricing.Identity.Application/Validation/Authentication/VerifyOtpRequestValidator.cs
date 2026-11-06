@@ -8,6 +8,9 @@ namespace Kahrad.Pricing.Identity.Application.Validation.Authentication
     {
         public VerifyOtpRequestValidator()
         {
+            RuleFor(x => x.RequestId)
+                .NotEmpty();
+
             RuleFor(x => x.PhoneNumber)
              .ValidIranianMobileNumber()
              .When(x => !string.IsNullOrWhiteSpace(x.PhoneNumber));

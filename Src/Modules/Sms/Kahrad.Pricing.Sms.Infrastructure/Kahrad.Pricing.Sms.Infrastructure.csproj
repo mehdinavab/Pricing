@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Identity\Kahrad.Pricing.Identity.Application\Kahrad.Pricing.Identity.Application.csproj" />
     <ProjectReference Include="..\Kahrad.Pricing.Sms.Application\Kahrad.Pricing.Sms.Application.csproj" />
     <ProjectReference Include="..\Kahrad.Pricing.Sms.Domain\Kahrad.Pricing.Sms.Domain.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Kahrad.Pricing.BuildingBlocks.Infrastructure\Kahrad.Pricing.BuildingBlocks.Infrastructure.csproj" />

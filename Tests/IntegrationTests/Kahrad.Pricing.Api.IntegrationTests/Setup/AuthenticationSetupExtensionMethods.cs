@@ -18,6 +18,7 @@ public static class AuthenticationSetupExtensionMethods
         await scope.ServiceProvider.GetRequiredService<IdentitySeeder>().SeedRolesAsync();
         var users = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
         var user = new ApplicationUser(KahradPricingApiWebAppFactory.TestUsername,"Integration","SuperAdmin","superadmin@example.test");
+        user.PhoneNumber = "09121234567";
         EnsureSucceeded(await users.CreateAsync(user,KahradPricingApiWebAppFactory.TestPassword));
         EnsureSucceeded(await users.AddToRoleAsync(user,RoleConstants.SuperAdmin));
     }

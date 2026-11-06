@@ -8,6 +8,14 @@ namespace Kahrad.Pricing.Identity.Application.Abstractions.Services
             PasswordLoginRequest request,
             CancellationToken cancellationToken = default);
 
+        Task<OtpRequestResponse> RequestOtpAsync(
+            RequestOtpRequest request,
+            CancellationToken cancellationToken = default);
+
+        Task<TokenResponseDto> LoginWithOtpAsync(
+            VerifyOtpRequest request,
+            CancellationToken cancellationToken = default);
+
         Task<TokenResponseDto> RefreshTokenAsync(
             RefreshTokenRequest request,
             CancellationToken cancellationToken = default);

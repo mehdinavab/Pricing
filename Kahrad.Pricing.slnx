@@ -74,6 +74,7 @@
     <Project Path="Tests/IntegrationTests/Kahrad.Pricing.Sms.IntegrationTests/Kahrad.Pricing.Sms.IntegrationTests.csproj" />
   </Folder>
   <Folder Name="/Tests/UnitTests/">
+    <Project Path="Tests/UnitTests/Kahrad.Pricing.Identity.Tests/Kahrad.Pricing.Identity.Tests.csproj" />
     <Project Path="Tests/UnitTests/Kahrad.Pricing.Pricing.Tests/Kahrad.Pricing.Pricing.Tests.csproj" />
     <Project Path="Tests/UnitTests/Kahrad.Pricing.Products.Tests/Kahrad.Pricing.Products.Tests.csproj" />
     <Project Path="Tests/UnitTests/Kahrad.Pricing.Sms.Tests/Kahrad.Pricing.Sms.Tests.csproj" />

@@ -148,13 +148,14 @@ public sealed class SmsMessage : BaseEntity
         string phoneNumber,
         string code,
         DateTime sendDateUtc,
+        DateTime? expiresAtUtc = null,
         int? templateId = null,
         string? templateParametersJson = null,
         string? lineNumber = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(code);
 
-        return new SmsMessage(
+        var message = new SmsMessage(
             batchId,
             phoneNumber,
             messageBody: $"Verification code: {code}",
@@ -163,6 +164,13 @@ public sealed class SmsMessage : BaseEntity
             templateId: templateId,
             templateParameters: templateParametersJson,
             lineNumber: lineNumber);
+        if (expiresAtUtc.HasValue)
+        {
+            if (expiresAtUtc.Value <= sendDateUtc)
+                throw new ArgumentOutOfRangeException(nameof(expiresAtUtc));
+            message.ExpiresAtUtc = expiresAtUtc.Value;
+        }
+        return message;
     }
 
     public bool IsExpired(DateTime utcNow)

@@ -3,6 +3,7 @@ using Kahrad.Pricing.Sms.Application.Abstractions.Services;
 using Kahrad.Pricing.Sms.Infrastructure.Persistence;
 using Kahrad.Pricing.Sms.Infrastructure.Persistence.Repositories;
 using Kahrad.Pricing.Sms.Infrastructure.Services;
+using Kahrad.Pricing.Identity.Application.Abstractions.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -48,6 +49,7 @@ public static class DependencyInjection
             PooledConnectionLifetime = TimeSpan.FromMinutes(5)
         }) { Timeout = Timeout.InfiniteTimeSpan }));
         services.AddScoped<ISmsProviderResolver, SmsProviderResolver>();
+        services.AddScoped<IOtpNotificationSender, IdentityOtpNotificationSender>();
 
 
         return services;

@@ -4,6 +4,9 @@ using Kahrad.Pricing.Identity.Application.DTOs.Authentication;
 using Kahrad.Pricing.Identity.Application.Exceptions;
 using Kahrad.Pricing.Identity.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -12,7 +15,11 @@ namespace Kahrad.Pricing.Identity.Application.Authentication
     public sealed class AuthenticationService(
         UserManager<ApplicationUser> userManager,
         IJwtTokenGenerator tokenGenerator,
-        IRefreshTokenRepository refreshTokenRepository) : IAuthenticationService
+        IRefreshTokenRepository refreshTokenRepository,
+        IOtpChallengeRepository otpChallenges,
+        IOtpNotificationSender otpNotifications,
+        IOptions<OtpAuthenticationOptions> otpOptions,
+        TimeProvider timeProvider) : IAuthenticationService
     {
         public async Task<TokenResponseDto> LoginWithPasswordAsync(
             PasswordLoginRequest request,
@@ -43,6 +50,116 @@ namespace Kahrad.Pricing.Identity.Application.Authentication
                 CreateRefreshToken(user.Id, familyId, tokens),
                 cancellationToken);
 
+            return tokens;
+        }
+
+        public async Task<OtpRequestResponse> RequestOtpAsync(
+            RequestOtpRequest request,
+            CancellationToken cancellationToken = default)
+        {
+            var options = otpOptions.Value;
+            options.Validate();
+            var now = timeProvider.GetUtcNow().UtcDateTime;
+            var genericResponse = new OtpRequestResponse(
+                Guid.NewGuid(),
+                now.AddMinutes(options.LifetimeMinutes),
+                options.ResendCooldownSeconds);
+
+            var normalizedPhone = NormalizeIranianMobile(request.PhoneNumber);
+            var phoneCandidates = PhoneCandidates(normalizedPhone);
+            var matchingUsers = await userManager.Users
+                .Where(x => x.PhoneNumber != null && phoneCandidates.Contains(x.PhoneNumber))
+                .Take(2)
+                .ToListAsync(cancellationToken);
+
+            if (matchingUsers.Count != 1)
+                return genericResponse;
+
+            var user = matchingUsers[0];
+            if (!user.IsActive || await userManager.IsLockedOutAsync(user))
+                return genericResponse;
+
+            var currentChallenge = await otpChallenges.GetActiveByUserIdAsync(
+                user.Id,
+                now,
+                cancellationToken);
+            if (currentChallenge is not null && currentChallenge.NextRequestAtUtc > now)
+                return genericResponse;
+
+            var code = GenerateNumericCode(options.CodeLength);
+            currentChallenge?.Invalidate(now);
+            var challenge = OtpChallenge.Create(
+                user.Id,
+                code,
+                now,
+                TimeSpan.FromMinutes(options.LifetimeMinutes),
+                TimeSpan.FromSeconds(options.ResendCooldownSeconds),
+                options.MaxFailedAttempts);
+
+            await otpChallenges.ReplaceActiveAsync(
+                currentChallenge,
+                challenge,
+                cancellationToken);
+
+            try
+            {
+                await otpNotifications.SendAsync(
+                    normalizedPhone,
+                    code,
+                    challenge.ExpiresAtUtc,
+                    cancellationToken);
+            }
+            catch
+            {
+                challenge.Invalidate(timeProvider.GetUtcNow().UtcDateTime);
+                await otpChallenges.UpdateAsync(challenge, cancellationToken);
+                throw;
+            }
+
+            return new OtpRequestResponse(
+                challenge.PublicId,
+                challenge.ExpiresAtUtc,
+                options.ResendCooldownSeconds);
+        }
+
+        public async Task<TokenResponseDto> LoginWithOtpAsync(
+            VerifyOtpRequest request,
+            CancellationToken cancellationToken = default)
+        {
+            var now = timeProvider.GetUtcNow().UtcDateTime;
+            var challenge = await otpChallenges.GetByPublicIdAsync(
+                request.RequestId,
+                cancellationToken);
+            if (challenge is null || !challenge.IsUsable(now))
+                throw InvalidOtp();
+
+            var user = await userManager.FindByIdAsync(challenge.UserId.ToString());
+            if (user is null || !user.IsActive || await userManager.IsLockedOutAsync(user) ||
+                !string.Equals(
+                    NormalizeIranianMobile(user.PhoneNumber ?? string.Empty),
+                    NormalizeIranianMobile(request.PhoneNumber),
+                    StringComparison.Ordinal))
+            {
+                challenge.Invalidate(now);
+                await otpChallenges.UpdateAsync(challenge, cancellationToken);
+                throw InvalidOtp();
+            }
+
+            if (!challenge.Verify(request.Code, now))
+            {
+                await otpChallenges.UpdateAsync(challenge, cancellationToken);
+                EnsureSucceeded(await userManager.AccessFailedAsync(user));
+                throw InvalidOtp();
+            }
+
+            challenge.Consume(now);
+            user.PhoneNumberConfirmed = true;
+            EnsureSucceeded(await userManager.UpdateAsync(user));
+            EnsureSucceeded(await userManager.ResetAccessFailedCountAsync(user));
+
+            var tokens = await tokenGenerator.GenerateAsync(user);
+            var refreshToken = CreateRefreshToken(user.Id, Guid.NewGuid(), tokens);
+            await otpChallenges.CompleteAsync(challenge, refreshToken, cancellationToken);
             return tokens;
         }
 
@@ -132,6 +249,45 @@ namespace Kahrad.Pricing.Identity.Application.Authentication
             return Convert.ToHexString(
                 SHA256.HashData(Encoding.UTF8.GetBytes(token)));
         }
+
+        private static string GenerateNumericCode(int length)
+        {
+            var code = new char[length];
+            for (var index = 0; index < code.Length; index++)
+                code[index] = (char)('0' + RandomNumberGenerator.GetInt32(10));
+            return new string(code);
+        }
+
+        private static string NormalizeIranianMobile(string phoneNumber)
+        {
+            var digits = new string(phoneNumber
+                .Where(char.IsAsciiDigit)
+                .ToArray());
+
+            if (digits.StartsWith("0098", StringComparison.Ordinal))
+                digits = digits[4..];
+            else if (digits.StartsWith("98", StringComparison.Ordinal))
+                digits = digits[2..];
+            else if (digits.StartsWith('0'))
+                digits = digits[1..];
+
+            return string.Create(CultureInfo.InvariantCulture, $"0{digits}");
+        }
+
+        private static string[] PhoneCandidates(string normalizedPhone)
+        {
+            var subscriber = normalizedPhone[1..];
+            return
+            [
+                normalizedPhone,
+                string.Create(CultureInfo.InvariantCulture, $"+98{subscriber}"),
+                string.Create(CultureInfo.InvariantCulture, $"0098{subscriber}"),
+                string.Create(CultureInfo.InvariantCulture, $"98{subscriber}")
+            ];
+        }
+
+        private static UnauthorizedAccessException InvalidOtp() =>
+            new("Invalid or expired verification code.");
 
         private static void EnsureSucceeded(IdentityResult result)
         {

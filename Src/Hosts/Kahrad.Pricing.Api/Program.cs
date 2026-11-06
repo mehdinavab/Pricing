@@ -20,7 +20,9 @@ using Microsoft.OpenApi;
 using Scalar.AspNetCore;
 using System.Text;
 using System.Globalization;
+using System.Threading.RateLimiting;
 using Kahrad.Pricing.Api.Localization;
+using Kahrad.Pricing.Identity.Application.Authentication;
 using Kahrad.Pricing.AccountingIntegration.Application;
 using Kahrad.Pricing.AccountingIntegration.Infrastructure;
 using Kahrad.Pricing.Sales.Application;
@@ -56,6 +58,27 @@ if (string.IsNullOrWhiteSpace(jwtOptions.Key) ||
 }
 
 builder.Services.AddScoped<FluentValidationActionFilter>();
+var otpOptions = builder.Configuration
+    .GetSection(OtpAuthenticationOptions.SectionName)
+    .Get<OtpAuthenticationOptions>() ?? new OtpAuthenticationOptions();
+otpOptions.Validate();
+builder.Services.Configure<OtpAuthenticationOptions>(
+    builder.Configuration.GetSection(OtpAuthenticationOptions.SectionName));
+builder.Services.AddSingleton(TimeProvider.System);
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    options.AddPolicy("otp-auth", httpContext =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+            _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 10,
+                Window = TimeSpan.FromMinutes(1),
+                QueueLimit = 0,
+                AutoReplenishment = true
+            }));
+});
 builder.Services.AddLocalization();
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
@@ -189,6 +212,8 @@ app.Use(async (context, next) =>
 });
 app.UseExceptionHandler();
 app.UseMiddleware<ApiOperationLoggingMiddleware>();
+app.UseRouting();
+app.UseRateLimiter();
 app.UseStatusCodePages(async statusContext =>
 {
     var context = statusContext.HttpContext;
