@@ -2,7 +2,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Kahrad.Pricing.Pricing.Domain\Kahrad.Pricing.Pricing.Domain.csproj" />
+    <ProjectReference Include="..\Kahrad.Pricing.Pricing.Engine\Kahrad.Pricing.Pricing.Engine.csproj" />
+    <ProjectReference Include="..\..\AccountingIntegration\Kahrad.Pricing.AccountingIntegration.Application\Kahrad.Pricing.AccountingIntegration.Application.csproj" />
     <ProjectReference Include="..\..\Products\Kahrad.Pricing.Products.Application\Kahrad.Pricing.Products.Application.csproj" />
+    <ProjectReference Include="..\..\Representatives\Kahrad.Pricing.Representatives.Application\Kahrad.Pricing.Representatives.Application.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Kahrad.Pricing.BuildingBlocks.Application\Kahrad.Pricing.BuildingBlocks.Application.csproj" />
   </ItemGroup>
 

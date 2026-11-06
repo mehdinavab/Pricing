@@ -15,6 +15,7 @@ public static class DependencyInjection
             ?? throw new InvalidOperationException("Configure the pricing SQL Server connection string.");
         services.AddDbContext<PricingDbContext>(options => options.UseSqlServer(connection));
         services.AddScoped<IPriceOverrideStore, PriceOverrideStore>();
+        services.AddScoped<IPricingPolicyStore, PricingPolicyStore>();
         return services;
     }
 }

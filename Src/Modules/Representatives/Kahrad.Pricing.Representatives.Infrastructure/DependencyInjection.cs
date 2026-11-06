@@ -15,6 +15,7 @@ public static class DependencyInjection
             ?? throw new InvalidOperationException("Configure the representatives SQL Server connection string.");
         services.AddDbContext<RepresentativesDbContext>(options => options.UseSqlServer(connection));
         services.AddScoped<IRepresentativeStore, RepresentativeStore>();
+        services.AddScoped<IRepresentativePricingReader, RepresentativePricingReader>();
         return services;
     }
 }
