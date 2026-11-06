@@ -1,3 +1,4 @@
+using Kahrad.Pricing.BuildingBlocks.Domain.Exceptions;
 using Kahrad.Pricing.Sales.Domain.Entities;
 
 namespace Kahrad.Pricing.Sales.Application.Contracts;
@@ -18,4 +19,7 @@ public interface ISaleFinalizationStore
 }
 
 public sealed class PublishedSalePricesNotConfiguredException()
-    : InvalidOperationException("Published sale prices are not configured.");
+    : KahradPricingException(
+        "Published sale prices are not configured.",
+        true,
+        ErrorCodes.ServiceUnavailable);

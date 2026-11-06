@@ -1,3 +1,5 @@
+using Kahrad.Pricing.BuildingBlocks.Domain.Exceptions;
+
 namespace Kahrad.Pricing.AccountingIntegration.Application.Contracts;
 
 /// <summary>Normalized application boundary; the provider's HTTP DTOs and paging are not known yet.</summary>
@@ -17,4 +19,7 @@ public sealed record ImportedAccountingInvoice(string ExternalInvoiceId, string?
     string? InvoiceNumber, string? ExternalStatus, DateTime? IssuedAtUtc);
 
 public sealed class AccountingProviderNotConfiguredException()
-    : InvalidOperationException("Accounting provider contract is not configured.");
+    : KahradPricingException(
+        "Accounting provider contract is not configured.",
+        true,
+        ErrorCodes.ServiceUnavailable);

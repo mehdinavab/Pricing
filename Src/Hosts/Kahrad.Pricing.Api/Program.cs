@@ -113,14 +113,7 @@ builder.Services.AddSwaggerGen(options =>
             [new OpenApiSecuritySchemeReference("Bearer", document)] = []
         });
 });
-builder.Services.AddExceptionHandler<BrandExceptionHandler>();
-builder.Services.AddExceptionHandler<GuaranteeExceptionHandler>();
-builder.Services.AddExceptionHandler<ProductExceptionHandler>();
-builder.Services.AddExceptionHandler<SmsExceptionHandler>();
-builder.Services.AddExceptionHandler<AccountingExceptionHandler>();
-builder.Services.AddExceptionHandler<RepresentativeExceptionHandler>();
-builder.Services.AddExceptionHandler<PricingExceptionHandler>();
-builder.Services.AddExceptionHandler<IdentityExceptionHandler>();
+builder.Services.AddExceptionHandler<ApiExceptionHandler>();
 builder.Services.AddProblemDetails(options => options.CustomizeProblemDetails = context =>
 {
     var messages = context.HttpContext.RequestServices.GetRequiredService<IStringLocalizer<ApiMessages>>();
@@ -195,6 +188,7 @@ app.Use(async (context, next) =>
     await next();
 });
 app.UseExceptionHandler();
+app.UseMiddleware<ApiOperationLoggingMiddleware>();
 app.UseStatusCodePages(async statusContext =>
 {
     var context = statusContext.HttpContext;
